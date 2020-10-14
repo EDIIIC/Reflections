@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
-//Name: Sharraffe_Rigged_3.ma
-//Last modified: Tue, Oct 13, 2020 09:41:25 PM
+//Name: Sharraffe_Rigged_3_Skinned.ma
+//Last modified: Tue, Oct 13, 2020 09:42:11 PM
 //Codeset: UTF-8
 requires maya "2019";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
@@ -30886,4 +30886,4 @@ connectAttr "Sharraffe_Rigged_2:shark:Material1F.msg" ":defaultTextureList1.tx"
 		-na;
 connectAttr "Sharaffe_LowPolyShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
-// End of Sharraffe_Rigged_3.ma
+// End of Sharraffe_Rigged_3_Skinned.ma
