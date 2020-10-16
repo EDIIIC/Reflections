@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: Sharraffe_Rigged_3_Skinned.ma
-//Last modified: Wed, Oct 14, 2020 11:35:27 PM
+//Last modified: Wed, Oct 14, 2020 11:44:08 PM
 //Codeset: UTF-8
 requires maya "2019";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
@@ -14,8 +14,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "A56C7B4B-7540-1362-6243-9894242E73AE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -7.8886875223973831 6.8609448720154145 8.421092994718002 ;
-	setAttr ".r" -type "double3" -737.13835461004555 -15166.999999997623 -1.1658952820027212e-15 ;
+	setAttr ".t" -type "double3" -6.9479757418978929 6.4307959695640013 10.628817889812399 ;
+	setAttr ".r" -type "double3" -732.93835461003937 -15157.799999997656 0 ;
 	setAttr ".rp" -type "double3" 0 9.3247078183740181e-16 0 ;
 	setAttr ".rpt" -type "double3" 5.9848514724126809e-16 -2.3666788259253091e-16 1.6485027423236279e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 13.559037677398603;
+	setAttr ".coi" 13.559037677403792;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
