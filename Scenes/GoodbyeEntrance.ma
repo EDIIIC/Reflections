@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: GoodbyeEntrance.ma
-//Last modified: Sun, Nov 01, 2020 10:48:59 PM
+//Last modified: Sun, Nov 01, 2020 10:56:11 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Laila_Rig_003" -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
@@ -99,25 +99,25 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "71BC06D4-CC44-0B81-FFB4-4DA945A8CAA3";
+	rename -uid "36A22BFE-F04D-402D-B4A0-F09BDAD81549";
 	setAttr -s 65 ".lnk";
 	setAttr -s 65 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "E498864A-2842-653F-D5EB-EDAD68C5111B";
+	rename -uid "F87A84E9-0642-631F-8AF1-EB9EE8862934";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9C864E1E-F941-3D22-AF94-6DBC662A8192";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "DC4EC399-9345-AB72-91F6-8A9100625D25";
+	rename -uid "F21B38E1-184A-FFD7-9688-0A92AA3C1C60";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "9E8D639D-1B46-EA4D-1300-2B9DB57BC2C6";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "9B7CACBA-9445-B75E-9C98-159F42B14D29";
+	rename -uid "9186A653-BE4A-F920-00AD-319BF0F54FB7";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "6692CAEF-BE4B-8CB5-34CE-88807C4D7FC3";
+	rename -uid "21F258A5-C04F-EDE9-DF49-18A14685A195";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode reference -n "Laila_Rig_003RN";
 	rename -uid "8026D677-E846-BDF1-11AD-2C997328FB1D";

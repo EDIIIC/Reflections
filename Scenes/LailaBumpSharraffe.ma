@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: LailaBumpSharraffe.ma
-//Last modified: Wed, Oct 28, 2020 11:30:44 PM
+//Last modified: Sun, Nov 01, 2020 10:54:53 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Sharraffe_Rigged_3_Skinned" -rfn "Sharraffe_Rigged_3_SkinnedRN"
 		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
@@ -24,7 +24,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "3B2EBE7D-C646-75AD-32EC-DE8F0B828F7D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 15.738583724988748 4.9627016870723972 -2.8344949777530779 ;
+	setAttr ".t" -type "double3" 21.105207620559231 5.9613609263459031 -2.9656524406680749 ;
 	setAttr ".r" -type "double3" -10.538352770544385 451.39999999975646 2.5444437451708134e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "795EC746-0A4D-48D4-C154-B399658AFEA1";
@@ -33,7 +33,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 16.089470588123376;
+	setAttr ".coi" 21.549797921971923;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -1013,23 +1013,23 @@ createNode mesh -n "pPlaneShape4" -p "pPlane4";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "AF84EC2E-3B4B-56FD-2769-13AAF9EAC0CF";
+	rename -uid "5A5F66D4-3B4A-8958-B64D-1993A6430681";
 	setAttr -s 76 ".lnk";
 	setAttr -s 76 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B0CAC36B-1349-6169-DC72-1D94342BEEB0";
+	rename -uid "41D9E9F3-2841-1519-D3E1-A2A708294EB1";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "EE8B4EFE-BD4A-E8C2-FEA5-B98A8DAF6FF9";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "15ACBE64-4E42-A5EB-6511-B2903FBEEE44";
+	rename -uid "A13A5B89-7B48-1B8E-3001-E4940B626629";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B94D19F8-274A-A3F0-C5E0-BCA75379DD4F";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0DF66990-0B4E-D974-14E7-D48D50D3EB30";
+	rename -uid "C4C9978E-744C-1C1A-3787-FF8FF9766A89";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "9A03ABE1-2A46-8728-875B-CA81A5337DC5";
+	rename -uid "E043D1FD-D24E-9ED2-1358-2A8C7DAC65E9";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "A3FEE68B-7743-7081-A6D0-EDA3C4D11C51";
@@ -1037,19 +1037,19 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 539\n            -height 344\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n"
 		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n"
-		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 538\n            -height 343\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
+		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 539\n            -height 343\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n"
+		+ "            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n"
 		+ "            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n"
 		+ "            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n"
-		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1088\n            -height 735\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
+		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1013\n            -height 619\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
 		+ "            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n"
-		+ "            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n"
 		+ "            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n"
@@ -1074,8 +1074,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
 		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1088\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1088\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1013\\n    -height 619\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1013\\n    -height 619\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1630,7 +1630,7 @@ createNode reference -n "Sharraffe_Rigged_3_SkinnedRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Sharraffe_Rigged_3_SkinnedRN"
 		"Sharraffe_Rigged_3_SkinnedRN" 0
-		"Sharraffe_Rigged_3_SkinnedRN" 814
+		"Sharraffe_Rigged_3_SkinnedRN" 806
 		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp" "visibility" " 1"
 		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL" 
 		"visibility" " -av 1"
@@ -1666,526 +1666,510 @@ createNode reference -n "Sharraffe_Rigged_3_SkinnedRN";
 		"R_Back_IKFK" " -av -k 1 0"
 		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL" 
 		"L_Back_IKFK" " -av -k 1 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL" 
-		"Translate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL" 
-		"Rotate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_2_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_3_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Front|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_FrontLeg_4_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_1_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_2_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_3_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:R_FK_Back|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FK_BackLeg_4_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_1_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_2_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_3_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Front|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_FrontLeg_4_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_1_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_2_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_3_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"visibility" " 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"scale" " -type \"double3\" 1.00000000000000022 1.00000000000000089 1.00000000000000022"
 		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"Translate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:FK_CTRLS|Sharraffe_Rigged_3_Skinned:L_FK_Back|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FK_BackLeg_4_CTRL" 
 		"Rotate" " -k 1 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL" 
-		"SpringBias" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL" 
-		"Translate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL" 
-		"Rotate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL" 
-		"SpringBias" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
 		"translate" " -type \"double3\" 0.0082702859731932088 -0.081316790465183419 -0.37496355591010744"
 		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
 		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
 		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL" 
 		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL" 
-		"Translate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL" 
-		"Rotate" " -k 1"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
 		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
 		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL" 
 		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
-		"translate" " -type \"double3\" 0 -6.52672340376018756 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"rotate" " -type \"double3\" 0 0 23.475437306385178"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"translate" " -type \"double3\" 0.048205191864680703 -0.023257654891809487 -3.8994699144190617e-09"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"rotate" " -type \"double3\" -2.6354383811601112e-06 0 30.60310438462440885"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"rotate" " -type \"double3\" -0.0048935658189233145 0.00033922865847484275 15.33952986243878591"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"translate" " -type \"double3\" 0.033936681176339939 0.026883230138147328 1.1676848564908481e-05"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"rotate" " -type \"double3\" 0.0056576064815456982 0.00094175218301468958 -16.89828101505202085"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"translate" " -type \"double3\" -0.036329477802635471 -0.049284704488354786 -1.6221249950276584e-06"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"rotate" " -type \"double3\" 0.001253475089105059 0.00049369240265679712 -34.4318574165122655"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"rotate" " -type \"double3\" -0.061814008114089131 -0.056869616475178852 -40.32042781438750012"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"translateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"translateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"translateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"rotate" " -type \"double3\" 0.026061096467237439 0.067995617283450591 -18.36624105181082456"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
-		"rotate" " -type \"double3\" 0 0 -6.24431554793185395"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
-		"rotate" " -type \"double3\" 0 0 -6.24431554793186283"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
-		"rotate" " -type \"double3\" 0 0 -6.2443155479318504"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
-		"rotate" " -type \"double3\" -11.38611275672556467 3.42434612549433215 13.98631436576394194"
-		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
-		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
 		"rotate" " -type \"double3\" 4.37657569203485064 -3.79624541100629287 17.53232977637604861"
 		
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
+		"rotate" " -type \"double3\" -11.38611275672556467 3.42434612549433215 13.98631436576394194"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
-		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
-		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL" 
 		"rotateZ" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
+		"rotate" " -type \"double3\" 0 0 -6.2443155479318504"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
+		"rotate" " -type \"double3\" 0 0 -6.24431554793186283"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
+		"rotate" " -type \"double3\" 0 0 -6.24431554793185395"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"rotate" " -type \"double3\" 0.026061096467237439 0.067995617283450591 -18.36624105181082456"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"rotate" " -type \"double3\" -0.061814008114089131 -0.056869616475178852 -40.32042781438750012"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"translate" " -type \"double3\" -0.036329477802635471 -0.049284704488354786 -1.6221249950276584e-06"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"rotate" " -type \"double3\" 0.001253475089105059 0.00049369240265679712 -34.4318574165122655"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"translate" " -type \"double3\" 0.033936681176339939 0.026883230138147328 1.1676848564908481e-05"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"rotate" " -type \"double3\" 0.0056576064815456982 0.00094175218301468958 -16.89828101505202085"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"rotate" " -type \"double3\" -0.0048935658189233145 0.00033922865847484275 15.33952986243878591"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"translate" " -type \"double3\" 0.048205191864680703 -0.023257654891809487 -3.8994699144190617e-09"
+		
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"rotate" " -type \"double3\" -2.6354383811601112e-06 0 30.60310438462440885"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"rotate" " -type \"double3\" 0 0 23.475437306385178"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
 		"rotateX" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
 		"rotateY" " -av"
-		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL" 
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL" 
 		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"translateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		"rotateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		"rotateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL" 
+		"rotateZ" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
+		"translate" " -type \"double3\" 0 -6.52672340376018756 0"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
+		"translateX" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
+		"translateY" " -av"
+		2 "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL" 
+		"translateZ" " -av"
 		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL.R_Front_IKFK" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[1]" ""
 		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL.L_Front_IKFK" 
@@ -2214,1061 +2198,1061 @@ createNode reference -n "Sharraffe_Rigged_3_SkinnedRN";
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[13]" ""
 		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[14]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[15]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[16]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[17]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[18]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[19]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[20]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[21]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[22]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[23]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[24]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[25]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[26]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[27]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[28]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[29]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[30]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[31]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[32]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[33]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[34]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[35]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[36]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.SpringBias" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.SpringBias" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[37]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[38]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[39]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[40]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[41]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[42]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[43]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[44]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[45]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[46]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_FrontLeg_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[47]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[48]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[49]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[50]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[51]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[52]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[53]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[54]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[55]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[56]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Front|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[57]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[58]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[59]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[60]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[61]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[62]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[63]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[64]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[65]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[66]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[67]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[68]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[69]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[70]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[71]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[72]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[73]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[74]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[75]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[76]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[77]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[78]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:R_FrontLeg_PV_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[79]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.SpringBias" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.SpringBias" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[80]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[81]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[82]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[83]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[84]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[85]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[86]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[87]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[88]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[89]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:R_IK_Back|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_IK_BackLeg_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[90]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[91]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[92]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[93]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[94]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[95]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[96]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[97]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[98]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[99]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[100]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[101]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[102]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[103]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[104]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[105]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[106]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[107]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[108]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[109]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_FrontLeg_PV_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[110]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.SpringBias" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.SpringBias" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[111]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[112]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[113]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[114]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[115]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[116]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[117]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[118]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[119]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[120]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Front|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_FrontLeg_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[121]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[122]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[123]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[124]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[125]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[126]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[127]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[128]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[129]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[130]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[131]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[132]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[133]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[134]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[135]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[136]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[137]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[138]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[139]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[140]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[141]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[142]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_Offset|Sharraffe_Rigged_3_Skinned:L_BackLeg_PV_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[143]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.SpringBias" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.SpringBias" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[144]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[145]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[146]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[147]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[148]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[149]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[150]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[151]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[152]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[153]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:IK_CTRLS|Sharraffe_Rigged_3_Skinned:L_IK_Back|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_IK_BackLeg_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[154]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[155]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[156]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[157]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[158]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[159]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[160]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[161]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[162]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[163]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[164]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[165]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[166]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[167]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[168]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[169]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[170]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[171]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[172]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[173]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[174]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[175]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[176]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[177]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[178]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[179]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[180]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[181]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[182]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[183]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[184]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[185]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[186]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[187]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[188]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[189]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[190]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[191]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[192]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[193]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[194]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[195]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[196]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[197]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[198]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[199]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[200]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[201]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[202]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[203]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[204]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[205]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[206]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[207]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[208]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[209]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[210]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[211]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[212]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[213]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[214]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[215]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[216]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[217]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[218]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[219]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[220]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[221]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[222]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[223]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[224]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[225]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[226]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[227]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[228]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[229]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[230]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[231]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[232]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[233]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[234]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[235]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[236]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[237]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[238]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[239]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[240]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[241]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[242]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[243]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[244]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[245]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[246]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[247]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[248]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[249]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[250]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[251]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[252]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[253]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[254]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[255]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[256]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[257]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[258]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[259]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[260]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[261]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[262]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[263]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[264]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[265]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[266]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[267]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[268]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[269]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[270]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[271]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[272]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[273]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[274]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[275]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[276]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[277]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[278]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[279]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[280]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[281]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[282]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[283]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[284]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[285]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[286]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[287]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[288]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[289]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[290]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[291]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[292]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[293]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[294]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[295]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[296]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[297]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[298]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[299]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[300]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[301]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[302]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[303]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[304]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[305]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[306]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[307]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[308]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[309]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[310]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[311]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[312]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[313]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[314]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[315]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[316]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[317]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[318]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[319]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[320]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[321]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[322]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[323]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[324]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[325]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[326]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[327]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[328]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[329]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[330]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[331]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[332]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[333]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[334]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[335]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[336]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[337]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[338]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[339]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[340]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[341]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[342]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[343]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[344]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[345]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[346]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[347]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[348]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[349]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[350]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[351]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[352]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[353]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[354]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[355]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[356]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[357]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_4_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[358]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[359]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[360]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[361]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_3_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[362]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[363]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[364]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[365]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[366]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[367]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[368]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[369]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_5_Neck_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[370]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[371]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[372]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[373]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[374]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[375]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[376]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[377]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[378]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[379]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[380]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[381]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_6_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[382]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[383]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[384]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[385]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[386]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[387]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[388]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[389]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[390]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[391]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[392]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[393]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_7_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[394]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[395]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[396]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[397]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_5_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[398]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[399]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[400]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[401]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[402]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[403]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[404]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[405]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_8_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[406]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[407]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[408]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[409]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_4_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[410]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[411]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[412]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[413]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[414]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[415]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[416]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[417]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_9_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[418]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[419]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[420]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[421]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_3_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[422]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[423]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[424]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[425]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[426]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[427]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[428]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[429]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_10_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[430]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[431]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[432]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[433]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_2_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[434]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[435]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[436]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[437]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[438]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[439]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[440]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[441]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Spine_11_Head_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[442]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[443]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[444]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[445]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Tail_1_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[446]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[447]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[448]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[449]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[450]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[451]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[452]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[453]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Nose_Translate_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[454]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[455]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[456]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[457]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_L_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[458]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[459]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[460]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[461]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[462]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[463]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[464]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[465]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Jaw_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Jaw_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[466]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[467]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[468]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[469]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_FrontToe_R_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[470]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[471]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[472]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[473]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[474]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[475]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[476]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[477]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Mouth_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[478]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[479]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[480]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[481]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_L_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[482]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[483]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[484]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[485]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[486]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[487]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[488]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[489]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Mouth_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[490]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[491]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[492]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[493]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_FrontToe_R_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[494]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[495]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[496]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[497]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[498]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[499]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:L_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Head_Side_L_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[500]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[501]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[502]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[503]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[504]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[505]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_L_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[506]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[507]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[508]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[509]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.Translate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[510]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.Rotate" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[511]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Hammer_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[512]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[513]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[514]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[515]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[516]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[517]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_BackToe_R_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[518]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[519]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[520]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[521]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[522]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[523]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[524]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[525]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[526]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[527]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[528]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[529]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_R_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[530]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[531]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_Eye_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[532]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.translateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[533]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[534]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.translateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[535]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.rotateZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.visibility" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[536]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleX" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[537]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleY" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[538]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.scaleZ" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.rotateZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[539]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.Translate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleX" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[540]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.Rotate" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleY" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[541]" ""
-		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL_Grp|Sharraffe_Rigged_3_Skinned:R_BackToe_L_CTRL.visibility" 
+		5 4 "Sharraffe_Rigged_3_SkinnedRN" "|Sharraffe_Rigged_3_Skinned:Sharaffe_Grp|Sharraffe_Rigged_3_Skinned:CTRLS|Sharraffe_Rigged_3_Skinned:Transform_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Transform_CTRL|Sharraffe_Rigged_3_Skinned:COG_CTRL_Grp|Sharraffe_Rigged_3_Skinned:COG_CTRL|Sharraffe_Rigged_3_Skinned:Eyes_CTRL_Grp|Sharraffe_Rigged_3_Skinned:Eyes_CTRL|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL_Grp|Sharraffe_Rigged_3_Skinned:L_Eye_CTRL.scaleZ" 
 		"Sharraffe_Rigged_3_SkinnedRN.placeHolderList[542]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -4249,7 +4233,7 @@ createNode animCurveTA -n "Spine_8_CTRL_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 5 ".ktv[0:4]"  90 0.0056576064815456982 116 4.6349120008685878
-		 140 4.9346650484009142 165 7.3524445100086959 200 12.75696922428633;
+		 140 4.9346650484009151 165 7.3524445100086959 200 12.75696922428633;
 createNode animCurveTA -n "Spine_8_CTRL_rotateY";
 	rename -uid "C28CC87A-3B44-9703-717D-14B4043F81C8";
 	setAttr ".tan" 18;
@@ -6270,11 +6254,11 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 12.22694497940680769"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
@@ -6476,13 +6460,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
@@ -6492,13 +6476,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
@@ -6508,13 +6492,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
@@ -6524,13 +6508,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
@@ -6540,13 +6524,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
@@ -6556,13 +6540,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
@@ -6572,13 +6556,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
@@ -6588,13 +6572,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
@@ -6604,13 +6588,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
@@ -6620,13 +6604,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
@@ -6636,13 +6620,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
@@ -6652,13 +6636,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -21.77265403018231282"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -21.77265403018231638"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl" 
@@ -6832,7 +6816,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" -11.85670386497717921 -4.4358645462320645 -0.11619903162607415"
+		"rotate" " -type \"double3\" -11.85670386497717921 -4.43586454623206539 -0.11619903162607415"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"rotateX" " -av"
@@ -6849,7 +6833,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" -9.84368172375124217 -11.31522685706520193 -1.32564982694054501"
+		"rotate" " -type \"double3\" -9.84368172375124217 -11.3152268570652037 -1.32564982694054501"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"rotateX" " -av"
@@ -6983,11 +6967,11 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
@@ -7040,13 +7024,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -5.86239666587749841"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"rotateZ" " -av"
+		"rotate" " -type \"double3\" 0 0 -5.8623966658774993"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl" 
@@ -7091,9 +7075,9 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"rotate" " -type \"double3\" -46.4991098488145127 -74.25669690681976931 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
-		"rotateY" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"rotateX" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
+		"rotateY" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl|Laila_Rig_003:ikHandle3" 
@@ -7191,11 +7175,11 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
-		"rotateZ" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
@@ -7207,11 +7191,11 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"rotate" " -type \"double3\" 22.80602153490767847 0 -10.21436079882485615"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
-		"rotateZ" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"rotateY" " -av"
+		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
+		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Jaw_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Jaw_Jnt_001_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Jaw_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Jaw_Jnt_001_Ctrl" 
@@ -7338,11 +7322,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[22]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[23]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[24]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[25]" ""
+		"Laila_Rig_003RN.placeHolderList[24]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[25]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[26]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[27]" ""
@@ -7598,11 +7582,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[152]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[153]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[154]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[155]" ""
+		"Laila_Rig_003RN.placeHolderList[154]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[155]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[156]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[157]" ""
@@ -7618,11 +7602,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[162]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[163]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[164]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[165]" ""
+		"Laila_Rig_003RN.placeHolderList[164]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[165]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[166]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[167]" ""
@@ -7638,11 +7622,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[172]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[173]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[174]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[175]" ""
+		"Laila_Rig_003RN.placeHolderList[174]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[175]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[176]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[177]" ""
@@ -7658,11 +7642,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[182]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[183]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[184]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[185]" ""
+		"Laila_Rig_003RN.placeHolderList[184]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[185]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[186]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[187]" ""
@@ -7678,11 +7662,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[192]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[193]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[194]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[195]" ""
+		"Laila_Rig_003RN.placeHolderList[194]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[195]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[196]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[197]" ""
@@ -7698,11 +7682,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[202]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[203]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[204]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[205]" ""
+		"Laila_Rig_003RN.placeHolderList[204]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[205]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[206]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[207]" ""
@@ -7718,11 +7702,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[212]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[213]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[214]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[215]" ""
+		"Laila_Rig_003RN.placeHolderList[214]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[215]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[216]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[217]" ""
@@ -7738,11 +7722,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[222]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[223]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[224]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[225]" ""
+		"Laila_Rig_003RN.placeHolderList[224]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[225]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[226]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[227]" ""
@@ -7758,11 +7742,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[232]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[233]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[234]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[235]" ""
+		"Laila_Rig_003RN.placeHolderList[234]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[235]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[236]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[237]" ""
@@ -7778,11 +7762,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[242]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[243]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[244]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[245]" ""
+		"Laila_Rig_003RN.placeHolderList[244]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[245]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[246]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[247]" ""
@@ -7798,11 +7782,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[252]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[253]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[254]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[255]" ""
+		"Laila_Rig_003RN.placeHolderList[254]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[255]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[256]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[257]" ""
@@ -7818,11 +7802,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[262]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[263]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[264]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[265]" ""
+		"Laila_Rig_003RN.placeHolderList[264]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[265]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[266]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[267]" ""
@@ -7892,19 +7876,19 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[299]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl.visibility" 
 		"Laila_Rig_003RN.placeHolderList[300]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateX" 
-		"Laila_Rig_003RN.placeHolderList[301]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateY" 
-		"Laila_Rig_003RN.placeHolderList[302]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateZ" 
-		"Laila_Rig_003RN.placeHolderList[303]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[304]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateY" 
-		"Laila_Rig_003RN.placeHolderList[305]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[306]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.visibility" 
+		"Laila_Rig_003RN.placeHolderList[301]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateX" 
+		"Laila_Rig_003RN.placeHolderList[302]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateY" 
+		"Laila_Rig_003RN.placeHolderList[303]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.translateZ" 
+		"Laila_Rig_003RN.placeHolderList[304]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateX" 
+		"Laila_Rig_003RN.placeHolderList[305]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[306]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[307]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[308]" ""
@@ -8106,17 +8090,17 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[406]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.Roll" 
 		"Laila_Rig_003RN.placeHolderList[407]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[408]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[409]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateY" 
-		"Laila_Rig_003RN.placeHolderList[410]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.translateX" 
-		"Laila_Rig_003RN.placeHolderList[411]" ""
+		"Laila_Rig_003RN.placeHolderList[408]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.translateY" 
-		"Laila_Rig_003RN.placeHolderList[412]" ""
+		"Laila_Rig_003RN.placeHolderList[409]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.translateZ" 
+		"Laila_Rig_003RN.placeHolderList[410]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateX" 
+		"Laila_Rig_003RN.placeHolderList[411]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[412]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[413]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[414]" ""
@@ -8126,17 +8110,17 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[416]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.Roll" 
 		"Laila_Rig_003RN.placeHolderList[417]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[418]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[419]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateY" 
-		"Laila_Rig_003RN.placeHolderList[420]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.translateX" 
-		"Laila_Rig_003RN.placeHolderList[421]" ""
+		"Laila_Rig_003RN.placeHolderList[418]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.translateY" 
-		"Laila_Rig_003RN.placeHolderList[422]" ""
+		"Laila_Rig_003RN.placeHolderList[419]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.translateZ" 
+		"Laila_Rig_003RN.placeHolderList[420]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateX" 
+		"Laila_Rig_003RN.placeHolderList[421]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[422]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[423]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[424]" ""
@@ -8144,9 +8128,9 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[425]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.scaleZ" 
 		"Laila_Rig_003RN.placeHolderList[426]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl.rotateY" 
-		"Laila_Rig_003RN.placeHolderList[427]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl.rotateX" 
+		"Laila_Rig_003RN.placeHolderList[427]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl.rotateY" 
 		"Laila_Rig_003RN.placeHolderList[428]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[429]" ""
@@ -8190,11 +8174,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[448]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[449]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[450]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[451]" ""
+		"Laila_Rig_003RN.placeHolderList[450]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[451]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[452]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[453]" ""
@@ -8210,11 +8194,11 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[458]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[459]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.rotateZ" 
-		"Laila_Rig_003RN.placeHolderList[460]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[461]" ""
+		"Laila_Rig_003RN.placeHolderList[460]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.rotateY" 
+		"Laila_Rig_003RN.placeHolderList[461]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.rotateZ" 
 		"Laila_Rig_003RN.placeHolderList[462]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl.scaleX" 
 		"Laila_Rig_003RN.placeHolderList[463]" ""
@@ -8292,7 +8276,7 @@ createNode animCurveTA -n "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateZ";
 	rename -uid "2F254EA5-5147-BD6E-5A23-589F1B54D04B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -5.8623966658774984 25 -2.4177243407622
+	setAttr -s 7 ".ktv[0:6]"  1 -5.8623966658774993 25 -2.4177243407622
 		 126 -2.4177243407622 166 -12.478484763582117 183 -0.8825090211898019 246 -12.478484763582117
 		 261 -2.7281384468542638;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
@@ -8534,7 +8518,7 @@ createNode animCurveTA -n "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  1 0 25 -9.4146621496616945 126 -9.4146621496616945
-		 166 -78.366716790654223 183 -45.647201208804518 246 -78.366716790654223 261 -49.207436402994588;
+		 166 -78.366716790654237 183 -45.647201208804518 246 -78.366716790654237 261 -49.207436402994595;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kot[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kix[5:6]"  1 1;
@@ -8617,8 +8601,8 @@ createNode animCurveTA -n "laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_rotateX";
 	rename -uid "5BC271D3-684C-5916-1EC2-87B8E13A9A39";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 7.7403973524918159 25 19.074270359513957
-		 126 19.074270359513957 166 -6.3183188179525676 183 54.863926489003454 246 -6.3183188179525676
+	setAttr -s 7 ".ktv[0:6]"  1 7.7403973524918159 25 19.07427035951396
+		 126 19.07427035951396 166 -6.3183188179525676 183 54.863926489003454 246 -6.3183188179525676
 		 261 26.421796606884982;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kot[0:6]"  16 18 18 18 18 1 18;
@@ -9137,7 +9121,7 @@ createNode animCurveTA -n "laila_Rig_001_Spine_Jnt_002_Ctrl_rotateY";
 	rename -uid "E004CA42-5544-49B2-9783-D6B6CF58AE29";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -11.315226857065202 25 0 126 0 166 2.9692933696300141
+	setAttr -s 7 ".ktv[0:6]"  1 -11.315226857065204 25 0 126 0 166 2.9692933696300141
 		 183 2.9692933696300088 246 2.9692933696300141 261 20.798586150793451;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kot[0:6]"  16 18 18 18 18 1 18;
@@ -9149,8 +9133,8 @@ createNode animCurveTA -n "laila_Rig_001_Spine_Jnt_002_Ctrl_rotateZ";
 	rename -uid "60599771-2347-5BAF-8711-5E988ECAB309";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -1.325649826940545 25 0 126 0 166 0.29764661969365297
-		 183 0.29764661969365208 246 0.29764661969365297 261 2.1846864453560606;
+	setAttr -s 7 ".ktv[0:6]"  1 -1.325649826940545 25 0 126 0 166 0.29764661969365303
+		 183 0.29764661969365208 246 0.29764661969365303 261 2.1846864453560606;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kot[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kix[5:6]"  1 1;
@@ -9216,7 +9200,7 @@ createNode animCurveTA -n "laila_Rig_001_Spine_Jnt_001_Ctrl_rotateY";
 	rename -uid "1770B067-A545-9C97-24A6-9CB8B1D7EF64";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -4.4358645462320645 25 0 126 0 166 2.5416274980601146
+	setAttr -s 7 ".ktv[0:6]"  1 -4.4358645462320654 25 0 126 0 166 2.5416274980601146
 		 183 2.5416274980601097 246 2.5416274980601146 261 12.09579327547727;
 	setAttr -s 7 ".kit[0:6]"  16 18 18 18 18 1 18;
 	setAttr -s 7 ".kot[0:6]"  16 18 18 18 18 1 18;
@@ -9520,7 +9504,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateZ";
 	rename -uid "F32603A0-F948-B69E-1CCF-5D8B99F610EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9554,7 +9538,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateZ";
 	rename -uid "32FB9586-3043-F5AE-3933-4F835BAC0D00";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9588,7 +9572,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateZ";
 	rename -uid "7B92C2EE-AC4F-3572-2814-8282A875959E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9622,7 +9606,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateZ";
 	rename -uid "36045BDE-FA4F-BF65-7E4E-FB8AB8391D56";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9656,7 +9640,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateZ";
 	rename -uid "93160D5A-CA4E-9D0A-9908-9E87578AA987";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9690,7 +9674,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateZ";
 	rename -uid "F9AD93BE-6B4D-DE3A-6FFE-3DB979BA700D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9724,7 +9708,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateZ";
 	rename -uid "C4E8BDF6-C241-6D00-950A-409BD6C9717F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9758,7 +9742,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateZ";
 	rename -uid "33846A47-2F45-EC00-42E7-8C977C3B9B8B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9792,7 +9776,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateZ";
 	rename -uid "2004BA3C-C84B-1B27-44C1-55A5431C7D83";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9826,7 +9810,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateZ";
 	rename -uid "6DB2FFE4-C141-C078-833B-10B2725E0004";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9860,7 +9844,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateZ";
 	rename -uid "F51A6197-2E4C-BA6E-33AC-E38AF91592ED";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -9894,7 +9878,7 @@ createNode animCurveTA -n "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateZ";
 	rename -uid "34827E85-6349-A1BB-461F-B6A6A7A0B24B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182313 25 -6.2223213908995172
+	setAttr -s 6 ".ktv[0:5]"  1 -21.772654030182316 25 -6.2223213908995172
 		 126 -6.2223213908995172 166 -76.378984058949783 183 -17.042104813829003 246 -76.378984058949783;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
@@ -11504,7 +11488,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11538,7 +11522,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11572,7 +11556,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerFour_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11606,7 +11590,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11640,7 +11624,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11674,7 +11658,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerOne_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11708,7 +11692,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11742,7 +11726,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11776,7 +11760,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerThree_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11810,7 +11794,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11844,7 +11828,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11878,7 +11862,7 @@ createNode animCurveTA -n "mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -50.43198511350284 183 -7.7700899858334624 246 -50.43198511350284;
+		 126 -11.502071021183989 166 -50.431985113502847 183 -7.7700899858334624 246 -50.431985113502847;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11912,7 +11896,7 @@ createNode animCurveTA -n "mary_Rig_001_L_Thumb_Jnt_002_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -18.695007357769889 183 -7.7700899858334624 246 -18.695007357769889;
+		 126 -11.502071021183989 166 -18.695007357769892 183 -7.7700899858334624 246 -18.695007357769892;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -11946,7 +11930,7 @@ createNode animCurveTA -n "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 12.226944979406808 25 -11.502071021183989
-		 126 -11.502071021183989 166 -18.695007357769889 183 -7.7700899858334624 246 -18.695007357769889;
+		 126 -11.502071021183989 166 -18.695007357769892 183 -7.7700899858334624 246 -18.695007357769892;
 	setAttr -s 6 ".kit[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kot[0:5]"  16 18 18 18 18 1;
 	setAttr -s 6 ".kix[5]"  1;
@@ -13877,8 +13861,8 @@ createNode animCurveTA -n "mary_Rig_001_L_Thumb_Jnt_001_Ctrl_rotateZ";
 	rename -uid "0AF7F707-AC4F-769A-A6DD-14B696DB5F79";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  126 0 166 -18.695007357769889 183 -7.7700899858334624
-		 246 -18.695007357769889;
+	setAttr -s 4 ".ktv[0:3]"  126 0 166 -18.695007357769892 183 -7.7700899858334624
+		 246 -18.695007357769892;
 	setAttr -s 4 ".kit[3]"  1;
 	setAttr -s 4 ".kot[3]"  1;
 	setAttr -s 4 ".kix[3]"  1;
@@ -14239,525 +14223,525 @@ connectAttr "L_IK_BackLeg_2_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[153
 		;
 connectAttr "L_IK_BackLeg_2_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[154]"
 		;
-connectAttr "Eyes_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[155]";
-connectAttr "Eyes_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[156]";
-connectAttr "Eyes_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[157]";
-connectAttr "Eyes_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[158]";
-connectAttr "Eyes_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[159]";
-connectAttr "Eyes_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[160]";
-connectAttr "Eyes_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[161]";
-connectAttr "Eyes_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[162]";
-connectAttr "Eyes_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[163]";
-connectAttr "Eyes_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[164]";
-connectAttr "R_Eye_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[165]";
-connectAttr "R_Eye_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[166]";
-connectAttr "R_Eye_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[167]";
-connectAttr "R_Eye_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[168]";
-connectAttr "R_Eye_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[169]";
-connectAttr "R_Eye_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[170]";
-connectAttr "R_Eye_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[171]";
-connectAttr "R_Eye_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[172]";
-connectAttr "R_Eye_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[173]";
-connectAttr "R_Eye_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[174]";
-connectAttr "L_Eye_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[175]";
-connectAttr "L_Eye_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[176]";
-connectAttr "L_Eye_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[177]";
-connectAttr "L_Eye_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[178]";
-connectAttr "L_Eye_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[179]";
-connectAttr "L_Eye_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[180]";
-connectAttr "L_Eye_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[181]";
-connectAttr "L_Eye_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[182]";
-connectAttr "L_Eye_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[183]";
-connectAttr "L_Eye_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[184]";
-connectAttr "R_Hammer_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[185]"
-		;
-connectAttr "R_Hammer_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[186]"
-		;
-connectAttr "R_Hammer_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[187]"
-		;
-connectAttr "R_Hammer_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[188]";
-connectAttr "R_Hammer_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[189]";
-connectAttr "R_Hammer_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[190]";
-connectAttr "R_Hammer_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[191]";
-connectAttr "R_Hammer_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[192]";
-connectAttr "R_Hammer_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[193]";
-connectAttr "R_Hammer_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[194]";
-connectAttr "R_Hammer_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[195]";
-connectAttr "R_Hammer_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[196]"
-		;
-connectAttr "Head_Side_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[197]"
-		;
-connectAttr "Head_Side_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[198]"
-		;
-connectAttr "Head_Side_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[199]"
-		;
-connectAttr "Head_Side_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[200]"
-		;
-connectAttr "Head_Side_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[201]"
-		;
-connectAttr "Head_Side_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[202]"
-		;
-connectAttr "Head_Side_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[203]";
-connectAttr "Head_Side_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[204]";
-connectAttr "Head_Side_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[205]";
-connectAttr "Head_Side_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[206]"
-		;
-connectAttr "L_Mouth_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[207]";
-connectAttr "L_Mouth_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[208]";
-connectAttr "L_Mouth_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[209]";
-connectAttr "L_Mouth_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[210]";
-connectAttr "L_Mouth_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[211]";
-connectAttr "L_Mouth_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[212]";
-connectAttr "L_Mouth_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[213]";
-connectAttr "L_Mouth_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[214]";
-connectAttr "L_Mouth_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[215]";
-connectAttr "L_Mouth_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[216]";
-connectAttr "L_Mouth_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[217]";
-connectAttr "L_Mouth_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[218]";
-connectAttr "R_Mouth_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[219]";
-connectAttr "R_Mouth_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[220]";
-connectAttr "R_Mouth_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[221]";
-connectAttr "R_Mouth_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[222]";
-connectAttr "R_Mouth_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[223]";
-connectAttr "R_Mouth_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[224]";
-connectAttr "R_Mouth_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[225]";
-connectAttr "R_Mouth_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[226]";
-connectAttr "R_Mouth_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[227]";
-connectAttr "R_Mouth_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[228]";
-connectAttr "R_Mouth_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[229]";
-connectAttr "R_Mouth_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[230]";
-connectAttr "Jaw_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[231]";
-connectAttr "Jaw_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[232]";
-connectAttr "Jaw_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[233]";
-connectAttr "Jaw_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[234]";
-connectAttr "Jaw_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[235]";
-connectAttr "Jaw_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[236]";
-connectAttr "Jaw_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[237]";
-connectAttr "Jaw_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[238]";
-connectAttr "Jaw_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[239]";
-connectAttr "Jaw_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[240]";
-connectAttr "Jaw_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[241]";
-connectAttr "Jaw_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[242]";
-connectAttr "Nose_Translate_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[243]"
-		;
-connectAttr "Nose_Translate_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[244]"
+connectAttr "R_BackToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[155]"
 		;
-connectAttr "Nose_Translate_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[245]"
+connectAttr "R_BackToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[156]"
 		;
-connectAttr "Nose_Translate_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[246]"
+connectAttr "R_BackToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[157]"
 		;
-connectAttr "Nose_Translate_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[247]"
+connectAttr "R_BackToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[158]"
 		;
-connectAttr "Nose_Translate_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[248]"
+connectAttr "R_BackToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[159]"
 		;
-connectAttr "Nose_Translate_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[249]"
+connectAttr "R_BackToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[160]"
 		;
-connectAttr "Nose_Translate_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[250]"
+connectAttr "R_BackToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[161]";
+connectAttr "R_BackToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[162]";
+connectAttr "R_BackToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[163]";
+connectAttr "R_BackToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[164]"
 		;
-connectAttr "Nose_Translate_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[251]"
+connectAttr "R_BackToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[165]";
+connectAttr "R_BackToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[166]"
 		;
-connectAttr "Nose_Translate_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[252]"
+connectAttr "R_BackToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[167]"
 		;
-connectAttr "Nose_Translate_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[253]"
+connectAttr "R_BackToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[168]"
 		;
-connectAttr "Nose_Translate_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[254]"
+connectAttr "R_BackToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[169]"
 		;
-connectAttr "Spine_11_Head_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[255]"
+connectAttr "R_BackToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[170]"
 		;
-connectAttr "Spine_11_Head_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[256]"
+connectAttr "R_BackToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[171]"
 		;
-connectAttr "Spine_11_Head_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[257]"
+connectAttr "R_BackToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[172]"
 		;
-connectAttr "Spine_11_Head_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[258]"
+connectAttr "R_BackToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[173]";
+connectAttr "R_BackToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[174]";
+connectAttr "R_BackToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[175]";
+connectAttr "R_BackToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[176]"
 		;
-connectAttr "Spine_11_Head_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[259]"
+connectAttr "R_BackToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[177]";
+connectAttr "R_BackToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[178]"
 		;
-connectAttr "Spine_11_Head_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[260]"
+connectAttr "L_BackToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[179]"
 		;
-connectAttr "Spine_11_Head_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[261]"
+connectAttr "L_BackToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[180]"
 		;
-connectAttr "Spine_11_Head_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[262]"
+connectAttr "L_BackToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[181]"
 		;
-connectAttr "Spine_11_Head_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[263]"
+connectAttr "L_BackToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[182]"
 		;
-connectAttr "Spine_11_Head_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[264]"
+connectAttr "L_BackToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[183]"
 		;
-connectAttr "Spine_11_Head_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[265]"
+connectAttr "L_BackToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[184]"
 		;
-connectAttr "Spine_11_Head_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[266]"
+connectAttr "L_BackToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[185]";
+connectAttr "L_BackToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[186]";
+connectAttr "L_BackToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[187]";
+connectAttr "L_BackToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[188]"
 		;
-connectAttr "Spine_10_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[267]"
+connectAttr "L_BackToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[189]";
+connectAttr "L_BackToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[190]"
 		;
-connectAttr "Spine_10_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[268]"
+connectAttr "L_BackToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[191]"
 		;
-connectAttr "Spine_10_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[269]"
+connectAttr "L_BackToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[192]"
 		;
-connectAttr "Spine_10_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[270]";
-connectAttr "Spine_10_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[271]";
-connectAttr "Spine_10_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[272]";
-connectAttr "Spine_10_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[273]";
-connectAttr "Spine_10_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[274]";
-connectAttr "Spine_10_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[275]";
-connectAttr "Spine_10_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[276]";
-connectAttr "Spine_10_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[277]";
-connectAttr "Spine_10_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[278]"
-		;
-connectAttr "Spine_9_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[279]";
-connectAttr "Spine_9_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[280]";
-connectAttr "Spine_9_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[281]";
-connectAttr "Spine_9_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[282]";
-connectAttr "Spine_9_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[283]";
-connectAttr "Spine_9_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[284]";
-connectAttr "Spine_9_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[285]";
-connectAttr "Spine_9_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[286]";
-connectAttr "Spine_9_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[287]";
-connectAttr "Spine_9_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[288]";
-connectAttr "Spine_9_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[289]";
-connectAttr "Spine_9_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[290]";
-connectAttr "Spine_8_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[291]";
-connectAttr "Spine_8_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[292]";
-connectAttr "Spine_8_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[293]";
-connectAttr "Spine_8_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[294]";
-connectAttr "Spine_8_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[295]";
-connectAttr "Spine_8_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[296]";
-connectAttr "Spine_8_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[297]";
-connectAttr "Spine_8_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[298]";
-connectAttr "Spine_8_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[299]";
-connectAttr "Spine_8_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[300]";
-connectAttr "Spine_8_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[301]";
-connectAttr "Spine_8_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[302]";
-connectAttr "Spine_7_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[303]";
-connectAttr "Spine_7_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[304]";
-connectAttr "Spine_7_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[305]";
-connectAttr "Spine_7_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[306]";
-connectAttr "Spine_7_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[307]";
-connectAttr "Spine_7_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[308]";
-connectAttr "Spine_7_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[309]";
-connectAttr "Spine_7_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[310]";
-connectAttr "Spine_7_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[311]";
-connectAttr "Spine_7_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[312]";
-connectAttr "Spine_7_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[313]";
-connectAttr "Spine_7_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[314]";
-connectAttr "Spine_6_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[315]";
-connectAttr "Spine_6_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[316]";
-connectAttr "Spine_6_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[317]";
-connectAttr "Spine_6_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[318]";
-connectAttr "Spine_6_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[319]";
-connectAttr "Spine_6_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[320]";
-connectAttr "Spine_6_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[321]";
-connectAttr "Spine_6_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[322]";
-connectAttr "Spine_6_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[323]";
-connectAttr "Spine_6_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[324]";
-connectAttr "Spine_6_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[325]";
-connectAttr "Spine_6_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[326]";
-connectAttr "Spine_5_Neck_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[327]"
-		;
-connectAttr "Spine_5_Neck_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[328]"
-		;
-connectAttr "Spine_5_Neck_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[329]"
-		;
-connectAttr "Spine_5_Neck_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[330]"
-		;
-connectAttr "Spine_5_Neck_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[331]"
-		;
-connectAttr "Spine_5_Neck_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[332]"
-		;
-connectAttr "Spine_5_Neck_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[333]"
-		;
-connectAttr "Spine_5_Neck_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[334]"
-		;
-connectAttr "Spine_5_Neck_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[335]"
-		;
-connectAttr "Spine_5_Neck_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[336]"
-		;
-connectAttr "Spine_5_Neck_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[337]"
-		;
-connectAttr "Spine_5_Neck_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[338]"
-		;
-connectAttr "Spine_4_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[339]";
-connectAttr "Spine_4_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[340]";
-connectAttr "Spine_4_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[341]";
-connectAttr "Spine_4_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[342]";
-connectAttr "Spine_4_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[343]";
-connectAttr "Spine_4_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[344]";
-connectAttr "Spine_4_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[345]";
-connectAttr "Spine_4_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[346]";
-connectAttr "Spine_4_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[347]";
-connectAttr "Spine_4_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[348]";
-connectAttr "Spine_4_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[349]";
-connectAttr "Spine_4_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[350]";
-connectAttr "Spine_3_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[351]";
-connectAttr "Spine_3_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[352]";
-connectAttr "Spine_3_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[353]";
-connectAttr "Spine_3_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[354]";
-connectAttr "Spine_3_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[355]";
-connectAttr "Spine_3_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[356]";
-connectAttr "Spine_3_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[357]";
-connectAttr "Spine_3_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[358]";
-connectAttr "Spine_3_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[359]";
-connectAttr "Spine_3_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[360]";
-connectAttr "Spine_3_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[361]";
-connectAttr "Spine_3_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[362]";
-connectAttr "Spine_2_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[363]";
-connectAttr "Spine_2_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[364]";
-connectAttr "Spine_2_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[365]";
-connectAttr "Spine_2_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[366]";
-connectAttr "Spine_2_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[367]";
-connectAttr "Spine_2_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[368]";
-connectAttr "Spine_2_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[369]";
-connectAttr "Spine_2_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[370]";
-connectAttr "Spine_2_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[371]";
-connectAttr "Spine_2_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[372]";
-connectAttr "Spine_2_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[373]";
-connectAttr "Spine_2_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[374]";
-connectAttr "Spine_1_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[375]";
-connectAttr "Spine_1_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[376]";
-connectAttr "Spine_1_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[377]";
-connectAttr "Spine_1_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[378]";
-connectAttr "Spine_1_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[379]";
-connectAttr "Spine_1_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[380]";
-connectAttr "Spine_1_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[381]";
-connectAttr "Spine_1_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[382]";
-connectAttr "Spine_1_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[383]";
-connectAttr "Spine_1_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[384]";
-connectAttr "Spine_1_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[385]";
-connectAttr "Spine_1_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[386]";
-connectAttr "Tail_5_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[387]";
-connectAttr "Tail_5_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[388]";
-connectAttr "Tail_5_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[389]";
-connectAttr "Tail_5_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[390]";
-connectAttr "Tail_5_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[391]";
-connectAttr "Tail_5_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[392]";
-connectAttr "Tail_5_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[393]";
-connectAttr "Tail_5_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[394]";
-connectAttr "Tail_5_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[395]";
-connectAttr "Tail_5_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[396]";
-connectAttr "Tail_5_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[397]";
-connectAttr "Tail_5_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[398]";
-connectAttr "Tail_4_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[399]";
-connectAttr "Tail_4_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[400]";
-connectAttr "Tail_4_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[401]";
-connectAttr "Tail_4_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[402]";
-connectAttr "Tail_4_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[403]";
-connectAttr "Tail_4_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[404]";
-connectAttr "Tail_4_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[405]";
-connectAttr "Tail_4_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[406]";
-connectAttr "Tail_4_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[407]";
-connectAttr "Tail_4_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[408]";
-connectAttr "Tail_4_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[409]";
-connectAttr "Tail_4_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[410]";
-connectAttr "Tail_3_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[411]";
-connectAttr "Tail_3_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[412]";
-connectAttr "Tail_3_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[413]";
-connectAttr "Tail_3_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[414]";
-connectAttr "Tail_3_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[415]";
-connectAttr "Tail_3_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[416]";
-connectAttr "Tail_3_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[417]";
-connectAttr "Tail_3_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[418]";
-connectAttr "Tail_3_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[419]";
-connectAttr "Tail_3_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[420]";
-connectAttr "Tail_3_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[421]";
-connectAttr "Tail_3_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[422]";
-connectAttr "Tail_2_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[423]";
-connectAttr "Tail_2_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[424]";
-connectAttr "Tail_2_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[425]";
-connectAttr "Tail_2_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[426]";
-connectAttr "Tail_2_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[427]";
-connectAttr "Tail_2_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[428]";
-connectAttr "Tail_2_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[429]";
-connectAttr "Tail_2_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[430]";
-connectAttr "Tail_2_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[431]";
-connectAttr "Tail_2_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[432]";
-connectAttr "Tail_2_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[433]";
-connectAttr "Tail_2_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[434]";
-connectAttr "Tail_1_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[435]";
-connectAttr "Tail_1_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[436]";
-connectAttr "Tail_1_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[437]";
-connectAttr "Tail_1_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[438]";
-connectAttr "Tail_1_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[439]";
-connectAttr "Tail_1_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[440]";
-connectAttr "Tail_1_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[441]";
-connectAttr "Tail_1_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[442]";
-connectAttr "Tail_1_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[443]";
-connectAttr "Tail_1_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[444]";
-connectAttr "Tail_1_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[445]";
-connectAttr "Tail_1_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[446]";
-connectAttr "L_FrontToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[447]"
+connectAttr "L_BackToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[193]"
 		;
-connectAttr "L_FrontToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[448]"
+connectAttr "L_BackToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[194]"
 		;
-connectAttr "L_FrontToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[449]"
+connectAttr "L_BackToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[195]"
 		;
-connectAttr "L_FrontToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[450]"
+connectAttr "L_BackToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[196]"
 		;
-connectAttr "L_FrontToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[451]"
+connectAttr "L_BackToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[197]";
+connectAttr "L_BackToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[198]";
+connectAttr "L_BackToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[199]";
+connectAttr "L_BackToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[200]"
 		;
-connectAttr "L_FrontToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[452]"
+connectAttr "L_BackToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[201]";
+connectAttr "L_BackToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[202]"
 		;
-connectAttr "L_FrontToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[453]"
+connectAttr "R_FrontToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[203]"
 		;
-connectAttr "L_FrontToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[454]"
+connectAttr "R_FrontToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[204]"
 		;
-connectAttr "L_FrontToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[455]"
+connectAttr "R_FrontToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[205]"
 		;
-connectAttr "L_FrontToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[456]"
+connectAttr "R_FrontToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[206]"
 		;
-connectAttr "L_FrontToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[457]"
+connectAttr "R_FrontToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[207]"
 		;
-connectAttr "L_FrontToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[458]"
+connectAttr "R_FrontToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[208]"
 		;
-connectAttr "L_FrontToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[459]"
+connectAttr "R_FrontToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[209]"
 		;
-connectAttr "L_FrontToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[460]"
+connectAttr "R_FrontToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[210]"
 		;
-connectAttr "L_FrontToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[461]"
+connectAttr "R_FrontToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[211]"
 		;
-connectAttr "L_FrontToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[462]"
+connectAttr "R_FrontToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[212]"
 		;
-connectAttr "L_FrontToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[463]"
+connectAttr "R_FrontToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[213]"
 		;
-connectAttr "L_FrontToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[464]"
+connectAttr "R_FrontToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[214]"
 		;
-connectAttr "L_FrontToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[465]"
+connectAttr "R_FrontToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[215]"
 		;
-connectAttr "L_FrontToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[466]"
+connectAttr "R_FrontToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[216]"
 		;
-connectAttr "L_FrontToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[467]"
+connectAttr "R_FrontToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[217]"
 		;
-connectAttr "L_FrontToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[468]"
+connectAttr "R_FrontToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[218]"
 		;
-connectAttr "L_FrontToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[469]"
+connectAttr "R_FrontToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[219]"
 		;
-connectAttr "L_FrontToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[470]"
+connectAttr "R_FrontToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[220]"
 		;
-connectAttr "R_FrontToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[471]"
+connectAttr "R_FrontToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[221]"
 		;
-connectAttr "R_FrontToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[472]"
+connectAttr "R_FrontToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[222]"
 		;
-connectAttr "R_FrontToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[473]"
+connectAttr "R_FrontToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[223]"
 		;
-connectAttr "R_FrontToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[474]"
+connectAttr "R_FrontToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[224]"
 		;
-connectAttr "R_FrontToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[475]"
+connectAttr "R_FrontToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[225]"
 		;
-connectAttr "R_FrontToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[476]"
+connectAttr "R_FrontToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[226]"
 		;
-connectAttr "R_FrontToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[477]"
+connectAttr "L_FrontToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[227]"
 		;
-connectAttr "R_FrontToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[478]"
+connectAttr "L_FrontToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[228]"
 		;
-connectAttr "R_FrontToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[479]"
+connectAttr "L_FrontToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[229]"
 		;
-connectAttr "R_FrontToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[480]"
+connectAttr "L_FrontToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[230]"
 		;
-connectAttr "R_FrontToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[481]"
+connectAttr "L_FrontToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[231]"
 		;
-connectAttr "R_FrontToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[482]"
+connectAttr "L_FrontToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[232]"
 		;
-connectAttr "R_FrontToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[483]"
+connectAttr "L_FrontToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[233]"
 		;
-connectAttr "R_FrontToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[484]"
+connectAttr "L_FrontToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[234]"
 		;
-connectAttr "R_FrontToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[485]"
+connectAttr "L_FrontToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[235]"
 		;
-connectAttr "R_FrontToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[486]"
+connectAttr "L_FrontToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[236]"
 		;
-connectAttr "R_FrontToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[487]"
+connectAttr "L_FrontToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[237]"
 		;
-connectAttr "R_FrontToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[488]"
+connectAttr "L_FrontToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[238]"
 		;
-connectAttr "R_FrontToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[489]"
-		;
-connectAttr "R_FrontToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[490]"
-		;
-connectAttr "R_FrontToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[491]"
-		;
-connectAttr "R_FrontToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[492]"
-		;
-connectAttr "R_FrontToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[493]"
-		;
-connectAttr "R_FrontToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[494]"
-		;
-connectAttr "L_BackToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[495]"
-		;
-connectAttr "L_BackToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[496]"
-		;
-connectAttr "L_BackToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[497]"
-		;
-connectAttr "L_BackToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[498]"
-		;
-connectAttr "L_BackToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[499]"
-		;
-connectAttr "L_BackToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[500]"
-		;
-connectAttr "L_BackToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[501]";
-connectAttr "L_BackToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[502]";
-connectAttr "L_BackToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[503]";
-connectAttr "L_BackToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[504]"
-		;
-connectAttr "L_BackToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[505]";
-connectAttr "L_BackToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[506]"
-		;
-connectAttr "L_BackToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[507]"
-		;
-connectAttr "L_BackToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[508]"
-		;
-connectAttr "L_BackToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[509]"
-		;
-connectAttr "L_BackToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[510]"
-		;
-connectAttr "L_BackToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[511]"
-		;
-connectAttr "L_BackToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[512]"
-		;
-connectAttr "L_BackToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[513]";
-connectAttr "L_BackToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[514]";
-connectAttr "L_BackToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[515]";
-connectAttr "L_BackToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[516]"
-		;
-connectAttr "L_BackToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[517]";
-connectAttr "L_BackToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[518]"
-		;
-connectAttr "R_BackToe_R_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[519]"
-		;
-connectAttr "R_BackToe_R_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[520]"
-		;
-connectAttr "R_BackToe_R_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[521]"
-		;
-connectAttr "R_BackToe_R_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[522]"
-		;
-connectAttr "R_BackToe_R_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[523]"
-		;
-connectAttr "R_BackToe_R_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[524]"
-		;
-connectAttr "R_BackToe_R_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[525]";
-connectAttr "R_BackToe_R_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[526]";
-connectAttr "R_BackToe_R_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[527]";
-connectAttr "R_BackToe_R_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[528]"
-		;
-connectAttr "R_BackToe_R_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[529]";
-connectAttr "R_BackToe_R_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[530]"
-		;
-connectAttr "R_BackToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[531]"
-		;
-connectAttr "R_BackToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[532]"
-		;
-connectAttr "R_BackToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[533]"
-		;
-connectAttr "R_BackToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[534]"
-		;
-connectAttr "R_BackToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[535]"
-		;
-connectAttr "R_BackToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[536]"
-		;
-connectAttr "R_BackToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[537]";
-connectAttr "R_BackToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[538]";
-connectAttr "R_BackToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[539]";
-connectAttr "R_BackToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[540]"
-		;
-connectAttr "R_BackToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[541]";
-connectAttr "R_BackToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[542]"
-		;
+connectAttr "L_FrontToe_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[239]"
+		;
+connectAttr "L_FrontToe_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[240]"
+		;
+connectAttr "L_FrontToe_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[241]"
+		;
+connectAttr "L_FrontToe_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[242]"
+		;
+connectAttr "L_FrontToe_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[243]"
+		;
+connectAttr "L_FrontToe_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[244]"
+		;
+connectAttr "L_FrontToe_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[245]"
+		;
+connectAttr "L_FrontToe_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[246]"
+		;
+connectAttr "L_FrontToe_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[247]"
+		;
+connectAttr "L_FrontToe_L_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[248]"
+		;
+connectAttr "L_FrontToe_L_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[249]"
+		;
+connectAttr "L_FrontToe_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[250]"
+		;
+connectAttr "Tail_1_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[251]";
+connectAttr "Tail_1_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[252]";
+connectAttr "Tail_1_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[253]";
+connectAttr "Tail_1_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[254]";
+connectAttr "Tail_1_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[255]";
+connectAttr "Tail_1_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[256]";
+connectAttr "Tail_1_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[257]";
+connectAttr "Tail_1_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[258]";
+connectAttr "Tail_1_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[259]";
+connectAttr "Tail_1_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[260]";
+connectAttr "Tail_1_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[261]";
+connectAttr "Tail_1_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[262]";
+connectAttr "Tail_2_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[263]";
+connectAttr "Tail_2_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[264]";
+connectAttr "Tail_2_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[265]";
+connectAttr "Tail_2_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[266]";
+connectAttr "Tail_2_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[267]";
+connectAttr "Tail_2_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[268]";
+connectAttr "Tail_2_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[269]";
+connectAttr "Tail_2_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[270]";
+connectAttr "Tail_2_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[271]";
+connectAttr "Tail_2_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[272]";
+connectAttr "Tail_2_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[273]";
+connectAttr "Tail_2_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[274]";
+connectAttr "Tail_3_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[275]";
+connectAttr "Tail_3_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[276]";
+connectAttr "Tail_3_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[277]";
+connectAttr "Tail_3_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[278]";
+connectAttr "Tail_3_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[279]";
+connectAttr "Tail_3_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[280]";
+connectAttr "Tail_3_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[281]";
+connectAttr "Tail_3_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[282]";
+connectAttr "Tail_3_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[283]";
+connectAttr "Tail_3_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[284]";
+connectAttr "Tail_3_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[285]";
+connectAttr "Tail_3_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[286]";
+connectAttr "Tail_4_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[287]";
+connectAttr "Tail_4_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[288]";
+connectAttr "Tail_4_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[289]";
+connectAttr "Tail_4_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[290]";
+connectAttr "Tail_4_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[291]";
+connectAttr "Tail_4_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[292]";
+connectAttr "Tail_4_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[293]";
+connectAttr "Tail_4_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[294]";
+connectAttr "Tail_4_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[295]";
+connectAttr "Tail_4_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[296]";
+connectAttr "Tail_4_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[297]";
+connectAttr "Tail_4_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[298]";
+connectAttr "Tail_5_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[299]";
+connectAttr "Tail_5_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[300]";
+connectAttr "Tail_5_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[301]";
+connectAttr "Tail_5_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[302]";
+connectAttr "Tail_5_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[303]";
+connectAttr "Tail_5_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[304]";
+connectAttr "Tail_5_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[305]";
+connectAttr "Tail_5_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[306]";
+connectAttr "Tail_5_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[307]";
+connectAttr "Tail_5_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[308]";
+connectAttr "Tail_5_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[309]";
+connectAttr "Tail_5_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[310]";
+connectAttr "Spine_1_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[311]";
+connectAttr "Spine_1_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[312]";
+connectAttr "Spine_1_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[313]";
+connectAttr "Spine_1_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[314]";
+connectAttr "Spine_1_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[315]";
+connectAttr "Spine_1_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[316]";
+connectAttr "Spine_1_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[317]";
+connectAttr "Spine_1_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[318]";
+connectAttr "Spine_1_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[319]";
+connectAttr "Spine_1_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[320]";
+connectAttr "Spine_1_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[321]";
+connectAttr "Spine_1_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[322]";
+connectAttr "Spine_2_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[323]";
+connectAttr "Spine_2_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[324]";
+connectAttr "Spine_2_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[325]";
+connectAttr "Spine_2_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[326]";
+connectAttr "Spine_2_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[327]";
+connectAttr "Spine_2_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[328]";
+connectAttr "Spine_2_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[329]";
+connectAttr "Spine_2_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[330]";
+connectAttr "Spine_2_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[331]";
+connectAttr "Spine_2_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[332]";
+connectAttr "Spine_2_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[333]";
+connectAttr "Spine_2_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[334]";
+connectAttr "Spine_3_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[335]";
+connectAttr "Spine_3_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[336]";
+connectAttr "Spine_3_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[337]";
+connectAttr "Spine_3_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[338]";
+connectAttr "Spine_3_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[339]";
+connectAttr "Spine_3_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[340]";
+connectAttr "Spine_3_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[341]";
+connectAttr "Spine_3_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[342]";
+connectAttr "Spine_3_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[343]";
+connectAttr "Spine_3_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[344]";
+connectAttr "Spine_3_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[345]";
+connectAttr "Spine_3_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[346]";
+connectAttr "Spine_4_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[347]";
+connectAttr "Spine_4_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[348]";
+connectAttr "Spine_4_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[349]";
+connectAttr "Spine_4_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[350]";
+connectAttr "Spine_4_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[351]";
+connectAttr "Spine_4_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[352]";
+connectAttr "Spine_4_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[353]";
+connectAttr "Spine_4_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[354]";
+connectAttr "Spine_4_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[355]";
+connectAttr "Spine_4_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[356]";
+connectAttr "Spine_4_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[357]";
+connectAttr "Spine_4_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[358]";
+connectAttr "Spine_5_Neck_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[359]"
+		;
+connectAttr "Spine_5_Neck_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[360]"
+		;
+connectAttr "Spine_5_Neck_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[361]"
+		;
+connectAttr "Spine_5_Neck_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[362]"
+		;
+connectAttr "Spine_5_Neck_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[363]"
+		;
+connectAttr "Spine_5_Neck_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[364]"
+		;
+connectAttr "Spine_5_Neck_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[365]"
+		;
+connectAttr "Spine_5_Neck_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[366]"
+		;
+connectAttr "Spine_5_Neck_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[367]"
+		;
+connectAttr "Spine_5_Neck_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[368]"
+		;
+connectAttr "Spine_5_Neck_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[369]"
+		;
+connectAttr "Spine_5_Neck_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[370]"
+		;
+connectAttr "Spine_6_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[371]";
+connectAttr "Spine_6_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[372]";
+connectAttr "Spine_6_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[373]";
+connectAttr "Spine_6_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[374]";
+connectAttr "Spine_6_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[375]";
+connectAttr "Spine_6_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[376]";
+connectAttr "Spine_6_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[377]";
+connectAttr "Spine_6_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[378]";
+connectAttr "Spine_6_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[379]";
+connectAttr "Spine_6_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[380]";
+connectAttr "Spine_6_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[381]";
+connectAttr "Spine_6_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[382]";
+connectAttr "Spine_7_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[383]";
+connectAttr "Spine_7_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[384]";
+connectAttr "Spine_7_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[385]";
+connectAttr "Spine_7_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[386]";
+connectAttr "Spine_7_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[387]";
+connectAttr "Spine_7_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[388]";
+connectAttr "Spine_7_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[389]";
+connectAttr "Spine_7_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[390]";
+connectAttr "Spine_7_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[391]";
+connectAttr "Spine_7_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[392]";
+connectAttr "Spine_7_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[393]";
+connectAttr "Spine_7_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[394]";
+connectAttr "Spine_8_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[395]";
+connectAttr "Spine_8_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[396]";
+connectAttr "Spine_8_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[397]";
+connectAttr "Spine_8_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[398]";
+connectAttr "Spine_8_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[399]";
+connectAttr "Spine_8_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[400]";
+connectAttr "Spine_8_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[401]";
+connectAttr "Spine_8_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[402]";
+connectAttr "Spine_8_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[403]";
+connectAttr "Spine_8_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[404]";
+connectAttr "Spine_8_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[405]";
+connectAttr "Spine_8_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[406]";
+connectAttr "Spine_9_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[407]";
+connectAttr "Spine_9_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[408]";
+connectAttr "Spine_9_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[409]";
+connectAttr "Spine_9_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[410]";
+connectAttr "Spine_9_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[411]";
+connectAttr "Spine_9_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[412]";
+connectAttr "Spine_9_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[413]";
+connectAttr "Spine_9_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[414]";
+connectAttr "Spine_9_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[415]";
+connectAttr "Spine_9_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[416]";
+connectAttr "Spine_9_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[417]";
+connectAttr "Spine_9_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[418]";
+connectAttr "Spine_10_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[419]"
+		;
+connectAttr "Spine_10_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[420]"
+		;
+connectAttr "Spine_10_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[421]"
+		;
+connectAttr "Spine_10_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[422]";
+connectAttr "Spine_10_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[423]";
+connectAttr "Spine_10_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[424]";
+connectAttr "Spine_10_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[425]";
+connectAttr "Spine_10_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[426]";
+connectAttr "Spine_10_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[427]";
+connectAttr "Spine_10_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[428]";
+connectAttr "Spine_10_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[429]";
+connectAttr "Spine_10_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[430]"
+		;
+connectAttr "Spine_11_Head_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[431]"
+		;
+connectAttr "Spine_11_Head_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[432]"
+		;
+connectAttr "Spine_11_Head_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[433]"
+		;
+connectAttr "Spine_11_Head_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[434]"
+		;
+connectAttr "Spine_11_Head_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[435]"
+		;
+connectAttr "Spine_11_Head_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[436]"
+		;
+connectAttr "Spine_11_Head_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[437]"
+		;
+connectAttr "Spine_11_Head_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[438]"
+		;
+connectAttr "Spine_11_Head_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[439]"
+		;
+connectAttr "Spine_11_Head_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[440]"
+		;
+connectAttr "Spine_11_Head_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[441]"
+		;
+connectAttr "Spine_11_Head_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[442]"
+		;
+connectAttr "Nose_Translate_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[443]"
+		;
+connectAttr "Nose_Translate_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[444]"
+		;
+connectAttr "Nose_Translate_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[445]"
+		;
+connectAttr "Nose_Translate_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[446]"
+		;
+connectAttr "Nose_Translate_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[447]"
+		;
+connectAttr "Nose_Translate_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[448]"
+		;
+connectAttr "Nose_Translate_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[449]"
+		;
+connectAttr "Nose_Translate_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[450]"
+		;
+connectAttr "Nose_Translate_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[451]"
+		;
+connectAttr "Nose_Translate_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[452]"
+		;
+connectAttr "Nose_Translate_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[453]"
+		;
+connectAttr "Nose_Translate_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[454]"
+		;
+connectAttr "Jaw_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[455]";
+connectAttr "Jaw_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[456]";
+connectAttr "Jaw_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[457]";
+connectAttr "Jaw_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[458]";
+connectAttr "Jaw_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[459]";
+connectAttr "Jaw_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[460]";
+connectAttr "Jaw_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[461]";
+connectAttr "Jaw_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[462]";
+connectAttr "Jaw_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[463]";
+connectAttr "Jaw_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[464]";
+connectAttr "Jaw_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[465]";
+connectAttr "Jaw_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[466]";
+connectAttr "R_Mouth_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[467]";
+connectAttr "R_Mouth_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[468]";
+connectAttr "R_Mouth_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[469]";
+connectAttr "R_Mouth_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[470]";
+connectAttr "R_Mouth_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[471]";
+connectAttr "R_Mouth_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[472]";
+connectAttr "R_Mouth_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[473]";
+connectAttr "R_Mouth_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[474]";
+connectAttr "R_Mouth_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[475]";
+connectAttr "R_Mouth_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[476]";
+connectAttr "R_Mouth_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[477]";
+connectAttr "R_Mouth_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[478]";
+connectAttr "L_Mouth_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[479]";
+connectAttr "L_Mouth_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[480]";
+connectAttr "L_Mouth_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[481]";
+connectAttr "L_Mouth_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[482]";
+connectAttr "L_Mouth_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[483]";
+connectAttr "L_Mouth_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[484]";
+connectAttr "L_Mouth_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[485]";
+connectAttr "L_Mouth_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[486]";
+connectAttr "L_Mouth_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[487]";
+connectAttr "L_Mouth_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[488]";
+connectAttr "L_Mouth_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[489]";
+connectAttr "L_Mouth_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[490]";
+connectAttr "Head_Side_L_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[491]"
+		;
+connectAttr "Head_Side_L_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[492]"
+		;
+connectAttr "Head_Side_L_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[493]"
+		;
+connectAttr "Head_Side_L_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[494]"
+		;
+connectAttr "Head_Side_L_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[495]"
+		;
+connectAttr "Head_Side_L_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[496]"
+		;
+connectAttr "Head_Side_L_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[497]";
+connectAttr "Head_Side_L_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[498]";
+connectAttr "Head_Side_L_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[499]";
+connectAttr "Head_Side_L_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[500]"
+		;
+connectAttr "R_Hammer_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[501]"
+		;
+connectAttr "R_Hammer_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[502]"
+		;
+connectAttr "R_Hammer_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[503]"
+		;
+connectAttr "R_Hammer_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[504]";
+connectAttr "R_Hammer_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[505]";
+connectAttr "R_Hammer_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[506]";
+connectAttr "R_Hammer_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[507]";
+connectAttr "R_Hammer_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[508]";
+connectAttr "R_Hammer_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[509]";
+connectAttr "R_Hammer_CTRL_Translate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[510]";
+connectAttr "R_Hammer_CTRL_Rotate.o" "Sharraffe_Rigged_3_SkinnedRN.phl[511]";
+connectAttr "R_Hammer_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[512]"
+		;
+connectAttr "Eyes_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[513]";
+connectAttr "Eyes_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[514]";
+connectAttr "Eyes_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[515]";
+connectAttr "Eyes_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[516]";
+connectAttr "Eyes_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[517]";
+connectAttr "Eyes_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[518]";
+connectAttr "Eyes_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[519]";
+connectAttr "Eyes_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[520]";
+connectAttr "Eyes_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[521]";
+connectAttr "Eyes_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[522]";
+connectAttr "R_Eye_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[523]";
+connectAttr "R_Eye_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[524]";
+connectAttr "R_Eye_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[525]";
+connectAttr "R_Eye_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[526]";
+connectAttr "R_Eye_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[527]";
+connectAttr "R_Eye_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[528]";
+connectAttr "R_Eye_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[529]";
+connectAttr "R_Eye_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[530]";
+connectAttr "R_Eye_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[531]";
+connectAttr "R_Eye_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[532]";
+connectAttr "L_Eye_CTRL_translateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[533]";
+connectAttr "L_Eye_CTRL_translateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[534]";
+connectAttr "L_Eye_CTRL_translateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[535]";
+connectAttr "L_Eye_CTRL_visibility.o" "Sharraffe_Rigged_3_SkinnedRN.phl[536]";
+connectAttr "L_Eye_CTRL_rotateX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[537]";
+connectAttr "L_Eye_CTRL_rotateY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[538]";
+connectAttr "L_Eye_CTRL_rotateZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[539]";
+connectAttr "L_Eye_CTRL_scaleX.o" "Sharraffe_Rigged_3_SkinnedRN.phl[540]";
+connectAttr "L_Eye_CTRL_scaleY.o" "Sharraffe_Rigged_3_SkinnedRN.phl[541]";
+connectAttr "L_Eye_CTRL_scaleZ.o" "Sharraffe_Rigged_3_SkinnedRN.phl[542]";
 connectAttr "mary_Rig_001_L_Thumb_Jnt_001_Ctrl_translateX.o" "Laila_Rig_003RN.phl[1]"
 		;
 connectAttr "mary_Rig_001_L_Thumb_Jnt_001_Ctrl_translateY.o" "Laila_Rig_003RN.phl[2]"
@@ -14804,11 +14788,11 @@ connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003RN.ph
 		;
 connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[23]"
 		;
-connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[24]"
+connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[24]"
 		;
-connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[25]"
+connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[25]"
 		;
-connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[26]"
+connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[26]"
 		;
 connectAttr "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[27]"
 		;
@@ -15064,11 +15048,11 @@ connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[153]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[154]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[154]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[155]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[155]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[156]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[156]"
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[157]"
 		;
@@ -15084,11 +15068,11 @@ connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[163]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[164]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[164]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[165]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[165]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[166]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[166]"
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[167]"
 		;
@@ -15104,11 +15088,11 @@ connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[173]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[174]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[174]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[175]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[175]"
 		;
-connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[176]"
+connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[176]"
 		;
 connectAttr "mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[177]"
 		;
@@ -15124,11 +15108,11 @@ connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_translateY.o" "Laila_Rig_003
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[183]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[184]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[184]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[185]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[185]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[186]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[186]"
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[187]"
 		;
@@ -15144,11 +15128,11 @@ connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_translateY.o" "Laila_Rig_003
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[193]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[194]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[194]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[195]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[195]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[196]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[196]"
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[197]"
 		;
@@ -15164,11 +15148,11 @@ connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[203]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[204]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[204]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[205]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[205]"
 		;
-connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[206]"
+connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[206]"
 		;
 connectAttr "mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[207]"
 		;
@@ -15184,11 +15168,11 @@ connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_translateY.o" "Laila_Rig_00
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[213]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[214]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[214]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[215]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[215]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[216]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[216]"
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[217]"
 		;
@@ -15204,11 +15188,11 @@ connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_translateY.o" "Laila_Rig_00
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[223]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[224]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[224]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[225]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[225]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[226]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[226]"
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[227]"
 		;
@@ -15224,11 +15208,11 @@ connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_translateY.o" "Laila_Rig_00
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[233]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[234]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[234]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[235]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[235]"
 		;
-connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[236]"
+connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[236]"
 		;
 connectAttr "mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[237]"
 		;
@@ -15244,11 +15228,11 @@ connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[243]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[244]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[244]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[245]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[245]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[246]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[246]"
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[247]"
 		;
@@ -15264,11 +15248,11 @@ connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[253]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[254]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[254]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[255]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[255]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[256]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[256]"
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[257]"
 		;
@@ -15284,11 +15268,11 @@ connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003R
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[263]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[264]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[264]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[265]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[265]"
 		;
-connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[266]"
+connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[266]"
 		;
 connectAttr "mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[267]"
 		;
@@ -15358,19 +15342,19 @@ connectAttr "mary_Rig_001_R_Thumb_Jnt_003_Ctrl_scaleZ.o" "Laila_Rig_003RN.phl[29
 		;
 connectAttr "mary_Rig_001_R_Thumb_Jnt_003_Ctrl_visibility.o" "Laila_Rig_003RN.phl[300]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_translateX.o" "Laila_Rig_003RN.phl[301]"
+connectAttr "laila_Rig_001_Translation_Ctrl_visibility.o" "Laila_Rig_003RN.phl[301]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_translateY.o" "Laila_Rig_003RN.phl[302]"
+connectAttr "laila_Rig_001_Translation_Ctrl_translateX.o" "Laila_Rig_003RN.phl[302]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[303]"
+connectAttr "laila_Rig_001_Translation_Ctrl_translateY.o" "Laila_Rig_003RN.phl[303]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[304]"
+connectAttr "laila_Rig_001_Translation_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[304]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[305]"
+connectAttr "laila_Rig_001_Translation_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[305]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[306]"
+connectAttr "laila_Rig_001_Translation_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[306]"
 		;
-connectAttr "laila_Rig_001_Translation_Ctrl_visibility.o" "Laila_Rig_003RN.phl[307]"
+connectAttr "laila_Rig_001_Translation_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[307]"
 		;
 connectAttr "laila_Rig_001_Translation_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[308]"
 		;
@@ -15530,17 +15514,17 @@ connectAttr "L_Arm_Pivot_Grp_Ctrl_Offset_scaleY.o" "Laila_Rig_003RN.phl[405]";
 connectAttr "L_Arm_Pivot_Grp_Ctrl_Offset_scaleZ.o" "Laila_Rig_003RN.phl[406]";
 connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Roll.o" "Laila_Rig_003RN.phl[407]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[408]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateX.o" "Laila_Rig_003RN.phl[408]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[409]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003RN.phl[409]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[410]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[410]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateX.o" "Laila_Rig_003RN.phl[411]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[411]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003RN.phl[412]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[412]"
 		;
-connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[413]"
+connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[413]"
 		;
 connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[414]"
 		;
@@ -15550,17 +15534,17 @@ connectAttr "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_scaleZ.o" "Laila_Rig_003RN.phl[
 		;
 connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Roll.o" "Laila_Rig_003RN.phl[417]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[418]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateX.o" "Laila_Rig_003RN.phl[418]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[419]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003RN.phl[419]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[420]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[420]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateX.o" "Laila_Rig_003RN.phl[421]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[421]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateY.o" "Laila_Rig_003RN.phl[422]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[422]"
 		;
-connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[423]"
+connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[423]"
 		;
 connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[424]"
 		;
@@ -15568,9 +15552,9 @@ connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_scaleY.o" "Laila_Rig_003RN.phl[
 		;
 connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_scaleZ.o" "Laila_Rig_003RN.phl[426]"
 		;
-connectAttr "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[427]"
+connectAttr "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[427]"
 		;
-connectAttr "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[428]"
+connectAttr "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[428]"
 		;
 connectAttr "laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[429]"
 		;
@@ -15614,11 +15598,11 @@ connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_translateY.o" "Laila_Rig_003RN.phl[
 		;
 connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_translateZ.o" "Laila_Rig_003RN.phl[449]"
 		;
-connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateZ.o" "Laila_Rig_003RN.phl[450]"
+connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateX.o" "Laila_Rig_003RN.phl[450]"
 		;
-connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateX.o" "Laila_Rig_003RN.phl[451]"
+connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateY.o" "Laila_Rig_003RN.phl[451]"
 		;
-connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateY.o" "Laila_Rig_003RN.phl[452]"
+connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_rotateZ.o" "Laila_Rig_003RN.phl[452]"
 		;
 connectAttr "laila_Rig_001_Neck_Jnt_001_ctrl_scaleX.o" "Laila_Rig_003RN.phl[453]"
 		;
@@ -15634,11 +15618,11 @@ connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_translateY.o" "Laila_Rig_003RN.phl[
 		;
 connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[459]"
 		;
-connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[460]"
+connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[460]"
 		;
-connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[461]"
+connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[461]"
 		;
-connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[462]"
+connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[462]"
 		;
 connectAttr "laila_Rig_001_Head_Jnt_001_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[463]"
 		;
