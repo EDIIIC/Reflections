@@ -1,23 +1,23 @@
 //Maya ASCII 2019 scene
 //Name: RockHop.ma
-//Last modified: Sun, Nov 01, 2020 10:53:23 PM
+//Last modified: Sun, Nov 01, 2020 11:03:37 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "RockHop_Area" -rfn "RockHop_AreaRN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/RockHop_Area.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Environments/RockHop_Area.ma";
 file -rdi 1 -ns "Kerfluffle_Rig_Done" -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;"
-		 -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
+		 -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
 file -rdi 1 -ns "Axolotadile_Rig_DONE" -rfn "Axolotadile_Rig_DONERN" -op "v=0;"
-		 -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Axolotadile_Rig_DONE.ma";
+		 -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Axolotadile_Rig_DONE.ma";
 file -rdi 1 -ns "Laila_Rig_003" -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 file -r -ns "RockHop_Area" -dr 1 -rfn "RockHop_AreaRN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/RockHop_Area.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Environments/RockHop_Area.ma";
 file -r -ns "Kerfluffle_Rig_Done" -dr 1 -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;" 
-		-typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
+		-typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
 file -r -ns "Axolotadile_Rig_DONE" -dr 1 -rfn "Axolotadile_Rig_DONERN" -op "v=0;"
-		 -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Axolotadile_Rig_DONE.ma";
+		 -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Axolotadile_Rig_DONE.ma";
 file -r -ns "Laila_Rig_003" -dr 1 -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 requires maya "2019";
 requires "stereoCamera" "10.0";
 requires "mtoa" "3.1.2";
@@ -33,8 +33,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "CBA11A85-764D-9638-98A2-FFA076C9B7AE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -24.722779141425708 7.7439124262702759 -5.2719045212176727 ;
-	setAttr ".r" -type "double3" -14.738352729872158 -466.19999999989682 0 ;
+	setAttr ".t" -type "double3" -15.80664539144454 8.5761116624347604 -0.61913529948444979 ;
+	setAttr ".r" -type "double3" -25.538352729871537 -458.99999999988353 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E305D96F-3746-A579-636F-4CA02C9B346A";
 	setAttr -k off ".v" no;
@@ -42,7 +42,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 26.406311864598639;
+	setAttr ".coi" 17.512968534224797;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -106,25 +106,25 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "BA31E05C-8546-230D-AC79-7184A1904D36";
+	rename -uid "3EE21A32-894F-B6DB-1776-1885E904988D";
 	setAttr -s 73 ".lnk";
 	setAttr -s 73 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "6C754F00-C344-5350-5AA6-12965D0E64FE";
+	rename -uid "597CFBBE-9C44-C63E-48A4-8DB724F41A2D";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7FFE3233-8842-B722-EEE3-B5B92032D773";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "36B623D8-1441-0677-F5A8-368930376CFD";
+	rename -uid "B916D0A7-9946-DE65-3959-CEAA074393B3";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "4275D43A-AC47-DCDC-8DEA-6C88B90DE9FA";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C73CA0D1-DC45-E87A-B03C-C2B1E0C81C12";
+	rename -uid "BA62A9AC-A547-F174-6A83-489B41F145D9";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "7041B9B4-9F49-CA55-A647-4C916220F9C0";
+	rename -uid "77E71500-A24B-2754-4ED5-8789AD258296";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode reference -n "RockHop_AreaRN";
 	rename -uid "98EBA79B-994B-8400-ADC3-5EAB05E20B15";

@@ -1,15 +1,15 @@
 //Maya ASCII 2019 scene
 //Name: LailaBumpSharraffe.ma
-//Last modified: Sun, Nov 01, 2020 10:54:53 PM
+//Last modified: Sun, Nov 01, 2020 11:05:28 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Sharraffe_Rigged_3_Skinned" -rfn "Sharraffe_Rigged_3_SkinnedRN"
-		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
+		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
 file -rdi 1 -ns "Laila_Rig_003" -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 file -r -ns "Sharraffe_Rigged_3_Skinned" -dr 1 -rfn "Sharraffe_Rigged_3_SkinnedRN"
-		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
+		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
 file -r -ns "Laila_Rig_003" -dr 1 -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 requires maya "2019";
 requires "stereoCamera" "10.0";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
@@ -1013,23 +1013,23 @@ createNode mesh -n "pPlaneShape4" -p "pPlane4";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5A5F66D4-3B4A-8958-B64D-1993A6430681";
+	rename -uid "A49686D7-0541-369D-A4F0-F9B3D79E2605";
 	setAttr -s 76 ".lnk";
 	setAttr -s 76 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "41D9E9F3-2841-1519-D3E1-A2A708294EB1";
+	rename -uid "3E7E774C-6D46-F8BF-6A56-ABB76C686752";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "EE8B4EFE-BD4A-E8C2-FEA5-B98A8DAF6FF9";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A13A5B89-7B48-1B8E-3001-E4940B626629";
+	rename -uid "43356C00-EB40-36AF-F43F-A2BEBA5D366B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B94D19F8-274A-A3F0-C5E0-BCA75379DD4F";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C4C9978E-744C-1C1A-3787-FF8FF9766A89";
+	rename -uid "C437A02A-B644-3F8D-0088-E8BC7FB0B4C5";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "E043D1FD-D24E-9ED2-1358-2A8C7DAC65E9";
+	rename -uid "4933FE77-AB43-1C6A-9B6B-2A8BA9DE8411";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "A3FEE68B-7743-7081-A6D0-EDA3C4D11C51";

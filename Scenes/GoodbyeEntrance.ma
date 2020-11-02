@@ -1,19 +1,19 @@
 //Maya ASCII 2019 scene
 //Name: GoodbyeEntrance.ma
-//Last modified: Sun, Nov 01, 2020 10:56:11 PM
+//Last modified: Sun, Nov 01, 2020 11:07:09 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Laila_Rig_003" -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 file -rdi 1 -ns "Kerfluffle_Rig_Done" -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;"
-		 -typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
+		 -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
 file -rdi 1 -ns "Goodbye_Entrance" -rfn "Goodbye_EntranceRN" -op "v=0;" -typ
-		 "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Environments/Goodbye_Entrance.ma";
+		 "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Environments/Goodbye_Entrance.ma";
 file -r -ns "Laila_Rig_003" -dr 1 -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Laila/Laila Rig 003.ma";
 file -r -ns "Kerfluffle_Rig_Done" -dr 1 -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;" 
-		-typ "mayaAscii" "/Volumes/10810494/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
+		-typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Other Creatures/Kerfluffle_Rig_Done.ma";
 file -r -ns "Goodbye_Entrance" -dr 1 -rfn "Goodbye_EntranceRN" -op "v=0;" -typ "mayaAscii"
-		 "/Volumes/10810494/Reflections Short/Reflections/Models/Environments/Goodbye_Entrance.ma";
+		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Environments/Goodbye_Entrance.ma";
 requires maya "2019";
 requires "stereoCamera" "10.0";
 requires "stereoCamera" "10.0";
@@ -99,25 +99,25 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "36A22BFE-F04D-402D-B4A0-F09BDAD81549";
+	rename -uid "E916F3ED-F64E-071E-AC27-2F96B2D91B5C";
 	setAttr -s 65 ".lnk";
 	setAttr -s 65 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F87A84E9-0642-631F-8AF1-EB9EE8862934";
+	rename -uid "0E0F87FB-D948-42A4-1F29-9A94B22AEB81";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9C864E1E-F941-3D22-AF94-6DBC662A8192";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "F21B38E1-184A-FFD7-9688-0A92AA3C1C60";
+	rename -uid "D50CB7A6-544A-DF37-00B2-81A0EE216D95";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "9E8D639D-1B46-EA4D-1300-2B9DB57BC2C6";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "9186A653-BE4A-F920-00AD-319BF0F54FB7";
+	rename -uid "6546036E-9A4B-A9B2-673F-E9981EFCBF3E";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "21F258A5-C04F-EDE9-DF49-18A14685A195";
+	rename -uid "05552A8A-8942-3279-2319-31B5A5A5F6F4";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode reference -n "Laila_Rig_003RN";
 	rename -uid "8026D677-E846-BDF1-11AD-2C997328FB1D";
