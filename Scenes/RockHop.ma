@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: RockHop.ma
-//Last modified: Tue, Nov 10, 2020 09:07:02 PM
+//Last modified: Sat, Nov 14, 2020 11:37:48 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "RockHop_Area" -rfn "RockHop_AreaRN" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Environments/RockHop_Area.ma";
@@ -33,8 +33,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "CBA11A85-764D-9638-98A2-FFA076C9B7AE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -16.266862018360666 5.8004268105914534 -3.3923215162627351 ;
-	setAttr ".r" -type "double3" -14.13835270906343 -1918.199999999357 0 ;
+	setAttr ".t" -type "double3" -16.871778141488363 6.5653410020201131 -6.8970642119714647 ;
+	setAttr ".r" -type "double3" -8.1383527090659395 -1925.3999999991813 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E305D96F-3746-A579-636F-4CA02C9B346A";
 	setAttr -k off ".v" no;
@@ -42,7 +42,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 19.19951408278455;
+	setAttr ".coi" 21.025047922878965;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -107,8 +107,9 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -n "Vid_Ref_Static";
 	rename -uid "FB763419-714F-3B82-CBA8-52ADF39AF7BE";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 16.261766231323161 5.3157274007784423 11.012180186420546 ;
-	setAttr ".r" -type "double3" 8.1875644143334494 68.124760388132799 -0.26209529636509782 ;
+	setAttr ".r" -type "double3" 8.1875644143334512 68.124760388132799 -0.26209529636509782 ;
 	setAttr ".s" -type "double3" -29.208 29.208478387964167 29.208478387964167 ;
 createNode imagePlane -n "Vid_Ref_StaticShape" -p "Vid_Ref_Static";
 	rename -uid "49CEAC75-144D-5613-764D-349EFBF738A0";
@@ -179,25 +180,25 @@ createNode mesh -n "pCubeShape2" -p "pCube2";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B28C45C4-7E48-92C6-AC40-57BF143B6255";
+	rename -uid "7666B6D4-474E-A788-1DA1-9FBA53A2AAAA";
 	setAttr -s 73 ".lnk";
 	setAttr -s 73 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "5ABD9959-E845-5300-F12C-488BAB77B93D";
+	rename -uid "2633B771-4E40-6AFC-5327-CC91D14136D3";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7FFE3233-8842-B722-EEE3-B5B92032D773";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "021A6F24-4248-F9AF-8F10-5F9D58CD2AF5";
+	rename -uid "65248CEF-A64B-DFBA-3018-69B4FAB669B2";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "4275D43A-AC47-DCDC-8DEA-6C88B90DE9FA";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "71A18EC5-5A49-31BB-30AF-9DAB617FBC43";
+	rename -uid "093126B7-A14B-B49F-539D-9A81347B94E1";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "9B4EFBDE-3240-2711-90BF-B4BDAA8661D0";
+	rename -uid "02A66D6A-E34E-F97E-7E80-6D98EE2FC585";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode reference -n "RockHop_AreaRN";
 	rename -uid "98EBA79B-994B-8400-ADC3-5EAB05E20B15";
@@ -240,7 +241,7 @@ createNode reference -n "RockHop_AreaRN";
 lockNode -l 1 ;
 createNode reference -n "Kerfluffle_Rig_DoneRN";
 	rename -uid "36157C40-3943-EDB7-CAE4-D9BF1C0D780F";
-	setAttr -s 7 ".phl";
+	setAttr -s 217 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -248,10 +249,220 @@ createNode reference -n "Kerfluffle_Rig_DoneRN";
 	setAttr ".phl[5]" 0;
 	setAttr ".phl[6]" 0;
 	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
+	setAttr ".phl[163]" 0;
+	setAttr ".phl[164]" 0;
+	setAttr ".phl[165]" 0;
+	setAttr ".phl[166]" 0;
+	setAttr ".phl[167]" 0;
+	setAttr ".phl[168]" 0;
+	setAttr ".phl[169]" 0;
+	setAttr ".phl[170]" 0;
+	setAttr ".phl[171]" 0;
+	setAttr ".phl[172]" 0;
+	setAttr ".phl[173]" 0;
+	setAttr ".phl[174]" 0;
+	setAttr ".phl[175]" 0;
+	setAttr ".phl[176]" 0;
+	setAttr ".phl[177]" 0;
+	setAttr ".phl[178]" 0;
+	setAttr ".phl[179]" 0;
+	setAttr ".phl[180]" 0;
+	setAttr ".phl[181]" 0;
+	setAttr ".phl[182]" 0;
+	setAttr ".phl[183]" 0;
+	setAttr ".phl[184]" 0;
+	setAttr ".phl[185]" 0;
+	setAttr ".phl[186]" 0;
+	setAttr ".phl[187]" 0;
+	setAttr ".phl[188]" 0;
+	setAttr ".phl[189]" 0;
+	setAttr ".phl[190]" 0;
+	setAttr ".phl[191]" 0;
+	setAttr ".phl[192]" 0;
+	setAttr ".phl[193]" 0;
+	setAttr ".phl[194]" 0;
+	setAttr ".phl[195]" 0;
+	setAttr ".phl[196]" 0;
+	setAttr ".phl[197]" 0;
+	setAttr ".phl[198]" 0;
+	setAttr ".phl[199]" 0;
+	setAttr ".phl[200]" 0;
+	setAttr ".phl[201]" 0;
+	setAttr ".phl[202]" 0;
+	setAttr ".phl[203]" 0;
+	setAttr ".phl[204]" 0;
+	setAttr ".phl[205]" 0;
+	setAttr ".phl[206]" 0;
+	setAttr ".phl[207]" 0;
+	setAttr ".phl[208]" 0;
+	setAttr ".phl[209]" 0;
+	setAttr ".phl[210]" 0;
+	setAttr ".phl[211]" 0;
+	setAttr ".phl[212]" 0;
+	setAttr ".phl[213]" 0;
+	setAttr ".phl[214]" 0;
+	setAttr ".phl[215]" 0;
+	setAttr ".phl[216]" 0;
+	setAttr ".phl[217]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Kerfluffle_Rig_DoneRN"
 		"Kerfluffle_Rig_DoneRN" 0
-		"Kerfluffle_Rig_DoneRN" 19
+		"Kerfluffle_Rig_DoneRN" 310
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP" "visibility" " 1"
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP" 
 		"visibility" " 1"
@@ -260,16 +471,16 @@ createNode reference -n "Kerfluffle_Rig_DoneRN";
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
 		"visibility" " -av 1"
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
-		"translate" " -type \"double3\" 1.91417811726580278 -0.49672181471356536 -8.13453105528514264"
+		"translate" " -type \"double3\" 1.91417811726580389 -4.28641045394296771 -12.4694986354108579"
 		
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
 		"translateX" " -av"
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
-		"translateZ" " -av"
-		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
 		"translateY" " -av"
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
-		"rotate" " -type \"double3\" -83.02430941063943237 -19.03997176034082628 -11.77404026642727075"
+		"translateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
+		"rotate" " -type \"double3\" -91.12211204186448299 -20.20316871570910777 12.03099546280676968"
 		
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
 		"rotateX" " -av"
@@ -277,20 +488,621 @@ createNode reference -n "Kerfluffle_Rig_DoneRN";
 		"rotateY" " -av"
 		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL" 
 		"rotateZ" " -av"
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.translateX" 
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL" 
+		"rotate" " -type \"double3\" -0.83906466163035343 5.95418256431060033 8.72590867787664415"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL" 
+		"rotate" " -type \"double3\" -0.50111804433386065 6.04191449818966042 8.72158270886779441"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL" 
+		"rotate" " -type \"double3\" -0.15084434246554781 6.06892377447307219 8.74537238452830756"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL" 
+		"rotate" " -type \"double3\" 0.19869669720438896 6.03395950031936845 8.79583978626756036"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL" 
+		"rotate" " -type \"double3\" -0.19537147540995831 2.55951998406396841 1.06451037028505535"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL" 
+		"rotate" " -type \"double3\" -0.10489492684194392 2.55244825446648083 1.09575315717948274"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL" 
+		"rotate" " -type \"double3\" -0.015133222824585532 2.54136434985355519 1.12795363514168345"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL" 
+		"rotate" " -type \"double3\" 0.07373719803259679 2.52628805545481949 1.16104066006962259"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL" 
+		"rotate" " -type \"double3\" 0.16154148617881048 2.50724717796771213 1.19494168275680535"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL" 
+		"rotate" " -type \"double3\" 0.24810675274235239 2.48427749998424163 1.22958296028781366"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL" 
+		"rotate" " -type \"double3\" 0.33326243773562297 2.45742271606903584 1.26488976688045929"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL" 
+		"rotate" " -type \"double3\" 0.41684067378901701 2.42673435059809339 1.30078660318133754"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL" 
+		"rotate" " -type \"double3\" 0.49867664437377873 2.39227165753017168 1.33719740305217938"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL" 
+		"rotate" " -type \"double3\" 0.57860893549534498 2.35410150234588356 1.3740457369245036"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL" 
+		"rotate" " -type \"double3\" 0.65647987986590306 2.31229822644866623 1.4112550108431241"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL" 
+		"rotate" " -type \"double3\" 0.73213589259703116 2.26694349438229281 1.44874866037175565"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL" 
+		"rotate" " -type \"double3\" 0.80542779749089444 2.2181261242755963 1.48645033859133968"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL" 
+		"rotate" " -type \"double3\" -0.83906466163035343 5.95418256431060033 8.72590867787664415"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL" 
+		"rotateZ" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL" 
+		"rotate" " -type \"double3\" -20.70881890511227041 31.84458258217386728 1.15808273564358299"
+		
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL" 
+		"rotateX" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL" 
+		"rotateY" " -av"
+		2 "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL" 
+		"rotateZ" " -av"
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.visibility" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[1]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.translateZ" 
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.translateX" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[2]" ""
 		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.translateY" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[3]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateX" 
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.translateZ" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[4]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateY" 
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateX" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[5]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateZ" 
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateY" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[6]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.visibility" 
-		"Kerfluffle_Rig_DoneRN.placeHolderList[7]" "";
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[7]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[8]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[9]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[10]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[11]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[12]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[13]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[14]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[15]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[16]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[17]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[18]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[19]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[20]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[21]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[22]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[23]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[24]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[25]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[26]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[27]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[28]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[29]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[30]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[31]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[32]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[33]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[34]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[35]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[36]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[37]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[38]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[39]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[40]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[41]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[42]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[43]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[44]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[45]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[46]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[47]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[48]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[49]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[50]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[51]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[52]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[53]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[54]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[55]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[56]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[57]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[58]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[59]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[60]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[61]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[62]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[63]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[64]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[65]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[66]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[67]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[68]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[69]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[70]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[71]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[72]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[73]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[74]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[75]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[76]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[77]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[78]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[79]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[80]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[81]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[82]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[83]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[84]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[85]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[86]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[87]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[88]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[89]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[90]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[91]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[92]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[93]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[94]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[95]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[96]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[97]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[98]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[99]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[100]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[101]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[102]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[103]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[104]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[105]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[106]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[107]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[108]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[109]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[110]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[111]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[112]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[113]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[114]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[115]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[116]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[117]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[118]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[119]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[120]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[121]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[122]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[123]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[124]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[125]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[126]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[127]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[128]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[129]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[130]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[131]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[132]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[133]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[134]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[135]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[136]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[137]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[138]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[139]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[140]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[141]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[142]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[143]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[144]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[145]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[146]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[147]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[148]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[149]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[150]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[151]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[152]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[153]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[154]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[155]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[156]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[157]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[158]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[159]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[160]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[161]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[162]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[163]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[164]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[165]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[166]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[167]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[168]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[169]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[170]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[171]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[172]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[173]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[174]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[175]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[176]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Forehead_CTRL_GRP|Kerfluffle_Rig_Done:Forehead_CTRL|Kerfluffle_Rig_Done:Antennae_01_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_01_CTRL|Kerfluffle_Rig_Done:Antennae_02_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_02_CTRL|Kerfluffle_Rig_Done:Antennae_03_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_03_CTRL|Kerfluffle_Rig_Done:Antennae_04_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_04_CTRL|Kerfluffle_Rig_Done:Antennae_05_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_05_CTRL|Kerfluffle_Rig_Done:Antennae_06_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_06_CTRL|Kerfluffle_Rig_Done:Antennae_07_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_07_CTRL|Kerfluffle_Rig_Done:Antennae_08_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_08_CTRL|Kerfluffle_Rig_Done:Antennae_09_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_09_CTRL|Kerfluffle_Rig_Done:Antennae_10_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_10_CTRL|Kerfluffle_Rig_Done:Antennae_11_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_11_CTRL|Kerfluffle_Rig_Done:Antennae_12_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_12_CTRL|Kerfluffle_Rig_Done:Antennae_13_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_13_CTRL|Kerfluffle_Rig_Done:Antennae_14_CTRL_GRP|Kerfluffle_Rig_Done:Antennae_14_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[177]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[178]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[179]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[180]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[181]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[182]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[183]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[184]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[185]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[186]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[187]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[188]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[189]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[190]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[191]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[192]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[193]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[194]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[195]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[196]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_L_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_L_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[197]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[198]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[199]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[200]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[201]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[202]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[203]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[204]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[205]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[206]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Front_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Front_R_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[207]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.translateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[208]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.translateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[209]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.translateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[210]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.rotateX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[211]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[212]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.rotateZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[213]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.scaleX" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[214]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.scaleY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[215]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.scaleZ" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[216]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Hips_CTRL_GRP|Kerfluffle_Rig_Done:Hips_CTRL|Kerfluffle_Rig_Done:Clav_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Clav_Back_R_CTRL|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL_GRP|Kerfluffle_Rig_Done:Shoulder_Back_R_CTRL.visibility" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[217]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Axolotadile_Rig_DONERN";
@@ -316,40 +1128,40 @@ createNode reference -n "Axolotadile_Rig_DONERN";
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP" 
 		"visibility" " 1"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
-		"translate" " -type \"double3\" -0.87925851576681247 1.06903912690469793 0.25582636094396061"
+		"translate" " -type \"double3\" -0.85044598441312036 1.42207336696258824 -0.92071087482410607"
 		
-		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
-		"translateY" " -av"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
 		"translateX" " -av"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
+		"translateY" " -av"
+		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
 		"translateZ" " -av"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
-		"rotate" " -type \"double3\" -103.09320768042627492 -126.01747351599935598 117.71613957578844634"
+		"rotate" " -type \"double3\" -106.49830062037318612 -102.51950272302083533 118.99956992518897891"
 		
-		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
-		"rotateY" " -av"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
 		"rotateX" " -av"
 		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
+		"rotateY" " -av"
+		2 "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL" 
 		"rotateZ" " -av"
-		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleX" 
-		"Axolotadile_Rig_DONERN.placeHolderList[1]" ""
-		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleY" 
-		"Axolotadile_Rig_DONERN.placeHolderList[2]" ""
-		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleZ" 
-		"Axolotadile_Rig_DONERN.placeHolderList[3]" ""
-		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.translateY" 
-		"Axolotadile_Rig_DONERN.placeHolderList[4]" ""
 		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.translateX" 
-		"Axolotadile_Rig_DONERN.placeHolderList[5]" ""
+		"Axolotadile_Rig_DONERN.placeHolderList[1]" ""
+		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.translateY" 
+		"Axolotadile_Rig_DONERN.placeHolderList[2]" ""
 		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.translateZ" 
-		"Axolotadile_Rig_DONERN.placeHolderList[6]" ""
-		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.rotateY" 
-		"Axolotadile_Rig_DONERN.placeHolderList[7]" ""
+		"Axolotadile_Rig_DONERN.placeHolderList[3]" ""
 		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.rotateX" 
-		"Axolotadile_Rig_DONERN.placeHolderList[8]" ""
+		"Axolotadile_Rig_DONERN.placeHolderList[4]" ""
+		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.rotateY" 
+		"Axolotadile_Rig_DONERN.placeHolderList[5]" ""
 		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.rotateZ" 
+		"Axolotadile_Rig_DONERN.placeHolderList[6]" ""
+		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleX" 
+		"Axolotadile_Rig_DONERN.placeHolderList[7]" ""
+		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleY" 
+		"Axolotadile_Rig_DONERN.placeHolderList[8]" ""
+		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.scaleZ" 
 		"Axolotadile_Rig_DONERN.placeHolderList[9]" ""
 		5 4 "Axolotadile_Rig_DONERN" "|Axolotadile_Rig_DONE:Axolotadile_LowPoly_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL_GRP|Axolotadile_Rig_DONE:Axolotadile_CTRL.visibility" 
 		"Axolotadile_Rig_DONERN.placeHolderList[10]" "";
@@ -807,7 +1619,7 @@ createNode reference -n "Laila_Rig_003RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Laila_Rig_003RN"
 		"Laila_Rig_003RN" 0
-		"Laila_Rig_003RN" 1870
+		"Laila_Rig_003RN" 1862
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl" 
 		"visibility" " 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl" 
@@ -839,7 +1651,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl" 
@@ -865,7 +1677,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_Thumb_Jnt_003_Ctrl" 
@@ -891,7 +1703,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl" 
@@ -917,7 +1729,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl" 
@@ -943,7 +1755,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerOne_Jnt_003_Ctrl" 
@@ -969,7 +1781,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl" 
@@ -995,7 +1807,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl" 
@@ -1021,7 +1833,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerTwo_Jnt_003_Ctrl" 
@@ -1047,7 +1859,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl" 
@@ -1073,7 +1885,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl" 
@@ -1099,7 +1911,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerThree_Jnt_003_Ctrl" 
@@ -1125,7 +1937,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl" 
@@ -1151,7 +1963,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl" 
@@ -1177,7 +1989,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 -9.49965831825626061"
+		"rotate" " -type \"double3\" 0 0 -57.69493443365012553"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_L_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_L_FingerFour_Jnt_003_Ctrl" 
@@ -1203,7 +2015,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl" 
@@ -1229,7 +2041,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl" 
@@ -1255,7 +2067,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerTwo_Jnt_003_Ctrl" 
@@ -1281,7 +2093,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl" 
@@ -1307,7 +2119,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl" 
@@ -1333,7 +2145,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerFour_Jnt_003_Ctrl" 
@@ -1359,7 +2171,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl" 
@@ -1385,7 +2197,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl" 
@@ -1411,7 +2223,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerThree_Jnt_003_Ctrl" 
@@ -1437,7 +2249,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl" 
@@ -1463,7 +2275,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl" 
@@ -1489,7 +2301,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_FingerOne_Jnt_003_Ctrl" 
@@ -1531,7 +2343,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0.2296857192825866"
+		"rotate" " -type \"double3\" 0 0 -9.24794650305963017"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:All_Jnts_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt|Laila_Rig_003:laila_rig_upper_body_jnt|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003|Laila_Rig_003:laila_Rig_001_Spine_Jnt_004|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_001|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_002|Laila_Rig_003:laila_Rig_001_R_Arm_Jnt_003|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_001_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_002_Ctrl|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl_Grp|Laila_Rig_003:mary_Rig_001_R_Thumb_Jnt_003_Ctrl" 
@@ -1566,7 +2378,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
-		"translate" " -type \"double3\" 1.69061578092063947 -0.20642417856495562 1.87375862004225979"
+		"translate" " -type \"double3\" 3.62469205403048678 1.08429072017071815 3.16263372185379188"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"translateX" " -av"
@@ -1575,7 +2387,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
-		"rotate" " -type \"double3\" 0 -148.04849360994629137 0"
+		"rotate" " -type \"double3\" 0 -133.4949511981700141 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
@@ -1601,7 +2413,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
-		"rotate" " -type \"double3\" 18.02942756379231426 0 0"
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
@@ -1655,7 +2467,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_001_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl_Offset" 
-		"translate" " -type \"double3\" 0.74904031648606406 0.41177866515390804 0.44313156095798506"
+		"translate" " -type \"double3\" 0.34411086882643072 0.042399346032613194 0.3476322428453022"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl_Offset" 
 		"translateX" " -av"
@@ -1680,7 +2492,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl|Laila_Rig_003:R_Leg_Pivot_Grp_Ctrl_Offset" 
 		"scaleZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:L_Leg_Pivot_Grp|Laila_Rig_003:L_Leg_Pivot_Grp_Ctrl|Laila_Rig_003:L_Leg_Pivot_Grp_Ctrl_Offset" 
-		"translate" " -type \"double3\" -0.39915248241953294 -0.2225512135267301 -1.21912554538384366"
+		"translate" " -type \"double3\" -0.6181425717164909 -0.27001241819258021 -1.10052136853207139"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl|Laila_Rig_003:L_Leg_Pivot_Grp|Laila_Rig_003:L_Leg_Pivot_Grp_Ctrl|Laila_Rig_003:L_Leg_Pivot_Grp_Ctrl_Offset" 
 		"translateX" " -av"
@@ -1715,7 +2527,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
-		"rotate" " -type \"double3\" -6.55512980438559811 0 0"
+		"rotate" " -type \"double3\" 5.4113814195176646 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
@@ -1741,7 +2553,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 23.70598180385965748 0 0"
+		"rotate" " -type \"double3\" 8.07717768032697769 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
@@ -1767,7 +2579,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" 18.26034918223163928 0 0"
+		"rotate" " -type \"double3\" -3.11829364345498616 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
@@ -1793,7 +2605,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -7.47307438425194981 0 0"
+		"rotate" " -type \"double3\" 2.7332194966583323 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
@@ -1855,7 +2667,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_001_Ctrl" 
 		"scaleZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:R_Pivot_Grp|Laila_Rig_003:R_Pivot_Grp_Ctrl|Laila_Rig_003:R_Pivot_Grp_Ctrl1" 
-		"translate" " -type \"double3\" -0.6044168140598889 -0.54853798834215428 -1.27781154415204434"
+		"translate" " -type \"double3\" 0.18101354499995143 -0.8369087388612414 -0.65890988077931978"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:R_Pivot_Grp|Laila_Rig_003:R_Pivot_Grp_Ctrl|Laila_Rig_003:R_Pivot_Grp_Ctrl1" 
 		"translateX" " -av"
@@ -1880,7 +2692,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:R_Pivot_Grp|Laila_Rig_003:R_Pivot_Grp_Ctrl|Laila_Rig_003:R_Pivot_Grp_Ctrl1" 
 		"scaleZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:L_Arm_Pivot_Grp|Laila_Rig_003:L_Arm_Pivot_Grp_Ctrl|Laila_Rig_003:L_Arm_Pivot_Grp_Ctrl_Offset" 
-		"translate" " -type \"double3\" 0.060131172247559435 -0.14988007133145023 1.67385749425115149"
+		"translate" " -type \"double3\" 1.11668461541056008 -1.04485384811146353 2.01879576802732963"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:L_Arm_Pivot_Grp|Laila_Rig_003:L_Arm_Pivot_Grp_Ctrl|Laila_Rig_003:L_Arm_Pivot_Grp_Ctrl_Offset" 
 		"translateX" " -av"
@@ -1977,7 +2789,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Eye_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Eye_Ctrl|Laila_Rig_003:laila_Rig_001_R_Eye_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Eye_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" 0.15326267789860917 0.8731251558393327 -0.3700541668977656"
+		"translate" " -type \"double3\" 0.022391393505951124 0.98302865954090357 -0.19148763290441523"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -1986,7 +2798,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -0.58225265414212901 24.52440276874440883 -3.35208605745965604"
+		"rotate" " -type \"double3\" -13.67255841528035099 14.60877830490396079 -16.72559762151995599"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -2061,7 +2873,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_L_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_L_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_L_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_L_Ball_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Ball_Ctrl|Laila_Rig_003:ikHandle1" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" 0.20033936164525243 -0.65489634029504407 0.51675674443741937"
+		"translate" " -type \"double3\" 1.02668457937375179 -0.29730328112160997 0.35420271674516146"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -2070,7 +2882,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -4.88522295421901731 9.4272986706505435 -36.14930865489723288"
+		"rotate" " -type \"double3\" 2.90016382727518884 12.47449461692802153 -81.07839042369920435"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -2141,7 +2953,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_Ball_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Ball_Ctrl|Laila_Rig_003:ikHandle2" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" -0.20388026409926191 -0.269603606684436 0.54413924369386191"
+		"translate" " -type \"double3\" -0.65446686651608799 0.048015237266599939 0.70864127775279018"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -2150,7 +2962,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -10.94872749410205337 -13.03754711098363117 8.69323793746876738"
+		"rotate" " -type \"double3\" 169.14418048212979784 -43.28631667602142841 -256.17944757155294155"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -2169,7 +2981,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl|Laila_Rig_003:ikHandle3" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" 0.37629075334816348 0.59157976643887111 -0.66543046592678001"
+		"translate" " -type \"double3\" 0.7109023124742766 0.37238283937815064 0.62372986845865697"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -2178,7 +2990,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 16.47891834062212624 -35.79506388405899031 -34.07297381573253858"
+		"rotate" " -type \"double3\" 3.76037620126664018 40.38480533690422902 -60.20965394762762912"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -2354,25 +3166,13 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:topnurbsSquare1" 
 		"visibility" " 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:topnurbsSquare1" 
-		"translateX" " -av 0"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:topnurbsSquare1" 
-		"translateZ" " -av 0"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:topnurbsSquare1" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:bottomnurbsSquare1" 
 		"visibility" " 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:bottomnurbsSquare1" 
-		"translateX" " -av 0"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:bottomnurbsSquare1" 
-		"translateZ" " -av 0"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:bottomnurbsSquare1" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:rightnurbsSquare1" 
 		"visibility" " 1"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:rightnurbsSquare1" 
-		"translateX" " -av 0"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:rightnurbsSquare1" 
-		"translateZ" " -av 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:rightnurbsSquare1" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:L_Blendshape_UI_Ctrl_Grp|Laila_Rig_003:L_Blendshape_UI_Ctrl|Laila_Rig_003:BS_BrowSqueeze_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Border_Ctrl|Laila_Rig_003:L_BS_BrowSqueeze_Ctrl_Grp|Laila_Rig_003:L_BS_BrowSqueeze_Ctrl" 
@@ -3584,10 +4384,6 @@ createNode reference -n "Laila_Rig_003RN";
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"rotateY" " -av"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
-		"FollowTranslate" " -k 1"
-		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
-		"FollowRotate" " -k 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
@@ -3599,7 +4395,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" -18.21171352574071634 21.64233046152336115 -18.11772899917260204"
+		"rotate" " -type \"double3\" 10.75886656177709533 -0.52745751811113639 5.31093092690697066"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"rotateX" " -av"
@@ -4482,17 +5278,17 @@ createNode reference -n "Laila_Rig_003RN";
 		"Laila_Rig_003RN.placeHolderList[395]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl.scaleZ" 
 		"Laila_Rig_003RN.placeHolderList[396]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateX" 
-		"Laila_Rig_003RN.placeHolderList[397]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateY" 
-		"Laila_Rig_003RN.placeHolderList[398]" ""
-		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateZ" 
-		"Laila_Rig_003RN.placeHolderList[399]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.rotateX" 
-		"Laila_Rig_003RN.placeHolderList[400]" ""
+		"Laila_Rig_003RN.placeHolderList[397]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.rotateY" 
-		"Laila_Rig_003RN.placeHolderList[401]" ""
+		"Laila_Rig_003RN.placeHolderList[398]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.rotateZ" 
+		"Laila_Rig_003RN.placeHolderList[399]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateX" 
+		"Laila_Rig_003RN.placeHolderList[400]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateY" 
+		"Laila_Rig_003RN.placeHolderList[401]" ""
+		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.translateZ" 
 		"Laila_Rig_003RN.placeHolderList[402]" ""
 		5 4 "Laila_Rig_003RN" "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_ToeFlap_Ctrl.visibility" 
 		"Laila_Rig_003RN.placeHolderList[403]" ""
@@ -4590,17 +5386,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 497\n            -height 216\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n"
 		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n"
-		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 497\n            -height 216\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
+		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 497\n            -height 216\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n"
+		+ "            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n"
 		+ "            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n"
 		+ "            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n"
-		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1088\n            -height 735\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
+		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1090\n            -height 735\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
 		+ "            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n"
 		+ "            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n"
@@ -4627,8 +5423,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
 		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1088\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1088\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1090\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1090\\n    -height 735\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -4731,7 +5527,7 @@ createNode animCurveTA -n "laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_rotateX";
 	rename -uid "0834DE03-1648-AA0D-A31F-4099816D5A20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 -13.672558415280351 7 10.076510483044471
+	setAttr -s 11 ".ktv[0:10]"  1 -13.672558415280351 7 10.076510483044473
 		 12 -0.58225265414212901 20 -35.11860002778581 34 -13.672558415280351 49 0 58 0 69 19.43834481541677
 		 73 29.173610949014471 79 19.321883180585814 113 -11.69253438461873;
 	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
@@ -5011,7 +5807,7 @@ createNode animCurveTA -n "laila_rig_upper_body_jnt_ctrl_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 11 ".ktv[0:10]"  1 5.4113814195176646 7 -4.7095084299889214
-		 12 -6.5551298043855981 20 11.335624385768176 34 5.4113814195176646 43 10.913728439861476
+		 12 -6.5551298043855981 20 11.335624385768178 34 5.4113814195176646 43 10.913728439861476
 		 49 31.580556243129777 58 6.810311945352419 69 0 73 0 79 -3.7639696445125348;
 	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
 		5 5 5;
@@ -5189,7 +5985,7 @@ createNode animCurveTA -n "laila_Rig_001_Spine_Jnt_002_Ctrl_rotateZ";
 	rename -uid "DAEE7F83-5344-F29F-64CE-47866F8DCE76";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 0 7 0 12 0 20 -8.986677295920666 34 0
+	setAttr -s 11 ".ktv[0:10]"  1 0 7 0 12 0 20 -8.9866772959206678 34 0
 		 43 -10.220302741452665 49 0 58 0 69 2.7168926054800395 73 14.655859920272405 79 0.12639839603432307;
 	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
 		5 5 5;
@@ -5807,7 +6603,7 @@ createNode animCurveTA -n "mary_Rig_001_L_Thumb_Jnt_003_Ctrl_rotateY";
 	rename -uid "F40711EB-0445-F87F-627E-DC89ACDDA90D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 11 ".ktv[0:10]"  1 0 7 20.111977690703824 12 0 20 0 34 0
+	setAttr -s 11 ".ktv[0:10]"  1 0 7 20.111977690703828 12 0 20 0 34 0
 		 43 0 49 0 58 0 69 0 79 0 113 0;
 	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
 		5 5 5;
@@ -6759,7 +7555,7 @@ createNode animCurveTA -n "laila_Rig_001_Head_Jnt_001_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  1 5.3109309269069707 12 -18.117728999172602
-		 20 -3.262909685714015 34 -27.248996177218022 43 -5.6058706460878192 49 -10.861984228604667
+		 20 -3.2629096857140154 34 -27.248996177218022 43 -5.6058706460878192 49 -10.861984228604667
 		 69 1.753810113130033 79 10.193189522593785;
 	setAttr -s 8 ".kot[0:7]"  5 5 5 5 5 5 5 5;
 createNode animCurveTU -n "laila_Rig_001_Head_Jnt_001_Ctrl_visibility";
@@ -6849,7 +7645,7 @@ createNode animCurveTA -n "laila_Rig_001_Translation_Ctrl_rotateX";
 	rename -uid "4DE930AD-F54C-C4E7-290F-0EACCE60E13C";
 	setAttr ".tan" 5;
 	setAttr ".wgt" no;
-	setAttr -s 15 ".ktv[0:14]"  1 0 7 0 12 0 20 0 34 0 43 0 49 0 58 1.5335307144924413
+	setAttr -s 15 ".ktv[0:14]"  1 0 7 0 12 0 20 0 34 0 43 0 49 0 58 1.5335307144924415
 		 69 18.607886025667199 73 53.438664930786715 79 98.6417725020506 85 111.63794694021472
 		 93 98.6417725020506 101 111.63794694021472 113 67.856911794244283;
 	setAttr -s 15 ".kit[0:14]"  16 18 16 18 16 18 16 18 
@@ -7991,8 +8787,8 @@ createNode animCurveTA -n "Transform_TRANS_CTRL_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  1 12.03099546280677 12 -11.774040266427271
-		 34 -2.2993760800788121 49 13.589570104621401 73 -6.4705182188427601 92 3.5649928918796334
-		 110 10.930028237112944;
+		 34 -2.2993760800788126 49 13.589570104621401 73 -6.4705182188427601 92 3.5649928918796334
+		 110 10.930028237112946;
 	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 createNode animCurveTU -n "Transform_TRANS_CTRL_visibility";
 	rename -uid "551C308F-624A-8830-F636-CA8C27796DDC";
@@ -8024,9 +8820,1380 @@ createNode animCurveTL -n "Transform_TRANS_CTRL_translateZ";
 		 34 -6.8221296293421352 49 -1.8836800894693173 73 -0.72592233820002738 92 -0.38137089986458628
 		 110 -0.28953623025382874;
 	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Hips_CTRL_rotateX";
+	rename -uid "D0062922-824F-DE57-5D6F-28B6CAE118BA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.83906466163035343 12 -3.239208232450677
+		 34 8.3636515125076905 49 8.1568733941907059 73 6.5465769045581155 92 2.8291391912987001
+		 110 1.6424068320565917;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Hips_CTRL_rotateY";
+	rename -uid "194C7E11-B14E-10B7-1E23-D9BA8B160C95";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 5.9541825643106003 12 0.8343034754461699
+		 34 1.6815049778187223 49 -5.2728563402431252 73 -1.8038796373833919 92 -7.3270413472133002
+		 110 -1.083375856896688;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Hips_CTRL_rotateZ";
+	rename -uid "66CA5A2B-CC44-431A-00C0-71ADDD0F7803";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 8.7259086778766441 12 2.9992325166976816
+		 34 5.3367130677877954 49 -4.0447601714341239 73 -0.50452969713938489 92 -4.5748307828312926
+		 110 4.9236754258697362;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_01_CTRL_rotateX";
+	rename -uid "1F6BCC81-214A-5655-DBEB-46A193695E28";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.83906466163035343 12 -3.239208232450677
+		 34 8.3636515125076905 49 8.1568733941907059 73 6.096229140942599 92 1.9486926548312062
+		 110 1.6140374814912692;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_01_CTRL_rotateY";
+	rename -uid "15CFDD57-CA48-01C1-F266-C786CFBF6196";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 5.9541825643106003 12 0.8343034754461699
+		 34 1.6815049778187223 49 -5.2728563402431252 73 -7.4790558509183329 92 1.5143709480950795
+		 110 -1.1252110422656083;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_01_CTRL_rotateZ";
+	rename -uid "CF749939-AF43-F8A0-4B8A-91A362DA07AB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 8.7259086778766441 12 2.9992325166976816
+		 34 5.3367130677877954 49 -4.0447601714341239 73 -1.6600037074468832 92 -2.8498567057817152
+		 110 6.3956167965902218;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_02_CTRL_rotateX";
+	rename -uid "F980AB07-D94B-36EE-2CF0-9F82EE8A2C63";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.50111804433386065 12 -2.9135354418863155
+		 34 8.6941014404868415 49 8.4664448491904523 73 6.4135520074609387 92 2.2604329220114523
+		 110 1.9463105352218499;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_02_CTRL_rotateY";
+	rename -uid "733A6D46-BC45-97FE-ECA5-BD953F11306F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 6.0419144981896604 12 0.95522026150930295
+		 34 1.7890258585711643 49 -5.1128302112472559 73 -7.3319613055476731 92 1.667833389787611
+		 110 -1.0237654775750062;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_02_CTRL_rotateZ";
+	rename -uid "12228262-3847-8BF5-CBCD-53B70111DEE3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 8.7215827088677944 12 2.9646785349490155
+		 34 5.3070799339777022 49 -4.1124186908447822 73 -1.7405435597971544 92 -2.8808404448678422
+		 110 6.3497462325119649;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_03_CTRL_rotateX";
+	rename -uid "F8459BBA-AE41-71E8-00CB-F3A904C9B7D8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.15084434246554781 12 -2.5696479935245438
+		 34 9.0403562182898067 49 8.8013080289340788 73 6.7538617125867066 92 2.5963308033957575
+		 110 2.2932512328889927;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_03_CTRL_rotateY";
+	rename -uid "9F73FB57-E441-74D2-56EF-0C81DA6E7438";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 6.0689237744730722 12 1.0171257265879634
+		 34 1.8368113272689182 49 -5.00893074430296 73 -7.2419151041252334 92 1.7644235131898593
+		 110 -0.98223402382266245;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Spine_03_CTRL_rotateZ";
+	rename -uid "64AAA81B-7848-7C39-40B4-2C88EF78D34C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 8.7453723845283076 12 2.9574363015512004
+		 34 5.3048731868341266 49 -4.1551194176252384 73 -1.7968690030768297 92 -2.8839420113081577
+		 110 6.3305121632521262;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Head_CTRL_rotateX";
+	rename -uid "33062A07-7744-4874-A2AE-2894FD5062AB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.19869669720438896 12 -2.2202457492434009
+		 34 9.3896025074732332 49 9.1492253925955627 73 7.104751807259218 92 2.9439968664374447
+		 110 2.7971274018447319;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Head_CTRL_rotateY";
+	rename -uid "825AD44E-0E45-733D-66C9-2CA9D5112F9C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 6.0339595003193685 12 1.0174869141004941
+		 34 1.8228481682000803 49 -4.9652061629632476 73 -7.2124471493319291 92 1.800323679117652
+		 110 -0.40101046066261875;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Head_CTRL_rotateZ";
+	rename -uid "1A139816-464F-F5F2-CDB0-56BEEC2D3255";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 8.7958397862675604 12 2.9772579583469807
+		 34 5.329643254612737 49 -4.1717460758543563 73 -1.8273942690566076 92 -2.8595102197756028
+		 110 -6.271863226660817;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Hips_CTRL_visibility";
+	rename -uid "C3564164-884A-3B42-51CD-549C3AE04C07";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Hips_CTRL_translateX";
+	rename -uid "D9EAD62B-F546-E339-6CE8-ACABCA8B55C6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Hips_CTRL_translateY";
+	rename -uid "CBF90AD4-E642-EB2E-E821-F5A52D531703";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Hips_CTRL_translateZ";
+	rename -uid "029AC5BE-624E-0B5C-2E7F-BBA64E4F88AD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Hips_CTRL_scaleX";
+	rename -uid "E93F12D1-FC40-B90E-60E6-589D8BBA6E62";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Hips_CTRL_scaleY";
+	rename -uid "C3DE058E-3E48-0CA7-681A-1291C81E449A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Hips_CTRL_scaleZ";
+	rename -uid "503EF087-9F4E-9BA9-EE9C-2ABF1F3E92B0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_01_CTRL_visibility";
+	rename -uid "54EC4958-A34F-9025-F908-72B5D836F05A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_01_CTRL_translateX";
+	rename -uid "B1BB8545-F14A-0015-5049-E6A05AEFE800";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_01_CTRL_translateY";
+	rename -uid "7774322E-054D-6F25-738D-AEB5BCBA0ED2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_01_CTRL_translateZ";
+	rename -uid "FEE9B759-3D45-BB02-0053-6B95F464E845";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_01_CTRL_scaleX";
+	rename -uid "E6AD8A13-C94A-CE0C-A140-5689DD4AF520";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_01_CTRL_scaleY";
+	rename -uid "44BD0EBB-4145-4EEF-5710-748B2D13B6ED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_01_CTRL_scaleZ";
+	rename -uid "68672A17-EE4D-AD2D-A780-ACAA4CA8464A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_02_CTRL_visibility";
+	rename -uid "22F17FC4-4B45-3897-6CD9-209625A40000";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_02_CTRL_translateX";
+	rename -uid "5B9F96AF-524A-9A21-89B6-A5BF4DFAC8E0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_02_CTRL_translateY";
+	rename -uid "316D879D-D844-6D96-4A4C-E0909E892750";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_02_CTRL_translateZ";
+	rename -uid "A66E79B9-EB4E-ADBC-68C4-4C9ADFE0422C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_02_CTRL_scaleX";
+	rename -uid "B1A8289B-6747-2D88-116E-76AD7611B8BE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_02_CTRL_scaleY";
+	rename -uid "756F3DE3-0344-E037-4B94-C2A883639A1E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_02_CTRL_scaleZ";
+	rename -uid "1EAB9BD2-7D46-023A-CAD1-14BBD616F361";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_03_CTRL_visibility";
+	rename -uid "ED69CC5F-1644-2867-2743-DE8ACCDC858F";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_03_CTRL_translateX";
+	rename -uid "10A68901-9840-CC03-D13D-1F8D009C15F4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_03_CTRL_translateY";
+	rename -uid "6DFD9723-A647-E72C-99E6-769ED65A0FFA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Spine_03_CTRL_translateZ";
+	rename -uid "6A2FE438-9B45-4F01-F3C7-9391C0BB8441";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_03_CTRL_scaleX";
+	rename -uid "5D3F1B0C-5843-13D1-3846-DF824D7CC792";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_03_CTRL_scaleY";
+	rename -uid "4AA7FE7C-914B-FE5A-FE9D-4FBF7C8FBB0B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Spine_03_CTRL_scaleZ";
+	rename -uid "3B0C6F45-8F45-ED22-70A1-9786663FDC35";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Head_CTRL_visibility";
+	rename -uid "C4C9D2FF-6541-0F4B-60AB-35B71BF492AD";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Head_CTRL_translateX";
+	rename -uid "56369D3D-114E-85F7-1C8B-FD92EB85E46B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Head_CTRL_translateY";
+	rename -uid "5EF47E15-3E4D-35D6-BEF9-FB92C34025AF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Head_CTRL_translateZ";
+	rename -uid "96EA3236-B740-C5CD-583F-669B27F8B755";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Head_CTRL_scaleX";
+	rename -uid "73C2261C-EB44-5C93-105A-B59F1FCCE0B4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Head_CTRL_scaleY";
+	rename -uid "B41E916D-AD4C-4A2A-C870-689ED93A46CC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Head_CTRL_scaleZ";
+	rename -uid "47F1151F-C944-9AEE-9B74-38B8D374EDA9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Shoulder_Front_R_CTRL_rotateX";
+	rename -uid "DA1CBB1F-DF46-F618-77DA-D0A87A6AF594";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 -20.70881890511227 34 -8.1427057221902821
+		 92 0 110 16.929607309143091;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTA -n "Shoulder_Front_R_CTRL_rotateY";
+	rename -uid "E4A3BC68-804E-6BF9-5F96-0EAB7CD3762E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 31.844582582173867 34 -20.650987342724726
+		 92 0 110 20.944323959156865;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTA -n "Shoulder_Front_R_CTRL_rotateZ";
+	rename -uid "0E47DF6F-B043-45BA-FD0D-018025E5A078";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 1.158082735643583 34 5.2882947756152019
+		 92 0 110 44.613398493292387;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTU -n "Shoulder_Front_R_CTRL_visibility";
+	rename -uid "B2D25535-3649-DB06-7B0B-3D80A165D7BC";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 1 34 1 92 1 110 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTL -n "Shoulder_Front_R_CTRL_translateX";
+	rename -uid "77335B91-1F43-F0F4-C34A-07B24DCC602A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 0 34 0 92 0 110 0;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTL -n "Shoulder_Front_R_CTRL_translateY";
+	rename -uid "066096FC-E048-EC18-3A87-3F8C40FDAB63";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 0 34 0 92 0 110 0;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTL -n "Shoulder_Front_R_CTRL_translateZ";
+	rename -uid "E1E7AB57-3F4B-52B9-C1BE-01932D77134F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 0 34 0 92 0 110 0;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTU -n "Shoulder_Front_R_CTRL_scaleX";
+	rename -uid "930D3423-DC4E-909B-6E9A-2C92D7326B0B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 1 34 1 92 1 110 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTU -n "Shoulder_Front_R_CTRL_scaleY";
+	rename -uid "EB0316D8-4948-D119-A0BB-3E91A3BB7501";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 1 34 1 92 1 110 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTU -n "Shoulder_Front_R_CTRL_scaleZ";
+	rename -uid "1C04D3E9-C44F-42BC-BBBC-A7AA527B2CA0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  12 1 34 1 92 1 110 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+createNode animCurveTA -n "Shoulder_Front_L_CTRL_rotateX";
+	rename -uid "B60C3839-BC49-7FCC-3EC0-D8AFAE412FB8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 2.8817296902336613;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTA -n "Shoulder_Front_L_CTRL_rotateY";
+	rename -uid "67F80BF9-D448-24C7-B62E-20B38CC2DE6B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 37.08890341921775;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTA -n "Shoulder_Front_L_CTRL_rotateZ";
+	rename -uid "99E87E5E-C140-BE49-A2D1-979E8EAFFDD5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 55.683415465382531;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTU -n "Shoulder_Front_L_CTRL_visibility";
+	rename -uid "7EA2D204-8648-D29A-7873-00A278E3ED5E";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 1 110 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "Shoulder_Front_L_CTRL_translateX";
+	rename -uid "0DC9E7F7-B84C-F116-CBCD-62A72B867190";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 0;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "Shoulder_Front_L_CTRL_translateY";
+	rename -uid "35741040-F242-961F-B2D7-BB818F132152";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 0;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "Shoulder_Front_L_CTRL_translateZ";
+	rename -uid "BCCED1F9-D647-AE7B-6363-15A3139ACA56";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 0 110 0;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTU -n "Shoulder_Front_L_CTRL_scaleX";
+	rename -uid "67EC0DAA-4248-6640-AC51-2CA02ACD10F4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 1 110 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTU -n "Shoulder_Front_L_CTRL_scaleY";
+	rename -uid "5A387FBC-C949-E455-8D9E-D9BC0E027893";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 1 110 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTU -n "Shoulder_Front_L_CTRL_scaleZ";
+	rename -uid "DA2DF4AC-B749-D390-3631-BBB06CDDC470";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  92 1 110 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTA -n "Shoulder_Back_R_CTRL_rotateX";
+	rename -uid "0CD3B900-4744-4648-E7EE-15A083BFD6C4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 -47.120801081291333;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "Shoulder_Back_R_CTRL_rotateY";
+	rename -uid "B879D211-5B4E-9F0F-0F9B-3E96EB6EBD5D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 34.749098336673541;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "Shoulder_Back_R_CTRL_rotateZ";
+	rename -uid "8BAC5820-0C46-00E3-3081-2E81F33A85E4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 6.421929844877436;
+	setAttr ".kot[0]"  5;
+createNode animCurveTU -n "Shoulder_Back_R_CTRL_visibility";
+	rename -uid "A8A106E8-A449-3018-BDBC-C19448C29DE4";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Shoulder_Back_R_CTRL_translateX";
+	rename -uid "58058664-FD44-2273-87CD-37A08A452D8D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 0;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Shoulder_Back_R_CTRL_translateY";
+	rename -uid "F9E1EFDF-8143-9198-9130-50916972C1AD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 0;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Shoulder_Back_R_CTRL_translateZ";
+	rename -uid "E9C8FED6-5042-37B6-2385-A5984951DA69";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 0;
+	setAttr ".kot[0]"  5;
+createNode animCurveTU -n "Shoulder_Back_R_CTRL_scaleX";
+	rename -uid "917C86A1-854F-7D26-2193-B4A3FD5B48D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTU -n "Shoulder_Back_R_CTRL_scaleY";
+	rename -uid "B37E0602-D643-EAF0-1765-AFB206268751";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTU -n "Shoulder_Back_R_CTRL_scaleZ";
+	rename -uid "75D79D83-654E-7410-65FF-C486B488602D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  110 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "Antennae_02_CTRL_rotateX";
+	rename -uid "1FE08B4B-9547-9C1C-5D69-B69992B0D1A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.19537147540995831 12 -0.22085449446342861
+		 34 -0.49742539635195748 49 2.011066644799107 73 6.2584121201355094 92 5.4380689003598919
+		 110 10.343548105259735;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_02_CTRL_rotateY";
+	rename -uid "11F6A23A-9944-5B9D-BC48-C784A6835361";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.5595199840639684 12 2.9322974942097302
+		 34 2.2785827951930071 49 6.9866109678705071 73 1.0860141939870191 92 0.80682897384973273
+		 110 4.1138602860303353;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_02_CTRL_rotateZ";
+	rename -uid "B478DEBC-C241-5B5E-9CB9-11A08EF25FFD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.0645103702850554 12 6.3841216315220999
+		 34 -4.649441900158223 49 2.7908813376983739 73 4.9330819465527638 92 -3.5231544021354564
+		 110 3.144003764143072;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_03_CTRL_rotateX";
+	rename -uid "043C5F6A-5E4E-FC18-45FD-51A3CB1C5C43";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.10489492684194392 12 -0.25207282678362658
+		 34 -0.49742539635221306 49 2.0110666447988468 73 5.5189359895139969 92 5.2928083270741393
+		 110 10.128910504770539;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_03_CTRL_rotateY";
+	rename -uid "12D74BFF-3B45-22A9-69EB-40BE291AA7BF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.5524482544664808 12 2.916973490656082
+		 34 2.278582795192976 49 6.9866109678704955 73 1.068789524987632 92 0.20430600580707375
+		 110 3.5322516291047266;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_03_CTRL_rotateZ";
+	rename -uid "AF2E7DAB-BE45-4B61-933B-0BA66B24318D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.0957531571794827 12 6.3963902357987612
+		 34 -4.6494419001582292 49 2.7908813376983286 73 5.4858486298752149 92 -3.2736335498890434
+		 110 3.3804951193306274;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_04_CTRL_rotateX";
+	rename -uid "99AF72F7-0748-2DF9-85E8-DE82A47476A6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 -0.015133222824585532 12 -0.2831275160433781
+		 34 -0.49742539635215977 49 2.0110666447989023 73 4.7181996911177411 92 5.0381739479171692
+		 110 9.8198632894627291;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_04_CTRL_rotateY";
+	rename -uid "1889C0EA-1B41-F4E3-26FF-CEBDD02CFA3E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.5413643498535552 12 2.9089883002006482
+		 34 2.2785827951929902 49 6.9866109678705133 73 1.1169649060176627 92 -0.2762403891232672
+		 110 3.0843995447776877;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_04_CTRL_rotateZ";
+	rename -uid "952CBCF1-814D-6908-CEC7-9CAB359E6F9A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.1279536351416835 12 6.4036394298710997
+		 34 -4.6494419001582514 49 2.7908813376983339 73 5.944683084571853 92 -3.0187056476299237
+		 110 3.6174281600401752;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_05_CTRL_rotateX";
+	rename -uid "6B0F2A8E-974E-4EB5-7B92-488770740DB7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.07373719803259679 12 -0.31284577052437579
+		 34 -0.49742539635215571 49 2.011066644798905 73 3.8713426954000703 92 4.6847834934515005
+		 110 9.428677145527347;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_05_CTRL_rotateY";
+	rename -uid "BA6285CC-124D-171E-64A0-6BA5AFB969E7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.5262880554548195 12 2.9083143385569064
+		 34 2.2785827951930013 49 6.986610967870523 73 1.2282540688530219 92 -0.61995699115607339
+		 110 2.7837459198798915;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_05_CTRL_rotateZ";
+	rename -uid "B8E7000A-EF42-EA36-1077-BB9FE9DAEAC7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.1610406600696226 12 6.4061205430751
+		 34 -4.6494419001582639 49 2.7908813376983299 73 6.2998993563343486 92 -2.7920864603938194
+		 110 3.8212598257512274;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_06_CTRL_rotateX";
+	rename -uid "296DDBB6-7141-FCFF-F707-7682822CB3A1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.16154148617881048 12 -0.34007525297885116
+		 34 -0.49742539635218652 49 2.0110666447988752 73 2.9939574793047661 92 4.2519118605917612
+		 110 8.9754910469787443;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_06_CTRL_rotateY";
+	rename -uid "3050EEF4-ED43-99CA-F024-A185200359AE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.5072471779677121 12 2.914792480680048
+		 34 2.2785827951930195 49 6.9866109678705453 73 1.398633080939786 92 -0.817545554309555
+		 110 2.637215467939384;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_06_CTRL_rotateZ";
+	rename -uid "30DDE2B4-5949-EFB4-CBF4-0D9729AAB2E3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.1949416827568053 12 6.4041335025091675
+		 34 -4.6494419001582612 49 2.7908813376983153 73 6.5436300749958134 92 -2.6231395739522072
+		 110 3.9633457063117783;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_07_CTRL_rotateX";
+	rename -uid "CEB9FB5F-114D-7538-D7BA-FC97AE4E1102";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.24810675274235239 12 -0.3636995323607935
+		 34 -0.49742539635219796 49 2.0110666447988614 73 2.101792088051071 92 3.7652042070277285
+		 110 8.4860919529159666;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_07_CTRL_rotateY";
+	rename -uid "9FA52CC4-B146-5E92-7200-DC85A68B8C53";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.4842774999842416 12 2.928133970573696
+		 34 2.278582795192972 49 6.9866109678705062 73 1.6225596838245016 92 -0.86491696419936615
+		 110 2.6458510719138029;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_07_CTRL_rotateZ";
+	rename -uid "89AF7F0E-4D49-0022-7156-B1A4CB59395A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.2295829602878137 12 6.3980234887269383
+		 34 -4.6494419001582505 49 2.790881337698333 73 6.6700860202941072 92 -2.5347616382145337
+		 110 4.0220227564432722;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_08_CTRL_rotateX";
+	rename -uid "A8252BB5-524C-7903-BAF4-189982871E6D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.33326243773562297 12 -0.38265314093398878
+		 34 -0.49742539635224925 49 2.0110666447988126 73 1.2104873025396063 92 3.2541816523164404
+		 110 7.9895345011913248;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_08_CTRL_rotateY";
+	rename -uid "CA2E9F7A-C145-E26F-2928-62BB6592F705";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.4574227160690358 12 2.9479239368628662
+		 34 2.2785827951930004 49 6.9866109678705328 73 1.8932525260131357 92 -0.76266225355776573
+		 110 2.8056503544075944;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_08_CTRL_rotateZ";
+	rename -uid "94290498-984E-C0E8-72A2-F9AE752523DA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.2648897668804593 12 6.3881769664751111
+		 34 -4.6494419001582354 49 2.7908813376983197 73 6.6757660071483302 92 -2.5418449905911014
+		 110 3.9840672367193379;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_09_CTRL_rotateX";
+	rename -uid "DD22837F-974A-37BD-9454-588D2B3ACA9A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.41684067378901701 12 -0.3959360677026712
+		 34 -0.49742539635226773 49 2.0110666447987948 73 0.33535047735995832 92 2.7497273185572237
+		 110 7.5157648475631706;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_09_CTRL_rotateY";
+	rename -uid "D736BBA5-0146-6EB2-CC85-F3986E320D45";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.4267343505980934 12 2.9736264741399672
+		 34 2.2785827951929911 49 6.9866109678705328 73 2.2030117904742457 92 -0.5154592993184145
+		 110 3.1084565764755578;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_09_CTRL_rotateZ";
+	rename -uid "0C840E1C-244E-A728-303C-218309369E93";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.3007866031813375 12 6.3750170845055329
+		 34 -4.6494419001582514 49 2.7908813376983206 73 6.5596051177235077 92 -2.650366529896659
+		 110 3.8454784511517084;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_10_CTRL_rotateX";
+	rename -uid "4E6A1F02-B74A-2FE3-24B8-0D8A12C2C0EF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.49867664437377873 12 -0.40262752603539892
+		 34 -0.49742539635227806 49 2.0110666447987784 73 -0.50883658638481555 92 2.2816849984610537
+		 110 7.0933575012935552;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_10_CTRL_rotateY";
+	rename -uid "29D5D6D8-8A4F-9373-430D-DEBCC9F62ECB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.3922716575301717 12 3.0045912357424265
+		 34 2.2785827951929432 49 6.9866109678704911 73 2.5435607521252721 92 -0.1315056901569763
+		 110 3.5427946144481215;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_10_CTRL_rotateZ";
+	rename -uid "998E6EFD-4643-5191-1F94-5EB56EBE6ADF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.3371974030521794 12 6.3589984556489032
+		 34 -4.6494419001582479 49 2.7908813376983277 73 6.3230534286470172 92 -2.8571462851694163
+		 110 3.6115518299502987;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_11_CTRL_rotateX";
+	rename -uid "D6CD2B95-7844-28A3-BEC6-BBA4A1540D3E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.57860893549534498 12 -0.40189884114420155
+		 34 -0.49742539635227012 49 2.0110666447987895 73 -1.3079820214053297 92 1.8766801520342258
+		 110 6.7474548487573927;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_11_CTRL_rotateY";
+	rename -uid "9ACCEE1D-EB49-7D68-322A-23ADAF90239C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.3541015023458836 12 3.0400614700828736
+		 34 2.2785827951929623 49 6.9866109678705035 73 2.9063873595834346 92 0.37797038419050477
+		 110 4.0945880043738399;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_11_CTRL_rotateZ";
+	rename -uid "37758788-0445-27A5-EAAF-2D844CA3B8ED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.3740457369245036 12 6.3406013478351761
+		 34 -4.649441900158255 49 2.790881337698321 73 5.9700816658097056 92 -3.1503148794360469
+		 110 3.2962170883722899;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_12_CTRL_rotateX";
+	rename -uid "EFF367F4-AE46-D962-E8F1-20A157BEB45A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.65647987986590306 12 -0.39302531152030262
+		 34 -0.4974253963522885 49 2.0110666447987655 73 -2.0488289235925925 92 1.5562742057333321
+		 110 6.4980062432542693;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_12_CTRL_rotateY";
+	rename -uid "B9D46520-4544-175E-37B8-91BEEF462DD3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.3122982264486662 12 3.079183419802431
+		 34 2.2785827951929374 49 6.9866109678704804 73 3.2830659372104662 92 0.99910750760435385
+		 110 4.7477352373702564;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_12_CTRL_rotateZ";
+	rename -uid "2F386071-1F4A-5952-B97E-58A510287591";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.4112550108431241 12 6.3203253377905853
+		 34 -4.6494419001582008 49 2.7908813376984081 73 5.5071142164531377 92 -3.5105065336256915
+		 110 2.9206461577610079;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_13_CTRL_rotateX";
+	rename -uid "680056F6-0F47-42FA-B027-C5936CF27DCF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.73213589259703116 12 -0.37539690735746428
+		 34 -0.49742539635227973 49 2.0110666447987731 73 -2.7190897935682217 92 1.3355684396080556
+		 110 6.3584168975306312;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_13_CTRL_rotateY";
+	rename -uid "933823FF-AB4D-A629-7D76-EEBC51101876";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.2669434943822928 12 3.1210169907070973
+		 34 2.2785827951929116 49 6.9866109678704618 73 3.6655413760528783 92 1.7157370158994405
+		 110 5.484560150792932;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_13_CTRL_rotateZ";
+	rename -uid "813B7D69-9940-309B-CE9B-8F871758ED48";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.4487486603717556 12 6.2986825008349303
+		 34 -4.6494419001582452 49 2.7908813376983441 73 4.942893354571348 92 -3.9127394030400238
+		 110 2.5111936114183155;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_14_CTRL_rotateX";
+	rename -uid "A4F18CB6-834E-601E-1677-20BA7FFF8B79";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0.80542779749089444 12 -0.34852767832738429
+		 34 -0.49742539635228877 49 2.0110666447987704 73 -3.307577893723614 92 1.2223641077683898
+		 110 6.3347166774422101;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_14_CTRL_rotateY";
+	rename -uid "F869C836-F544-6050-272B-9EB05D812E92";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 2.2181261242755963 12 3.1645475855041498
+		 34 2.2785827951929529 49 6.9866109678704893 73 4.0463615036063576 92 2.5096870476464401
+		 110 6.2861825470080523;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTA -n "Antennae_14_CTRL_rotateZ";
+	rename -uid "3CE6011E-334F-6B64-5A80-D8B017688C4F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1.4864503385913397 12 6.2761902315684459
+		 34 -4.6494419001582674 49 2.7908813376983068 73 4.2882812599589801 92 -4.328858345208884
+		 110 2.0968178505278057;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_14_CTRL_visibility";
+	rename -uid "CFC8E875-6441-0666-1303-3384C8F9DB75";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_14_CTRL_translateX";
+	rename -uid "8AB82D00-0246-097B-77C1-D68CC37E4E9E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_14_CTRL_translateY";
+	rename -uid "4065EA37-3449-2836-8999-CEA9AD7D86D8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_14_CTRL_translateZ";
+	rename -uid "9D255C0E-E541-1A80-B5FE-41B216D72214";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_14_CTRL_scaleX";
+	rename -uid "431D6E44-6243-CCC5-4EF3-29834FD0A0CE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_14_CTRL_scaleY";
+	rename -uid "5FEB1878-A543-2BFA-66C7-CB9EEF54369A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_14_CTRL_scaleZ";
+	rename -uid "68412DA4-154C-B3C6-E2E9-6A9D1EB3BB0C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_05_CTRL_visibility";
+	rename -uid "7471AF09-914C-0FB2-4D6E-9889636CEC0E";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_05_CTRL_translateX";
+	rename -uid "B61B7B35-8F4D-BB48-39B4-398D0F0A0BF0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_05_CTRL_translateY";
+	rename -uid "D30662FF-2D4E-F345-9C2B-058FBE1E4EE7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_05_CTRL_translateZ";
+	rename -uid "79F3F22C-4047-9F1F-4997-9480B31DCEBC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_05_CTRL_scaleX";
+	rename -uid "00081B90-E942-ED26-F7FC-B189EEF9D85A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_05_CTRL_scaleY";
+	rename -uid "6FBA71A0-E54B-11D0-F989-E7B66496A591";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_05_CTRL_scaleZ";
+	rename -uid "8284D2D5-AC41-BE95-BA80-02B5B0DCBE36";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_04_CTRL_visibility";
+	rename -uid "03F6DC0A-1F44-B297-AE96-EFB71710F4DC";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_04_CTRL_translateX";
+	rename -uid "18F20FDC-BC4C-2EE7-B320-A5A53074D1B4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_04_CTRL_translateY";
+	rename -uid "9C64F765-CE4C-2EFC-B430-14A6FF0BB1ED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_04_CTRL_translateZ";
+	rename -uid "8F9FEB4D-8147-9AEB-CF89-2DADD1B5691A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_04_CTRL_scaleX";
+	rename -uid "90A8EEC1-C449-BFD6-E369-0D966B421B98";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_04_CTRL_scaleY";
+	rename -uid "B29E0C75-4243-E19C-2A09-EEB335227E0D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_04_CTRL_scaleZ";
+	rename -uid "58D7ECEA-434B-0932-98DF-C5965678B39B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_03_CTRL_visibility";
+	rename -uid "8B584424-E045-1D04-CEDB-C2A4EA1862DA";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_03_CTRL_translateX";
+	rename -uid "78142FD4-AD4B-F7DD-8A6A-A18900D0857F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_03_CTRL_translateY";
+	rename -uid "C361AD59-4149-C217-C414-3997C09BE59F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_03_CTRL_translateZ";
+	rename -uid "B5C353AD-3C43-0EDC-A2C1-8CB477701F3A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_03_CTRL_scaleX";
+	rename -uid "CAF48AA5-1B4E-E48C-208D-1FA221EEE82F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_03_CTRL_scaleY";
+	rename -uid "FA99C747-3847-6582-154B-CFB22287404F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_03_CTRL_scaleZ";
+	rename -uid "23707080-9441-5C11-CEFA-E5AC1C6EA464";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_02_CTRL_visibility";
+	rename -uid "2439D072-D541-199D-CE19-EAA1C2E813D2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_02_CTRL_translateX";
+	rename -uid "4B73682A-F140-6CF7-F7F5-5B9D1FF765DE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_02_CTRL_translateY";
+	rename -uid "9B57E415-8843-B75C-6C59-BD8DA1F15CF4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_02_CTRL_translateZ";
+	rename -uid "CFA9755F-4C46-E16F-C563-528A25B183BB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_02_CTRL_scaleX";
+	rename -uid "36EBED25-3046-4530-4742-DAB1D8B31CD6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_02_CTRL_scaleY";
+	rename -uid "2FA95AFE-A340-75D8-7F1B-379F0F789DE3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_02_CTRL_scaleZ";
+	rename -uid "3B7EB8BD-8644-B2C4-E4C0-5A97DC89BB0B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_13_CTRL_visibility";
+	rename -uid "37BB2CB0-7040-5676-3987-2B8E5A494455";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_13_CTRL_translateX";
+	rename -uid "026B3BAE-3146-F951-6F7B-DAA832FCCCD7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_13_CTRL_translateY";
+	rename -uid "5F819D66-5447-425C-9477-2E8981F075D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_13_CTRL_translateZ";
+	rename -uid "96D30862-D74E-869B-EF66-B394A2A2761D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_13_CTRL_scaleX";
+	rename -uid "E824897B-714D-E474-98CC-55B57274A803";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_13_CTRL_scaleY";
+	rename -uid "7FD269B5-A048-C6F4-1228-72B457625AFC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_13_CTRL_scaleZ";
+	rename -uid "999DB35E-234A-FEFA-4439-59909652265C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_12_CTRL_visibility";
+	rename -uid "8BB63C31-6C4F-BD67-7056-A8B7DB389B69";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_12_CTRL_translateX";
+	rename -uid "BE19C17C-304C-9E49-3619-6A9E69C920F5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_12_CTRL_translateY";
+	rename -uid "E4102D8A-384B-4C08-B089-B0A62C0D66A5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_12_CTRL_translateZ";
+	rename -uid "38D0CEFE-9A46-0389-D5EC-7B93F0F97A8C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_12_CTRL_scaleX";
+	rename -uid "DF3233FC-964A-232B-5EAF-3CB15178E591";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_12_CTRL_scaleY";
+	rename -uid "1366ACCA-D84D-2FA3-E1E1-719A25EF0B04";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_12_CTRL_scaleZ";
+	rename -uid "EF8CC17E-AD4F-6DC7-D34D-FBB96BBEA8DB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_11_CTRL_visibility";
+	rename -uid "8FEF6F40-DF4D-C4FB-E3D4-8BA00DA62CA2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_11_CTRL_translateX";
+	rename -uid "546899D0-8746-DB59-5F55-90AF1152649D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_11_CTRL_translateY";
+	rename -uid "62E802E1-BF46-8ADE-1B80-44968D9D5AF5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_11_CTRL_translateZ";
+	rename -uid "E4B6A500-1943-851F-548F-45999E7FEC57";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_11_CTRL_scaleX";
+	rename -uid "2C3F2E44-6A4A-12BF-ADB4-6D8E58FCC066";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_11_CTRL_scaleY";
+	rename -uid "26EAA250-0B4D-A5DB-4BF9-EA88A675880C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_11_CTRL_scaleZ";
+	rename -uid "2A13E1AD-5A45-1D87-639E-608C3B265FB8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_10_CTRL_visibility";
+	rename -uid "BD80D3D8-4E46-C5FE-4A15-878EF80B01B0";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_10_CTRL_translateX";
+	rename -uid "2247649F-1842-75A3-79BF-E9A7109BF4FA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_10_CTRL_translateY";
+	rename -uid "5599BE79-0447-4BA6-6086-06B3F0F1CA30";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_10_CTRL_translateZ";
+	rename -uid "1B6C310E-BC49-90F6-2793-D5B9B680ABF4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_10_CTRL_scaleX";
+	rename -uid "FBBCACAB-5D41-E11B-734B-F4B52356E304";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_10_CTRL_scaleY";
+	rename -uid "39303D6F-4B4E-672E-0A03-CCAAB2C065AA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_10_CTRL_scaleZ";
+	rename -uid "34F3B6FA-CA45-5BC1-C06E-2B871770B511";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_09_CTRL_visibility";
+	rename -uid "40539531-B745-A72E-E69C-3BA5BC0275A0";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_09_CTRL_translateX";
+	rename -uid "C268541B-A047-81A1-78DE-938E191E7C04";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_09_CTRL_translateY";
+	rename -uid "A94909A0-5948-E199-E444-1885DA78EA3C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_09_CTRL_translateZ";
+	rename -uid "948536BF-9A4D-AFB5-36FB-71A0A0186D4D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_09_CTRL_scaleX";
+	rename -uid "BC45B078-7A42-EFF7-F2F1-468A5A9D7EC4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_09_CTRL_scaleY";
+	rename -uid "B8ECB6CF-964A-6ABF-AF53-BE913C872C71";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_09_CTRL_scaleZ";
+	rename -uid "1A2CBA5F-F94B-1DB9-B6BE-2186F5AC7ED4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_08_CTRL_visibility";
+	rename -uid "5A383BDB-3040-3489-27D7-8E8E0A2D0D1D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_08_CTRL_translateX";
+	rename -uid "EF730765-8C4C-94AD-5A67-90A2B9F70544";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_08_CTRL_translateY";
+	rename -uid "3F2C7F4D-C34F-8E6A-D3AF-B3B2D0F038FA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_08_CTRL_translateZ";
+	rename -uid "FE64CF3E-1640-705B-3AB6-DE891841B909";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_08_CTRL_scaleX";
+	rename -uid "27878DDE-2C4F-1FA3-861D-29B56C515995";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_08_CTRL_scaleY";
+	rename -uid "CD1FA1CE-7B48-6E6B-F696-568553F9B97D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_08_CTRL_scaleZ";
+	rename -uid "614C9249-E545-699E-D219-34BD59B5F790";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_07_CTRL_visibility";
+	rename -uid "947D29FD-7143-2D05-4B0C-718651B4D359";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_07_CTRL_translateX";
+	rename -uid "B94F4196-7F41-4C37-C4DA-8F8826188DB8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_07_CTRL_translateY";
+	rename -uid "27BD84D1-BE43-41B0-8B86-43A960966138";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_07_CTRL_translateZ";
+	rename -uid "F3F4A49E-A54F-204D-8724-0383AE4D0807";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_07_CTRL_scaleX";
+	rename -uid "74952789-C442-3D2E-FFB2-99BE55783116";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_07_CTRL_scaleY";
+	rename -uid "F4BB27AF-C849-FA9A-B85E-2BBD54EAACEC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_07_CTRL_scaleZ";
+	rename -uid "42126D1C-F043-AAFC-77CC-21B9EA477932";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_06_CTRL_visibility";
+	rename -uid "5DF3A783-7547-4CC0-DB50-FCA8153E6D5B";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_06_CTRL_translateX";
+	rename -uid "939AA6C0-8C42-93AA-8ED8-40B32BC41172";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_06_CTRL_translateY";
+	rename -uid "C7F49610-5141-556D-E04E-238E0D8B0E23";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTL -n "Antennae_06_CTRL_translateZ";
+	rename -uid "D51968D8-0D4B-FE80-8C49-488089DAD9F8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 0 12 0 34 0 49 0 73 0 92 0 110 0;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_06_CTRL_scaleX";
+	rename -uid "17E0BC33-E84B-DFA9-0687-719573CA2696";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_06_CTRL_scaleY";
+	rename -uid "9740F124-0543-C976-69CA-9DB4BB801FFF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
+createNode animCurveTU -n "Antennae_06_CTRL_scaleZ";
+	rename -uid "27110BB7-C74A-E4A3-D2AC-1283A2091A7E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  1 1 12 1 34 1 49 1 73 1 92 1 110 1;
+	setAttr -s 7 ".kot[0:6]"  5 5 5 5 5 5 5;
 select -ne :time1;
-	setAttr ".o" 17;
-	setAttr ".unw" 17;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -8059,22 +10226,244 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 3 ".sol";
-connectAttr "Transform_TRANS_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[1]";
-connectAttr "Transform_TRANS_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[2]";
+connectAttr "Transform_TRANS_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[1]";
+connectAttr "Transform_TRANS_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[2]";
 connectAttr "Transform_TRANS_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[3]";
-connectAttr "Transform_TRANS_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[4]";
-connectAttr "Transform_TRANS_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[5]";
-connectAttr "Transform_TRANS_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[6]";
-connectAttr "Transform_TRANS_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[7]";
-connectAttr "Axolotadile_CTRL_scaleX.o" "Axolotadile_Rig_DONERN.phl[1]";
-connectAttr "Axolotadile_CTRL_scaleY.o" "Axolotadile_Rig_DONERN.phl[2]";
-connectAttr "Axolotadile_CTRL_scaleZ.o" "Axolotadile_Rig_DONERN.phl[3]";
-connectAttr "Axolotadile_CTRL_translateY.o" "Axolotadile_Rig_DONERN.phl[4]";
-connectAttr "Axolotadile_CTRL_translateX.o" "Axolotadile_Rig_DONERN.phl[5]";
-connectAttr "Axolotadile_CTRL_translateZ.o" "Axolotadile_Rig_DONERN.phl[6]";
-connectAttr "Axolotadile_CTRL_rotateY.o" "Axolotadile_Rig_DONERN.phl[7]";
-connectAttr "Axolotadile_CTRL_rotateX.o" "Axolotadile_Rig_DONERN.phl[8]";
-connectAttr "Axolotadile_CTRL_rotateZ.o" "Axolotadile_Rig_DONERN.phl[9]";
+connectAttr "Transform_TRANS_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[4]";
+connectAttr "Transform_TRANS_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[5]";
+connectAttr "Transform_TRANS_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[6]";
+connectAttr "Transform_TRANS_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[7]";
+connectAttr "Spine_01_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[8]";
+connectAttr "Spine_01_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[9]";
+connectAttr "Spine_01_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[10]";
+connectAttr "Spine_01_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[11]";
+connectAttr "Spine_01_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[12]";
+connectAttr "Spine_01_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[13]";
+connectAttr "Spine_01_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[14]";
+connectAttr "Spine_01_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[15]";
+connectAttr "Spine_01_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[16]";
+connectAttr "Spine_01_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[17]";
+connectAttr "Spine_02_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[18]";
+connectAttr "Spine_02_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[19]";
+connectAttr "Spine_02_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[20]";
+connectAttr "Spine_02_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[21]";
+connectAttr "Spine_02_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[22]";
+connectAttr "Spine_02_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[23]";
+connectAttr "Spine_02_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[24]";
+connectAttr "Spine_02_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[25]";
+connectAttr "Spine_02_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[26]";
+connectAttr "Spine_02_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[27]";
+connectAttr "Spine_03_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[28]";
+connectAttr "Spine_03_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[29]";
+connectAttr "Spine_03_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[30]";
+connectAttr "Spine_03_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[31]";
+connectAttr "Spine_03_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[32]";
+connectAttr "Spine_03_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[33]";
+connectAttr "Spine_03_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[34]";
+connectAttr "Spine_03_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[35]";
+connectAttr "Spine_03_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[36]";
+connectAttr "Spine_03_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[37]";
+connectAttr "Head_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[38]";
+connectAttr "Head_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[39]";
+connectAttr "Head_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[40]";
+connectAttr "Head_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[41]";
+connectAttr "Head_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[42]";
+connectAttr "Head_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[43]";
+connectAttr "Head_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[44]";
+connectAttr "Head_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[45]";
+connectAttr "Head_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[46]";
+connectAttr "Head_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[47]";
+connectAttr "Antennae_02_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[48]";
+connectAttr "Antennae_02_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[49]";
+connectAttr "Antennae_02_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[50]";
+connectAttr "Antennae_02_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[51]";
+connectAttr "Antennae_02_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[52]";
+connectAttr "Antennae_02_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[53]";
+connectAttr "Antennae_02_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[54]";
+connectAttr "Antennae_02_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[55]";
+connectAttr "Antennae_02_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[56]";
+connectAttr "Antennae_02_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[57]";
+connectAttr "Antennae_03_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[58]";
+connectAttr "Antennae_03_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[59]";
+connectAttr "Antennae_03_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[60]";
+connectAttr "Antennae_03_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[61]";
+connectAttr "Antennae_03_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[62]";
+connectAttr "Antennae_03_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[63]";
+connectAttr "Antennae_03_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[64]";
+connectAttr "Antennae_03_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[65]";
+connectAttr "Antennae_03_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[66]";
+connectAttr "Antennae_03_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[67]";
+connectAttr "Antennae_04_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[68]";
+connectAttr "Antennae_04_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[69]";
+connectAttr "Antennae_04_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[70]";
+connectAttr "Antennae_04_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[71]";
+connectAttr "Antennae_04_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[72]";
+connectAttr "Antennae_04_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[73]";
+connectAttr "Antennae_04_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[74]";
+connectAttr "Antennae_04_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[75]";
+connectAttr "Antennae_04_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[76]";
+connectAttr "Antennae_04_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[77]";
+connectAttr "Antennae_05_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[78]";
+connectAttr "Antennae_05_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[79]";
+connectAttr "Antennae_05_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[80]";
+connectAttr "Antennae_05_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[81]";
+connectAttr "Antennae_05_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[82]";
+connectAttr "Antennae_05_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[83]";
+connectAttr "Antennae_05_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[84]";
+connectAttr "Antennae_05_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[85]";
+connectAttr "Antennae_05_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[86]";
+connectAttr "Antennae_05_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[87]";
+connectAttr "Antennae_06_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[88]";
+connectAttr "Antennae_06_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[89]";
+connectAttr "Antennae_06_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[90]";
+connectAttr "Antennae_06_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[91]";
+connectAttr "Antennae_06_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[92]";
+connectAttr "Antennae_06_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[93]";
+connectAttr "Antennae_06_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[94]";
+connectAttr "Antennae_06_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[95]";
+connectAttr "Antennae_06_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[96]";
+connectAttr "Antennae_06_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[97]";
+connectAttr "Antennae_07_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[98]";
+connectAttr "Antennae_07_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[99]";
+connectAttr "Antennae_07_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[100]";
+connectAttr "Antennae_07_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[101]";
+connectAttr "Antennae_07_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[102]";
+connectAttr "Antennae_07_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[103]";
+connectAttr "Antennae_07_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[104]";
+connectAttr "Antennae_07_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[105]";
+connectAttr "Antennae_07_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[106]";
+connectAttr "Antennae_07_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[107]";
+connectAttr "Antennae_08_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[108]";
+connectAttr "Antennae_08_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[109]";
+connectAttr "Antennae_08_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[110]";
+connectAttr "Antennae_08_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[111]";
+connectAttr "Antennae_08_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[112]";
+connectAttr "Antennae_08_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[113]";
+connectAttr "Antennae_08_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[114]";
+connectAttr "Antennae_08_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[115]";
+connectAttr "Antennae_08_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[116]";
+connectAttr "Antennae_08_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[117]";
+connectAttr "Antennae_09_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[118]";
+connectAttr "Antennae_09_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[119]";
+connectAttr "Antennae_09_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[120]";
+connectAttr "Antennae_09_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[121]";
+connectAttr "Antennae_09_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[122]";
+connectAttr "Antennae_09_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[123]";
+connectAttr "Antennae_09_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[124]";
+connectAttr "Antennae_09_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[125]";
+connectAttr "Antennae_09_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[126]";
+connectAttr "Antennae_09_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[127]";
+connectAttr "Antennae_10_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[128]";
+connectAttr "Antennae_10_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[129]";
+connectAttr "Antennae_10_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[130]";
+connectAttr "Antennae_10_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[131]";
+connectAttr "Antennae_10_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[132]";
+connectAttr "Antennae_10_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[133]";
+connectAttr "Antennae_10_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[134]";
+connectAttr "Antennae_10_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[135]";
+connectAttr "Antennae_10_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[136]";
+connectAttr "Antennae_10_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[137]";
+connectAttr "Antennae_11_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[138]";
+connectAttr "Antennae_11_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[139]";
+connectAttr "Antennae_11_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[140]";
+connectAttr "Antennae_11_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[141]";
+connectAttr "Antennae_11_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[142]";
+connectAttr "Antennae_11_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[143]";
+connectAttr "Antennae_11_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[144]";
+connectAttr "Antennae_11_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[145]";
+connectAttr "Antennae_11_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[146]";
+connectAttr "Antennae_11_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[147]";
+connectAttr "Antennae_12_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[148]";
+connectAttr "Antennae_12_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[149]";
+connectAttr "Antennae_12_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[150]";
+connectAttr "Antennae_12_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[151]";
+connectAttr "Antennae_12_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[152]";
+connectAttr "Antennae_12_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[153]";
+connectAttr "Antennae_12_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[154]";
+connectAttr "Antennae_12_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[155]";
+connectAttr "Antennae_12_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[156]";
+connectAttr "Antennae_12_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[157]";
+connectAttr "Antennae_13_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[158]";
+connectAttr "Antennae_13_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[159]";
+connectAttr "Antennae_13_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[160]";
+connectAttr "Antennae_13_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[161]";
+connectAttr "Antennae_13_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[162]";
+connectAttr "Antennae_13_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[163]";
+connectAttr "Antennae_13_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[164]";
+connectAttr "Antennae_13_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[165]";
+connectAttr "Antennae_13_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[166]";
+connectAttr "Antennae_13_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[167]";
+connectAttr "Antennae_14_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[168]";
+connectAttr "Antennae_14_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[169]";
+connectAttr "Antennae_14_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[170]";
+connectAttr "Antennae_14_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[171]";
+connectAttr "Antennae_14_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[172]";
+connectAttr "Antennae_14_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[173]";
+connectAttr "Antennae_14_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[174]";
+connectAttr "Antennae_14_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[175]";
+connectAttr "Antennae_14_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[176]";
+connectAttr "Antennae_14_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[177]";
+connectAttr "Hips_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[178]";
+connectAttr "Hips_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[179]";
+connectAttr "Hips_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[180]";
+connectAttr "Hips_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[181]";
+connectAttr "Hips_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[182]";
+connectAttr "Hips_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[183]";
+connectAttr "Hips_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[184]";
+connectAttr "Hips_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[185]";
+connectAttr "Hips_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[186]";
+connectAttr "Hips_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[187]";
+connectAttr "Shoulder_Front_L_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[188]"
+		;
+connectAttr "Shoulder_Front_L_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[189]"
+		;
+connectAttr "Shoulder_Front_L_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[190]"
+		;
+connectAttr "Shoulder_Front_L_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[191]";
+connectAttr "Shoulder_Front_L_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[192]";
+connectAttr "Shoulder_Front_L_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[193]";
+connectAttr "Shoulder_Front_L_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[194]";
+connectAttr "Shoulder_Front_L_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[195]";
+connectAttr "Shoulder_Front_L_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[196]";
+connectAttr "Shoulder_Front_L_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[197]"
+		;
+connectAttr "Shoulder_Front_R_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[198]"
+		;
+connectAttr "Shoulder_Front_R_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[199]"
+		;
+connectAttr "Shoulder_Front_R_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[200]"
+		;
+connectAttr "Shoulder_Front_R_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[201]";
+connectAttr "Shoulder_Front_R_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[202]";
+connectAttr "Shoulder_Front_R_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[203]";
+connectAttr "Shoulder_Front_R_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[204]";
+connectAttr "Shoulder_Front_R_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[205]";
+connectAttr "Shoulder_Front_R_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[206]";
+connectAttr "Shoulder_Front_R_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[207]"
+		;
+connectAttr "Shoulder_Back_R_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[208]"
+		;
+connectAttr "Shoulder_Back_R_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[209]"
+		;
+connectAttr "Shoulder_Back_R_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[210]"
+		;
+connectAttr "Shoulder_Back_R_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[211]";
+connectAttr "Shoulder_Back_R_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[212]";
+connectAttr "Shoulder_Back_R_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[213]";
+connectAttr "Shoulder_Back_R_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[214]";
+connectAttr "Shoulder_Back_R_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[215]";
+connectAttr "Shoulder_Back_R_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[216]";
+connectAttr "Shoulder_Back_R_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[217]"
+		;
+connectAttr "Axolotadile_CTRL_translateX.o" "Axolotadile_Rig_DONERN.phl[1]";
+connectAttr "Axolotadile_CTRL_translateY.o" "Axolotadile_Rig_DONERN.phl[2]";
+connectAttr "Axolotadile_CTRL_translateZ.o" "Axolotadile_Rig_DONERN.phl[3]";
+connectAttr "Axolotadile_CTRL_rotateX.o" "Axolotadile_Rig_DONERN.phl[4]";
+connectAttr "Axolotadile_CTRL_rotateY.o" "Axolotadile_Rig_DONERN.phl[5]";
+connectAttr "Axolotadile_CTRL_rotateZ.o" "Axolotadile_Rig_DONERN.phl[6]";
+connectAttr "Axolotadile_CTRL_scaleX.o" "Axolotadile_Rig_DONERN.phl[7]";
+connectAttr "Axolotadile_CTRL_scaleY.o" "Axolotadile_Rig_DONERN.phl[8]";
+connectAttr "Axolotadile_CTRL_scaleZ.o" "Axolotadile_Rig_DONERN.phl[9]";
 connectAttr "Axolotadile_CTRL_visibility.o" "Axolotadile_Rig_DONERN.phl[10]";
 connectAttr "mary_Rig_001_L_Thumb_Jnt_002_Ctrl_translateX.o" "Laila_Rig_003RN.phl[1]"
 		;
@@ -8826,15 +11215,15 @@ connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_scaleY.o" "Laila_Rig_003RN.phl[
 		;
 connectAttr "laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_scaleZ.o" "Laila_Rig_003RN.phl[396]"
 		;
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateX.o" "Laila_Rig_003RN.phl[397]"
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[397]";
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[398]";
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[399]";
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateX.o" "Laila_Rig_003RN.phl[400]"
 		;
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateY.o" "Laila_Rig_003RN.phl[398]"
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateY.o" "Laila_Rig_003RN.phl[401]"
 		;
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[399]"
+connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_translateZ.o" "Laila_Rig_003RN.phl[402]"
 		;
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateX.o" "Laila_Rig_003RN.phl[400]";
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateY.o" "Laila_Rig_003RN.phl[401]";
-connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_rotateZ.o" "Laila_Rig_003RN.phl[402]";
 connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_visibility.o" "Laila_Rig_003RN.phl[403]"
 		;
 connectAttr "laila_Rig_001_R_ToeFlap_Ctrl_scaleX.o" "Laila_Rig_003RN.phl[404]";
