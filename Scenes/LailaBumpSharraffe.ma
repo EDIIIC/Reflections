@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: LailaBumpSharraffe.ma
-//Last modified: Mon, Nov 30, 2020 01:02:06 AM
+//Last modified: Mon, Nov 30, 2020 01:03:55 AM
 //Codeset: UTF-8
 file -rdi 1 -ns "Sharraffe_Rigged_3_Skinned" -rfn "Sharraffe_Rigged_3_SkinnedRN"
 		 -op "v=0;" -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/Reflections/Models/Sharaffe/Sharraffe_Rigged_3_Skinned.ma";
@@ -8469,7 +8469,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
-		"translate" " -type \"double3\" -3.01652817507801529 -0.089378833778086572 2.13754193561874661"
+		"translate" " -type \"double3\" -3.04163860091055183 -0.089378833778086586 2.99322922170074524"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl" 
 		"translateX" " -av"
@@ -8496,7 +8496,8 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" -2.1304948009960411e-05 8.2789506805792479e-05 -0.0024828464724254932"
+		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"translateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
@@ -8504,7 +8505,8 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0.080863492352603913 0.044440084629658635 -0.15153232731826671"
+		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl" 
@@ -8530,7 +8532,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl" 
-		"rotate" " -type \"double3\" -6.90663451601145617 0 0"
+		"rotate" " -type \"double3\" -0.11072198458481096 0 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_hip_jnt_Ctrl" 
@@ -8604,7 +8606,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
-		"rotate" " -type \"double3\" -4.26432457497768347 1.7513762109514337 -1.23262096935847199"
+		"rotate" " -type \"double3\" -6.09337518827849944 4.21355767825304817 -1.49550242953223012"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl" 
 		"rotateX" " -av"
@@ -8631,7 +8633,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" 8.89736185504106736 -1.8760712279072389 1.88120539306165191"
+		"rotate" " -type \"double3\" 7.07854271434575733 0.58820103847683747 2.18153388520412239"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl" 
 		"rotateX" " -av"
@@ -8658,7 +8660,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
-		"rotate" " -type \"double3\" -1.14639048972862145 -1.45480449131601675 -2.13794505916572497"
+		"rotate" " -type \"double3\" 2.88890426115861043 1.01802495165427009 -2.26586608210358254"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl" 
 		"rotateX" " -av"
@@ -8685,7 +8687,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -0.25267740486932233 -1.92644940239074036 2.34572204667138351"
+		"rotate" " -type \"double3\" 3.7832043991492017 0.54807455446823661 2.25639094093975956"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -8704,7 +8706,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" 0 0.025236436105790037 0.0068892640786310244"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl" 
 		"translateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Clavicle_Jnt_001_Ctrl" 
@@ -8732,7 +8734,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl" 
 		"visibility" " -av 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" 0 0.025236436105790037 0.0068892640786310244"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl" 
 		"translateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl" 
@@ -8772,7 +8774,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_002_Ctrl|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Spine_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Clavicle_Jnt_001_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_001_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:R_Pivot_Grp|Laila_Rig_003:R_Pivot_Grp_Ctrl|Laila_Rig_003:R_Pivot_Grp_Ctrl1" 
-		"translate" " -type \"double3\" 0.3935391498298903 0.085295722872975724 -0.38949733690744032"
+		"translate" " -type \"double3\" 0.3935391498298903 0.085295722872975724 -0.38612021172174577"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_COG_Jnt_Ctrl|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl_grp|Laila_Rig_003:laila_rig_upper_body_jnt_ctrl|Laila_Rig_003:R_Pivot_Grp|Laila_Rig_003:R_Pivot_Grp_Ctrl|Laila_Rig_003:R_Pivot_Grp_Ctrl1" 
 		"translateX" " -av"
@@ -8843,7 +8845,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_L_Arm_Switch_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Arm_Switch_Ctrl" 
 		"Switch" " -k 1 1"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" -0.25467001055328098 -0.049626757425143504 -0.15838224066273957"
+		"translate" " -type \"double3\" -0.21992207666020644 0.011334750028523102 -0.13891847649111194"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -8852,7 +8854,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 3.06759057823582104 3.50360568228005542 0.31887814173740597"
+		"rotate" " -type \"double3\" -0.50077713725958506 8.41759841686073429 -0.31735457016763269"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -8903,7 +8905,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Leg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_L_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_L_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_L_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_L_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_L_Ball_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_L_Ball_Ctrl|Laila_Rig_003:ikHandle1" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" -0.20047576992848806 -0.16087892317895416 0.10793820927408382"
+		"translate" " -type \"double3\" -0.18146833310545121 -0.23080605893968301 0.052416115952466508"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -8912,7 +8914,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" 3.13083847998304465 10.36419562207898615 -1.79751818822608"
+		"rotate" " -type \"double3\" 2.82294088875355875 10.36509848353302665 -1.79786108638787434"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -8963,7 +8965,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Reg_Jnt_003_Ctrl|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Heel_Ctrl|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_OuterRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_InnerRoll_Ctrl|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Toe_Ctrl|Laila_Rig_003:laila_Rig_001_R_Ball_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_R_Ball_Ctrl|Laila_Rig_003:ikHandle2" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" -0.5896691610663426 -0.0080173846953187494 0.56541215878758122"
+		"translate" " -type \"double3\" -0.60954355428929996 -0.16821754544424952 0.51889723607152416"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -8972,7 +8974,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -82.73219681079764598 -19.91981360854382999 56.18415181928335755"
+		"rotate" " -type \"double3\" -79.95311080440970386 -31.9542297416804324 52.94500596592619956"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -8991,7 +8993,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_L_Arm_Jnt_003_Ctrl|Laila_Rig_003:ikHandle3" 
 		"visibility" " 0"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
-		"translate" " -type \"double3\" 0.46401465159854283 -0.056323124935841622 -0.53573645184170304"
+		"translate" " -type \"double3\" 0.47436364469917169 0.10448510751053 -0.48824664268548457"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"translateX" " -av"
@@ -9000,7 +9002,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
-		"rotate" " -type \"double3\" -60.21164418880992031 -14.432018280146508 62.90154840561096705"
+		"rotate" " -type \"double3\" -56.75589606334321502 -25.50295397583124668 57.14227828422522037"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_IK_R_Arm_Jnt_003_Ctrl" 
 		"rotateX" " -av"
@@ -9249,7 +9251,8 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
-		"rotate" " -type \"double3\" 0 -2.48945872058738304 0"
+		"rotate" " -type \"double3\" -1.3691750464026613 -4.21972982399028851 -0.36851355323231222"
+		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
 		"rotateX" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl" 
@@ -9279,7 +9282,7 @@ createNode reference -n "Laila_Rig_003RN";
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"translateZ" " -av"
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
-		"rotate" " -type \"double3\" -0.24219091237038634 -10.51112944384284553 -1.10927316118022778"
+		"rotate" " -type \"double3\" -6.98479220362834585 -5.02309365641599914 -0.16450522936777345"
 		
 		2 "|Laila_Rig_003:Laila_Rig|Laila_Rig_003:Controls|Laila_Rig_003:laila_Rig_001_Translation_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Translation_Ctrl|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl_Grp|Laila_Rig_003:laila_Rig_001_Neck_Jnt_001_ctrl|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl_Grp|Laila_Rig_003:laila_Rig_001_Head_Jnt_001_Ctrl" 
 		"rotateX" " -av"
@@ -17369,8 +17372,8 @@ createNode animCurveTU -n "Lower_Jaw_visibility";
 	setAttr ".ktv[0]"  336 1;
 	setAttr ".kot[0]"  5;
 select -ne :time1;
-	setAttr ".o" 336;
-	setAttr ".unw" 336;
+	setAttr ".o" 373;
+	setAttr ".unw" 373;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
