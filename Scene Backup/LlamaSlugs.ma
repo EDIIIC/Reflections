@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: LlamaSlugs_HeadTurn.ma
-//Last modified: Mon, Feb 15, 2021 09:06:42 PM
+//Last modified: Wed, Feb 24, 2021 04:10:46 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "Laila_Rig_003" -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/Laila Rig 004.ma";
@@ -10,6 +10,8 @@ file -rdi 1 -ns "Kerfluffle_Rig_Done" -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;"
 		 -typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/Kerfluffle_Rig_Done.ma";
 file -rdi 1 -ns "LlamaSlugRig1" -rfn "LlamaSlugRigRN1" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/BabyLlamaSlugRig.ma";
+file -rdi 1 -ns "Other_World_Scene" -rfn "Other_World_SceneRN" -op "v=0;" -typ
+		 "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/References/Other World Scene/scenes/Other World Scene.ma";
 file -r -ns "Laila_Rig_003" -dr 1 -rfn "Laila_Rig_003RN" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/Laila Rig 004.ma";
 file -r -ns "LlamaSlugRig" -dr 1 -rfn "LlamaSlugRigRN" -op "v=0;" -typ "mayaAscii"
@@ -18,9 +20,12 @@ file -r -ns "Kerfluffle_Rig_Done" -dr 1 -rfn "Kerfluffle_Rig_DoneRN" -op "v=0;"
 		-typ "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/Kerfluffle_Rig_Done.ma";
 file -r -ns "LlamaSlugRig1" -dr 1 -rfn "LlamaSlugRigRN1" -op "v=0;" -typ "mayaAscii"
 		 "/Volumes/10810494/UVU Senior/Reflections Short/References/Characters/BabyLlamaSlugRig.ma";
+file -r -ns "Other_World_Scene" -dr 1 -rfn "Other_World_SceneRN" -op "v=0;" -typ
+		 "mayaAscii" "/Volumes/10810494/UVU Senior/Reflections Short/References/Other World Scene/scenes/Other World Scene.ma";
 requires maya "2019";
 requires -nodeType "RedshiftOptions" "redshift4maya" "3.0.36";
 requires "stereoCamera" "10.0";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "3.1.2";
 requires "stereoCamera" "10.0";
 currentUnit -l foot -a degree -t film;
 fileInfo "application" "maya";
@@ -29,10 +34,74 @@ fileInfo "version" "2019";
 fileInfo "cutIdentifier" "201812112215-434d8d9c04";
 fileInfo "osv" "Mac OS X 10.16";
 fileInfo "license" "student";
+createNode transform -n "persp_duplicates";
+	rename -uid "BC2D58DA-7846-8C18-A284-978E0BB20BF8";
+	setAttr ".v" no;
+createNode transform -s -n "persp3" -p "persp_duplicates";
+	rename -uid "764231B0-9A44-AF6F-079B-98B9B5458D6A";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 5.9161794049639624 2.9125229476778092 6.0243036574673603 ;
+	setAttr ".r" -type "double3" -14.138352729603927 43.000000000000895 1.0872149393727062e-15 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000004 1.0000000000000009 ;
+	setAttr ".rp" -type "double3" 8.4505164604014564e-16 -4.662353909187011e-16 0 ;
+	setAttr ".rpt" -type "double3" -1.4935088521332326e-16 1.4122863671217304e-17 -4.9303391192812222e-16 ;
+createNode camera -s -n "persp3Shape" -p "persp3";
+	rename -uid "AF9593F4-5C43-6687-55C1-86ABBD203B56";
+	setAttr -k off ".v" no;
+	setAttr ".fl" 34.999999999999986;
+	setAttr ".ncp" 0.0032808398950131233;
+	setAttr ".fcp" 328.08398950131232;
+	setAttr ".fd" 0.16404199475065617;
+	setAttr ".coi" 3.49673182294497;
+	setAttr ".ow" 0.32808398950131235;
+	setAttr ".imn" -type "string" "persp";
+	setAttr ".den" -type "string" "persp_depth";
+	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" 106.85442872590963 19.417677281072336 25.25082681251979 ;
+	setAttr ".hc" -type "string" "viewSet -p %camera";
+createNode transform -s -n "persp" -p "persp_duplicates";
+	rename -uid "7A8120AF-514E-2675-474B-29BC9DC5E910";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 2.4008257517559999 8.5187103982239627 16.353965183274877 ;
+	setAttr ".r" -type "double3" 1421.6616472524584 -30237.800000000414 -9.946564829277098e-17 ;
+createNode camera -s -n "perspShape" -p "persp";
+	rename -uid "F48B8D3C-DB4C-7B20-7CE6-338CE0B1B8D8";
+	setAttr -k off ".v" no;
+	setAttr ".fl" 34.999999999999986;
+	setAttr ".ncp" 0.0032808398950131233;
+	setAttr ".fcp" 328.08398950131232;
+	setAttr ".fd" 0.16404199475065617;
+	setAttr ".coi" 18.820364615540811;
+	setAttr ".ow" 0.32808398950131235;
+	setAttr ".imn" -type "string" "persp";
+	setAttr ".den" -type "string" "persp_depth";
+	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" 38.960510253906236 77.768569946289105 0.84016406536103383 ;
+	setAttr ".hc" -type "string" "viewSet -p %camera";
+createNode transform -s -n "persp2" -p "persp_duplicates";
+	rename -uid "6A28DE57-9C46-E2F0-9BC2-6ABF85DFFECD";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 2.4008257517560008 8.5187103982239645 16.353965183274877 ;
+	setAttr ".r" -type "double3" -18.338352747541727 2.1999999995872197 0 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
+createNode camera -s -n "persp2Shape" -p "persp2";
+	rename -uid "40E3A9AD-D94C-8992-A6F0-2EAB37FD478B";
+	setAttr -k off ".v" no;
+	setAttr ".fl" 34.999999999999986;
+	setAttr ".ncp" 0.0032808398950131233;
+	setAttr ".fcp" 328.08398950131232;
+	setAttr ".fd" 0.16404199475065617;
+	setAttr ".coi" 18.820364615540811;
+	setAttr ".ow" 0.32808398950131235;
+	setAttr ".imn" -type "string" "persp";
+	setAttr ".den" -type "string" "persp_depth";
+	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" 38.960510253906236 77.768569946289105 0.84016406536103383 ;
+	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "73076468-704F-C30A-B0F4-81A1AD69F14C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.5809332877446747 32.881672033211977 1.7230842986206099 ;
+	setAttr ".t" -type "double3" 27.340315097410116 32.88167203321197 30.638384125052465 ;
 	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
 createNode camera -s -n "topShape" -p "top";
 	rename -uid "DEF4171E-F147-4513-3F19-4599618D615C";
@@ -42,7 +111,7 @@ createNode camera -s -n "topShape" -p "top";
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
 	setAttr ".coi" 31.81195984125528;
-	setAttr ".ow" 11.686646633271735;
+	setAttr ".ow" 24.784333545801076;
 	setAttr ".imn" -type "string" "top";
 	setAttr ".den" -type "string" "top_depth";
 	setAttr ".man" -type "string" "top_mask";
@@ -90,215 +159,353 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -s -n "persp1";
 	rename -uid "C9559EAD-2646-687A-ADF8-80BADAAF9DEE";
-	setAttr ".t" -type "double3" 6.4023848412898881 3.0921016982809801 6.5456951540271655 ;
-	setAttr ".r" -type "double3" -14.138352729603929 43.000000000000895 0 ;
-	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000004 ;
+	setAttr ".t" -type "double3" 7.6423241448637178 2.721287270622919 7.1171636918015961 ;
+	setAttr ".r" -type "double3" -9.3383527296040771 46.200000000000841 -5.7440331739424809e-16 ;
+	setAttr ".s" -type "double3" 0.99999999999999956 0.99999999999999978 1.0000000000000007 ;
+	setAttr ".rp" -type "double3" -9.616104937698201e-16 5.8279423864837605e-16 -1.8649415636748048e-15 ;
+	setAttr ".rpt" -type "double3" -1.1004181596608653e-15 -3.1033714878682856e-16 1.2198401229177595e-15 ;
 createNode camera -s -n "persp1Shape" -p "persp1";
 	rename -uid "4A9D0805-8649-0625-9581-68847EDB7A8E";
 	setAttr -k off ".v" no;
+	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999986;
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 15.207286092075092;
+	setAttr ".coi" 17.567805022745326;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 11.102900678801374 15.828162523509929 127.96519827988452 ;
+	setAttr ".tp" -type "double3" -163.29364090415754 3.348940908908844 -128.06443160560798 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
-createNode transform -n "Camera_Position";
-	rename -uid "33BF8A41-9A4D-777A-CA20-AFA548ABDBE4";
+	setAttr ".dr" yes;
+createNode transform -n "Camera_Position_Values";
+	rename -uid "CB2AE1E6-A241-1AE4-BE7F-C899456F98AE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 6.4023848412898881 3.0921016982809801 6.5456951540271655 ;
-	setAttr ".r" -type "double3" -14.138352729603927 43.000000000000895 1.0872149393727062e-15 ;
-	setAttr ".s" -type "double3" 1 0.99999999999999989 1 ;
-createNode mesh -n "Camera_PositionShape" -p "Camera_Position";
-	rename -uid "66A30B5C-824E-8CAC-E9E7-31856C03F0D4";
+	setAttr ".t" -type "double3" 7.6423241448637178 2.7212872706229194 7.1171636918015961 ;
+	setAttr ".r" -type "double3" -9.3383527296040789 46.200000000000841 0 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999967 1 ;
+createNode mesh -n "Camera_Position_ValuesShape" -p "Camera_Position_Values";
+	rename -uid "F6E69551-6A4A-B557-32BE-ABA6E6681CC1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 121 ".uvst[0].uvsp[0:120]" -type "float2" 0 0 0.1 0 0.2 0 0.30000001
+		 0 0.40000001 0 0.5 0 0.60000002 0 0.69999999 0 0.80000001 0 0.90000004 0 1 0 0 0.1
+		 0.1 0.1 0.2 0.1 0.30000001 0.1 0.40000001 0.1 0.5 0.1 0.60000002 0.1 0.69999999 0.1
+		 0.80000001 0.1 0.90000004 0.1 1 0.1 0 0.2 0.1 0.2 0.2 0.2 0.30000001 0.2 0.40000001
+		 0.2 0.5 0.2 0.60000002 0.2 0.69999999 0.2 0.80000001 0.2 0.90000004 0.2 1 0.2 0 0.30000001
+		 0.1 0.30000001 0.2 0.30000001 0.30000001 0.30000001 0.40000001 0.30000001 0.5 0.30000001
+		 0.60000002 0.30000001 0.69999999 0.30000001 0.80000001 0.30000001 0.90000004 0.30000001
+		 1 0.30000001 0 0.40000001 0.1 0.40000001 0.2 0.40000001 0.30000001 0.40000001 0.40000001
+		 0.40000001 0.5 0.40000001 0.60000002 0.40000001 0.69999999 0.40000001 0.80000001
+		 0.40000001 0.90000004 0.40000001 1 0.40000001 0 0.5 0.1 0.5 0.2 0.5 0.30000001 0.5
+		 0.40000001 0.5 0.5 0.5 0.60000002 0.5 0.69999999 0.5 0.80000001 0.5 0.90000004 0.5
+		 1 0.5 0 0.60000002 0.1 0.60000002 0.2 0.60000002 0.30000001 0.60000002 0.40000001
+		 0.60000002 0.5 0.60000002 0.60000002 0.60000002 0.69999999 0.60000002 0.80000001
+		 0.60000002 0.90000004 0.60000002 1 0.60000002 0 0.69999999 0.1 0.69999999 0.2 0.69999999
+		 0.30000001 0.69999999 0.40000001 0.69999999 0.5 0.69999999 0.60000002 0.69999999
+		 0.69999999 0.69999999 0.80000001 0.69999999 0.90000004 0.69999999 1 0.69999999 0
+		 0.80000001 0.1 0.80000001 0.2 0.80000001 0.30000001 0.80000001 0.40000001 0.80000001
+		 0.5 0.80000001 0.60000002 0.80000001 0.69999999 0.80000001 0.80000001 0.80000001
+		 0.90000004 0.80000001 1 0.80000001 0 0.90000004 0.1 0.90000004 0.2 0.90000004 0.30000001
+		 0.90000004 0.40000001 0.90000004 0.5 0.90000004 0.60000002 0.90000004 0.69999999
+		 0.90000004 0.80000001 0.90000004 0.90000004 0.90000004 1 0.90000004 0 1 0.1 1 0.2
+		 1 0.30000001 1 0.40000001 1 0.5 1 0.60000002 1 0.69999999 1 0.80000001 1 0.90000004
+		 1 1 1;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -s -n "persp2" -p "Camera_Position";
-	rename -uid "6A28DE57-9C46-E2F0-9BC2-6ABF85DFFECD";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" -9.6157791273756086 4.1766568496219083 5.6351617039798452 ;
-	setAttr ".r" -type "double3" 0.066801363820960261 -39.318274868549565 -11.906041238552124 ;
-	setAttr ".s" -type "double3" 1 1.0000000000000002 1 ;
-createNode camera -s -n "persp2Shape" -p "persp2";
-	rename -uid "40E3A9AD-D94C-8992-A6F0-2EAB37FD478B";
-	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999986;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 18.820364615540811;
-	setAttr ".ow" 0.32808398950131235;
-	setAttr ".imn" -type "string" "persp";
-	setAttr ".den" -type "string" "persp_depth";
-	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 38.960510253906236 77.768569946289105 0.84016406536103383 ;
-	setAttr ".hc" -type "string" "viewSet -p %camera";
-createNode transform -s -n "persp" -p "Camera_Position";
-	rename -uid "764231B0-9A44-AF6F-079B-98B9B5458D6A";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 9.1972215786696852e-16 -6.0897444858765864e-16 -0.73518252608856083 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000007 1.0000000000000009 ;
-	setAttr ".rp" -type "double3" 8.4505164604014564e-16 -4.662353909187012e-16 0 ;
-	setAttr ".rpt" -type "double3" -1.1194465031611713e-15 5.5889481989381746e-16 2.4101565991060194e-15 ;
-createNode camera -s -n "perspShape" -p "|Camera_Position|persp";
-	rename -uid "AF9593F4-5C43-6687-55C1-86ABBD203B56";
-	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999986;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 3.49673182294497;
-	setAttr ".ow" 0.32808398950131235;
-	setAttr ".imn" -type "string" "persp";
-	setAttr ".den" -type "string" "persp_depth";
-	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 106.85442872590963 19.417677281072336 25.25082681251979 ;
-	setAttr ".hc" -type "string" "viewSet -p %camera";
-createNode transform -n "Laila_Placeholder";
-	rename -uid "A6225A4C-9747-7E3A-37FE-9D9351892343";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.6992280422450892 1.1684364533243088 2.0926453722230174 ;
-	setAttr ".r" -type "double3" 0 26.198484153205598 0 ;
-	setAttr ".s" -type "double3" 1.3127511653959827 2.2465453567332063 1.3127511653959827 ;
-createNode mesh -n "Laila_PlaceholderShape" -p "Laila_Placeholder";
-	rename -uid "EB2B0759-E94C-CA83-C7DD-ACAEE36B2465";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "Momma_Slug_Placeholder";
-	rename -uid "2F1ABE89-BE46-38B7-5405-B8BA659A109A";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.8607785452461894 1.3616316011396332 -0.7656787574438918 ;
-	setAttr ".r" -type "double3" 0 3.022461382737665 0 ;
-	setAttr ".s" -type "double3" 3.6176373992784461 2.7489506446469911 1.8401975757942257 ;
-createNode mesh -n "Momma_Slug_PlaceholderShape" -p "Momma_Slug_Placeholder";
-	rename -uid "9E078881-1F4A-ED59-B97A-3F9902108672";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
+	setAttr -s 121 ".vt[0:120]"  -0.5 -1.110223e-16 0.5 -0.39999998 -1.110223e-16 0.5
+		 -0.30000001 -1.110223e-16 0.5 -0.20000002 -1.110223e-16 0.5 -0.10000001 -1.110223e-16 0.5
+		 0 -1.110223e-16 0.5 0.099999949 -1.110223e-16 0.5 0.19999996 -1.110223e-16 0.5 0.29999998 -1.110223e-16 0.5
+		 0.39999998 -1.110223e-16 0.5 0.5 -1.110223e-16 0.5 -0.5 -8.8817837e-17 0.39999998
+		 -0.39999998 -8.8817837e-17 0.39999998 -0.30000001 -8.8817837e-17 0.39999998 -0.20000002 -8.8817837e-17 0.39999998
+		 -0.10000001 -8.8817837e-17 0.39999998 0 -8.8817837e-17 0.39999998 0.099999949 -8.8817837e-17 0.39999998
+		 0.19999996 -8.8817837e-17 0.39999998 0.29999998 -8.8817837e-17 0.39999998 0.39999998 -8.8817837e-17 0.39999998
+		 0.5 -8.8817837e-17 0.39999998 -0.5 -6.6613384e-17 0.30000001 -0.39999998 -6.6613384e-17 0.30000001
+		 -0.30000001 -6.6613384e-17 0.30000001 -0.20000002 -6.6613384e-17 0.30000001 -0.10000001 -6.6613384e-17 0.30000001
+		 0 -6.6613384e-17 0.30000001 0.099999949 -6.6613384e-17 0.30000001 0.19999996 -6.6613384e-17 0.30000001
+		 0.29999998 -6.6613384e-17 0.30000001 0.39999998 -6.6613384e-17 0.30000001 0.5 -6.6613384e-17 0.30000001
+		 -0.5 -4.4408925e-17 0.20000002 -0.39999998 -4.4408925e-17 0.20000002 -0.30000001 -4.4408925e-17 0.20000002
+		 -0.20000002 -4.4408925e-17 0.20000002 -0.10000001 -4.4408925e-17 0.20000002 0 -4.4408925e-17 0.20000002
+		 0.099999949 -4.4408925e-17 0.20000002 0.19999996 -4.4408925e-17 0.20000002 0.29999998 -4.4408925e-17 0.20000002
+		 0.39999998 -4.4408925e-17 0.20000002 0.5 -4.4408925e-17 0.20000002 -0.5 -2.2204462e-17 0.10000001
+		 -0.39999998 -2.2204462e-17 0.10000001 -0.30000001 -2.2204462e-17 0.10000001 -0.20000002 -2.2204462e-17 0.10000001
+		 -0.10000001 -2.2204462e-17 0.10000001 0 -2.2204462e-17 0.10000001 0.099999949 -2.2204462e-17 0.10000001
+		 0.19999996 -2.2204462e-17 0.10000001 0.29999998 -2.2204462e-17 0.10000001 0.39999998 -2.2204462e-17 0.10000001
+		 0.5 -2.2204462e-17 0.10000001 -0.5 0 0 -0.39999998 0 0 -0.30000001 0 0 -0.20000002 0 0
+		 -0.10000001 0 0 0 0 0 0.099999949 0 0 0.19999996 0 0 0.29999998 0 0 0.39999998 0 0
+		 0.5 0 0 -0.5 2.2204449e-17 -0.099999949 -0.39999998 2.2204449e-17 -0.099999949 -0.30000001 2.2204449e-17 -0.099999949
+		 -0.20000002 2.2204449e-17 -0.099999949 -0.10000001 2.2204449e-17 -0.099999949 0 2.2204449e-17 -0.099999949
+		 0.099999949 2.2204449e-17 -0.099999949 0.19999996 2.2204449e-17 -0.099999949 0.29999998 2.2204449e-17 -0.099999949
+		 0.39999998 2.2204449e-17 -0.099999949 0.5 2.2204449e-17 -0.099999949 -0.5 4.4408912e-17 -0.19999996
+		 -0.39999998 4.4408912e-17 -0.19999996 -0.30000001 4.4408912e-17 -0.19999996 -0.20000002 4.4408912e-17 -0.19999996
+		 -0.10000001 4.4408912e-17 -0.19999996 0 4.4408912e-17 -0.19999996 0.099999949 4.4408912e-17 -0.19999996
+		 0.19999996 4.4408912e-17 -0.19999996 0.29999998 4.4408912e-17 -0.19999996 0.39999998 4.4408912e-17 -0.19999996
+		 0.5 4.4408912e-17 -0.19999996 -0.5 6.6613378e-17 -0.29999998 -0.39999998 6.6613378e-17 -0.29999998
+		 -0.30000001 6.6613378e-17 -0.29999998 -0.20000002 6.6613378e-17 -0.29999998 -0.10000001 6.6613378e-17 -0.29999998
+		 0 6.6613378e-17 -0.29999998 0.099999949 6.6613378e-17 -0.29999998 0.19999996 6.6613378e-17 -0.29999998
+		 0.29999998 6.6613378e-17 -0.29999998 0.39999998 6.6613378e-17 -0.29999998 0.5 6.6613378e-17 -0.29999998
+		 -0.5 8.8817837e-17 -0.39999998 -0.39999998 8.8817837e-17 -0.39999998 -0.30000001 8.8817837e-17 -0.39999998
+		 -0.20000002 8.8817837e-17 -0.39999998 -0.10000001 8.8817837e-17 -0.39999998 0 8.8817837e-17 -0.39999998
+		 0.099999949 8.8817837e-17 -0.39999998 0.19999996 8.8817837e-17 -0.39999998 0.29999998 8.8817837e-17 -0.39999998
+		 0.39999998 8.8817837e-17 -0.39999998 0.5 8.8817837e-17 -0.39999998 -0.5 1.110223e-16 -0.5
+		 -0.39999998 1.110223e-16 -0.5 -0.30000001 1.110223e-16 -0.5 -0.20000002 1.110223e-16 -0.5
+		 -0.10000001 1.110223e-16 -0.5 0 1.110223e-16 -0.5 0.099999949 1.110223e-16 -0.5 0.19999996 1.110223e-16 -0.5
+		 0.29999998 1.110223e-16 -0.5 0.39999998 1.110223e-16 -0.5 0.5 1.110223e-16 -0.5;
+	setAttr -s 220 ".ed";
+	setAttr ".ed[0:165]"  0 1 0 0 11 0 1 2 0 1 12 1 2 3 0 2 13 1 3 4 0 3 14 1
+		 4 5 0 4 15 1 5 6 0 5 16 1 6 7 0 6 17 1 7 8 0 7 18 1 8 9 0 8 19 1 9 10 0 9 20 1 10 21 0
+		 11 12 1 11 22 0 12 13 1 12 23 1 13 14 1 13 24 1 14 15 1 14 25 1 15 16 1 15 26 1 16 17 1
+		 16 27 1 17 18 1 17 28 1 18 19 1 18 29 1 19 20 1 19 30 1 20 21 1 20 31 1 21 32 0 22 23 1
+		 22 33 0 23 24 1 23 34 1 24 25 1 24 35 1 25 26 1 25 36 1 26 27 1 26 37 1 27 28 1 27 38 1
+		 28 29 1 28 39 1 29 30 1 29 40 1 30 31 1 30 41 1 31 32 1 31 42 1 32 43 0 33 34 1 33 44 0
+		 34 35 1 34 45 1 35 36 1 35 46 1 36 37 1 36 47 1 37 38 1 37 48 1 38 39 1 38 49 1 39 40 1
+		 39 50 1 40 41 1 40 51 1 41 42 1 41 52 1 42 43 1 42 53 1 43 54 0 44 45 1 44 55 0 45 46 1
+		 45 56 1 46 47 1 46 57 1 47 48 1 47 58 1 48 49 1 48 59 1 49 50 1 49 60 1 50 51 1 50 61 1
+		 51 52 1 51 62 1 52 53 1 52 63 1 53 54 1 53 64 1 54 65 0 55 56 1 55 66 0 56 57 1 56 67 1
+		 57 58 1 57 68 1 58 59 1 58 69 1 59 60 1 59 70 1 60 61 1 60 71 1 61 62 1 61 72 1 62 63 1
+		 62 73 1 63 64 1 63 74 1 64 65 1 64 75 1 65 76 0 66 67 1 66 77 0 67 68 1 67 78 1 68 69 1
+		 68 79 1 69 70 1 69 80 1 70 71 1 70 81 1 71 72 1 71 82 1 72 73 1 72 83 1 73 74 1 73 84 1
+		 74 75 1 74 85 1 75 76 1 75 86 1 76 87 0 77 78 1 77 88 0 78 79 1 78 89 1 79 80 1 79 90 1
+		 80 81 1 80 91 1 81 82 1 81 92 1 82 83 1 82 93 1 83 84 1 83 94 1 84 85 1 84 95 1 85 86 1
+		 85 96 1 86 87 1;
+	setAttr ".ed[166:219]" 86 97 1 87 98 0 88 89 1 88 99 0 89 90 1 89 100 1 90 91 1
+		 90 101 1 91 92 1 91 102 1 92 93 1 92 103 1 93 94 1 93 104 1 94 95 1 94 105 1 95 96 1
+		 95 106 1 96 97 1 96 107 1 97 98 1 97 108 1 98 109 0 99 100 1 99 110 0 100 101 1 100 111 1
+		 101 102 1 101 112 1 102 103 1 102 113 1 103 104 1 103 114 1 104 105 1 104 115 1 105 106 1
+		 105 116 1 106 107 1 106 117 1 107 108 1 107 118 1 108 109 1 108 119 1 109 120 0 110 111 0
+		 111 112 0 112 113 0 113 114 0 114 115 0 115 116 0 116 117 0 117 118 0 118 119 0 119 120 0;
+	setAttr -s 100 -ch 400 ".fc[0:99]" -type "polyFaces" 
+		f 4 0 3 -22 -2
+		mu 0 4 0 1 12 11
+		f 4 2 5 -24 -4
+		mu 0 4 1 2 13 12
+		f 4 4 7 -26 -6
+		mu 0 4 2 3 14 13
+		f 4 6 9 -28 -8
+		mu 0 4 3 4 15 14
+		f 4 8 11 -30 -10
+		mu 0 4 4 5 16 15
+		f 4 10 13 -32 -12
+		mu 0 4 5 6 17 16
+		f 4 12 15 -34 -14
+		mu 0 4 6 7 18 17
+		f 4 14 17 -36 -16
+		mu 0 4 7 8 19 18
+		f 4 16 19 -38 -18
+		mu 0 4 8 9 20 19
+		f 4 18 20 -40 -20
+		mu 0 4 9 10 21 20
+		f 4 21 24 -43 -23
+		mu 0 4 11 12 23 22
+		f 4 23 26 -45 -25
+		mu 0 4 12 13 24 23
+		f 4 25 28 -47 -27
+		mu 0 4 13 14 25 24
+		f 4 27 30 -49 -29
+		mu 0 4 14 15 26 25
+		f 4 29 32 -51 -31
+		mu 0 4 15 16 27 26
+		f 4 31 34 -53 -33
+		mu 0 4 16 17 28 27
+		f 4 33 36 -55 -35
+		mu 0 4 17 18 29 28
+		f 4 35 38 -57 -37
+		mu 0 4 18 19 30 29
+		f 4 37 40 -59 -39
+		mu 0 4 19 20 31 30
+		f 4 39 41 -61 -41
+		mu 0 4 20 21 32 31
+		f 4 42 45 -64 -44
+		mu 0 4 22 23 34 33
+		f 4 44 47 -66 -46
+		mu 0 4 23 24 35 34
+		f 4 46 49 -68 -48
+		mu 0 4 24 25 36 35
+		f 4 48 51 -70 -50
+		mu 0 4 25 26 37 36
+		f 4 50 53 -72 -52
+		mu 0 4 26 27 38 37
+		f 4 52 55 -74 -54
+		mu 0 4 27 28 39 38
+		f 4 54 57 -76 -56
+		mu 0 4 28 29 40 39
+		f 4 56 59 -78 -58
+		mu 0 4 29 30 41 40
+		f 4 58 61 -80 -60
+		mu 0 4 30 31 42 41
+		f 4 60 62 -82 -62
+		mu 0 4 31 32 43 42
+		f 4 63 66 -85 -65
+		mu 0 4 33 34 45 44
+		f 4 65 68 -87 -67
+		mu 0 4 34 35 46 45
+		f 4 67 70 -89 -69
+		mu 0 4 35 36 47 46
+		f 4 69 72 -91 -71
+		mu 0 4 36 37 48 47
+		f 4 71 74 -93 -73
+		mu 0 4 37 38 49 48
+		f 4 73 76 -95 -75
+		mu 0 4 38 39 50 49
+		f 4 75 78 -97 -77
+		mu 0 4 39 40 51 50
+		f 4 77 80 -99 -79
+		mu 0 4 40 41 52 51
+		f 4 79 82 -101 -81
+		mu 0 4 41 42 53 52
+		f 4 81 83 -103 -83
+		mu 0 4 42 43 54 53
+		f 4 84 87 -106 -86
+		mu 0 4 44 45 56 55
+		f 4 86 89 -108 -88
+		mu 0 4 45 46 57 56
+		f 4 88 91 -110 -90
+		mu 0 4 46 47 58 57
+		f 4 90 93 -112 -92
+		mu 0 4 47 48 59 58
+		f 4 92 95 -114 -94
+		mu 0 4 48 49 60 59
+		f 4 94 97 -116 -96
+		mu 0 4 49 50 61 60
+		f 4 96 99 -118 -98
+		mu 0 4 50 51 62 61
+		f 4 98 101 -120 -100
+		mu 0 4 51 52 63 62
+		f 4 100 103 -122 -102
+		mu 0 4 52 53 64 63
+		f 4 102 104 -124 -104
+		mu 0 4 53 54 65 64
+		f 4 105 108 -127 -107
+		mu 0 4 55 56 67 66
+		f 4 107 110 -129 -109
+		mu 0 4 56 57 68 67
+		f 4 109 112 -131 -111
+		mu 0 4 57 58 69 68
+		f 4 111 114 -133 -113
+		mu 0 4 58 59 70 69
+		f 4 113 116 -135 -115
+		mu 0 4 59 60 71 70
+		f 4 115 118 -137 -117
+		mu 0 4 60 61 72 71
+		f 4 117 120 -139 -119
+		mu 0 4 61 62 73 72
+		f 4 119 122 -141 -121
+		mu 0 4 62 63 74 73
+		f 4 121 124 -143 -123
+		mu 0 4 63 64 75 74
+		f 4 123 125 -145 -125
+		mu 0 4 64 65 76 75
+		f 4 126 129 -148 -128
+		mu 0 4 66 67 78 77
+		f 4 128 131 -150 -130
+		mu 0 4 67 68 79 78
+		f 4 130 133 -152 -132
+		mu 0 4 68 69 80 79
+		f 4 132 135 -154 -134
+		mu 0 4 69 70 81 80
+		f 4 134 137 -156 -136
+		mu 0 4 70 71 82 81
+		f 4 136 139 -158 -138
+		mu 0 4 71 72 83 82
+		f 4 138 141 -160 -140
+		mu 0 4 72 73 84 83
+		f 4 140 143 -162 -142
+		mu 0 4 73 74 85 84
+		f 4 142 145 -164 -144
+		mu 0 4 74 75 86 85
+		f 4 144 146 -166 -146
+		mu 0 4 75 76 87 86
+		f 4 147 150 -169 -149
+		mu 0 4 77 78 89 88
+		f 4 149 152 -171 -151
+		mu 0 4 78 79 90 89
+		f 4 151 154 -173 -153
+		mu 0 4 79 80 91 90
+		f 4 153 156 -175 -155
+		mu 0 4 80 81 92 91
+		f 4 155 158 -177 -157
+		mu 0 4 81 82 93 92
+		f 4 157 160 -179 -159
+		mu 0 4 82 83 94 93
+		f 4 159 162 -181 -161
+		mu 0 4 83 84 95 94
+		f 4 161 164 -183 -163
+		mu 0 4 84 85 96 95
+		f 4 163 166 -185 -165
+		mu 0 4 85 86 97 96
+		f 4 165 167 -187 -167
+		mu 0 4 86 87 98 97
+		f 4 168 171 -190 -170
+		mu 0 4 88 89 100 99
+		f 4 170 173 -192 -172
+		mu 0 4 89 90 101 100
+		f 4 172 175 -194 -174
+		mu 0 4 90 91 102 101
+		f 4 174 177 -196 -176
+		mu 0 4 91 92 103 102
+		f 4 176 179 -198 -178
+		mu 0 4 92 93 104 103
+		f 4 178 181 -200 -180
+		mu 0 4 93 94 105 104
+		f 4 180 183 -202 -182
+		mu 0 4 94 95 106 105
+		f 4 182 185 -204 -184
+		mu 0 4 95 96 107 106
+		f 4 184 187 -206 -186
+		mu 0 4 96 97 108 107
+		f 4 186 188 -208 -188
+		mu 0 4 97 98 109 108
+		f 4 189 192 -211 -191
+		mu 0 4 99 100 111 110
+		f 4 191 194 -212 -193
+		mu 0 4 100 101 112 111
+		f 4 193 196 -213 -195
+		mu 0 4 101 102 113 112
+		f 4 195 198 -214 -197
+		mu 0 4 102 103 114 113
+		f 4 197 200 -215 -199
+		mu 0 4 103 104 115 114
+		f 4 199 202 -216 -201
+		mu 0 4 104 105 116 115
+		f 4 201 204 -217 -203
+		mu 0 4 105 106 117 116
+		f 4 203 206 -218 -205
+		mu 0 4 106 107 118 117
+		f 4 205 208 -219 -207
+		mu 0 4 107 108 119 118
+		f 4 207 209 -220 -209
+		mu 0 4 108 109 120 119;
 	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Baby_Slug_Placeholder";
-	rename -uid "02975AF9-5F4E-28DC-A924-959833029983";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 4.2937411219416068 0.71011317857100675 1.1463214451769819 ;
-	setAttr ".r" -type "double3" 0 44.517661906212503 0 ;
-	setAttr ".s" -type "double3" 1.8680056101384568 1.4194499501853095 0.9502056220538927 ;
-createNode mesh -n "Baby_Slug_PlaceholderShape" -p "Baby_Slug_Placeholder";
-	rename -uid "6FE0DE2F-3445-10D5-99A1-26974B34C68C";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -s -n "persp";
-	rename -uid "C9559EAD-2646-687A-ADF8-80BADAAF9DEE";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.4008257517559999 8.5187103982239627 16.353965183274877 ;
-	setAttr ".r" -type "double3" 1421.6616472524584 -30237.800000000414 -9.946564829277098e-17 ;
-createNode camera -s -n "perspShape" -p "|persp";
-	rename -uid "4A9D0805-8649-0625-9581-68847EDB7A8E";
-	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999986;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 18.820364615540811;
-	setAttr ".ow" 0.32808398950131235;
-	setAttr ".imn" -type "string" "persp";
-	setAttr ".den" -type "string" "persp_depth";
-	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 38.960510253906236 77.768569946289105 0.84016406536103383 ;
-	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "30B48E2F-C849-1CD8-A8C2-C9BAE00D5063";
-	setAttr -s 122 ".lnk";
-	setAttr -s 122 ".slnk";
+	rename -uid "8796C54B-5C4E-523F-DD44-D3B5039836EE";
+	setAttr -s 65 ".lnk";
+	setAttr -s 3 ".ign";
+	setAttr -s 59 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "99387AEB-9040-9C37-9654-31AAB57DB1EE";
+	rename -uid "07010CF5-EA48-052C-BA4A-D4B4681EC46C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "DE304897-D548-B8E1-13F3-6F9B32DAF78E";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0C512B33-6C42-5F39-B7E4-348AF99717F8";
+	rename -uid "46161408-314F-B277-5B22-429089274D4D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "6551F370-0040-CD5A-9773-509CE09140BD";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "ABCFF056-2F48-6D89-147E-C1BCEF496F10";
+	rename -uid "93C09E28-B44E-9E1B-F2B3-27B6E47C811A";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 4 0 1 3 2 ;
 	setAttr -s 4 ".bspr";
 	setAttr -s 4 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "91044E7B-3540-9896-4F68-38B1439D7D8A";
+	rename -uid "2AAC7940-3E48-6267-19F3-88852C90845D";
 	setAttr ".tpdt[0].tpcd" -type "Int32Array" 1 0 ;
 createNode reference -n "Laila_Rig_003RN";
 	rename -uid "968271D7-2A48-AEF2-3A68-648384B957E4";
@@ -5313,11 +5520,11 @@ createNode reference -n "Kerfluffle_Rig_DoneRN";
 		"Kerfluffle_Rig_DoneRN.placeHolderList[269]" ""
 		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.translateZ" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[270]" ""
-		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.rotateZ" 
-		"Kerfluffle_Rig_DoneRN.placeHolderList[271]" ""
 		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.rotateX" 
-		"Kerfluffle_Rig_DoneRN.placeHolderList[272]" ""
+		"Kerfluffle_Rig_DoneRN.placeHolderList[271]" ""
 		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.rotateY" 
+		"Kerfluffle_Rig_DoneRN.placeHolderList[272]" ""
+		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.rotateZ" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[273]" ""
 		5 4 "Kerfluffle_Rig_DoneRN" "|Kerfluffle_Rig_Done:Kerfluffle_GRP|Kerfluffle_Rig_Done:Kerfluffle_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL_GRP|Kerfluffle_Rig_Done:Transform_ROT_CTRL|Kerfluffle_Rig_Done:Transform_TRANS_CTRL_GRP|Kerfluffle_Rig_Done:Transform_TRANS_CTRL|Kerfluffle_Rig_Done:COG_CTRL_GRP|Kerfluffle_Rig_Done:COG_CTRL|Kerfluffle_Rig_Done:Spine_01_CTRL_GRP|Kerfluffle_Rig_Done:Spine_01_CTRL|Kerfluffle_Rig_Done:Spine_02_CTRL_GRP|Kerfluffle_Rig_Done:Spine_02_CTRL|Kerfluffle_Rig_Done:Spine_03_CTRL_GRP|Kerfluffle_Rig_Done:Spine_03_CTRL|Kerfluffle_Rig_Done:Head_CTRL_GRP|Kerfluffle_Rig_Done:Head_CTRL|Kerfluffle_Rig_Done:Jaw_CTRL_GRP|Kerfluffle_Rig_Done:Jaw_CTRL.scaleX" 
 		"Kerfluffle_Rig_DoneRN.placeHolderList[274]" ""
@@ -10052,13 +10259,6 @@ createNode animCurveTU -n "TranslateCtrl_scaleZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr ".ktv[0]"  5 0.86639295210900469;
-createNode polyCube -n "polyCube1";
-	rename -uid "95ED9C9C-9348-7ED9-6959-28816F3EF2E8";
-	setAttr ".ax" -type "double3" 0 1 0 ;
-	setAttr ".w" 1;
-	setAttr ".h" 1;
-	setAttr ".d" 1;
-	setAttr ".cuv" 4;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "3E3357E6-8644-2111-ECB8-ED8FCCF8FD45";
 	setAttr ".b" -type "string" (
@@ -13261,12 +13461,6 @@ createNode animCurveTU -n "R_BS_BrowsOutDown_Ctrl_scaleZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 2 ".ktv[0:1]"  52 1 75 1;
-createNode polyPlane -n "polyPlane1";
-	rename -uid "A0074318-CE4A-437B-79E1-3AB988166F79";
-	setAttr ".ax" -type "double3" 0 1 0 ;
-	setAttr ".w" 1;
-	setAttr ".h" 1;
-	setAttr ".cuv" 2;
 createNode animCurveTA -n "Tail_CTRL_rotateX";
 	rename -uid "11FE0CB1-CB40-A996-DB81-518D6D715743";
 	setAttr ".tan" 18;
@@ -13632,7 +13826,7 @@ createNode animCurveTA -n "Jaw_CTRL_rotateZ";
 	setAttr ".wgt" no;
 	setAttr -s 9 ".ktv[0:8]"  1 14.468816534375708 16 14.468816534375708
 		 23 -3.9129140667290927 31 -3.9129140667290927 35 1.6034768761317257 40 -4.625480622483809
-		 54 -4.625480622483809 57 9.4654837806835062 71 13.378137475868529;
+		 54 -4.625480622483809 57 9.4654837806835062 71 13.378137475868531;
 createNode animCurveTU -n "Jaw_CTRL_visibility";
 	rename -uid "7A187AA7-CD4B-09FD-F9EC-1EA4AF9D3E75";
 	setAttr ".tan" 9;
@@ -13703,6 +13897,37 @@ createNode animCurveTU -n "Slider_05_CTRL_visibility";
 	setAttr ".wgt" no;
 	setAttr -s 3 ".ktv[0:2]"  9 1 13 1 18 1;
 	setAttr -s 3 ".kot[0:2]"  5 5 5;
+createNode reference -n "Other_World_SceneRN";
+	rename -uid "E4C3578D-2B45-184D-BB87-A3AE11D37DA0";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Other_World_SceneRN"
+		"Other_World_SceneRN" 0
+		"Other_World_SceneRN" 2
+		2 "|Other_World_Scene:Scene" "translate" " -type \"double3\" 28.58692777423664921 0 33.41307222576335079"
+		
+		2 "|Other_World_Scene:Scene|Other_World_Scene:Rocks_Grp|Other_World_Scene:Intro_Area_Rocks|Other_World_Scene:Rock_Size6" 
+		"translate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "5EC80630-479B-9EC7-0F77-2DBDF7558E72";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
+	setAttr ".assbb" yes;
+	setAttr ".AA_samples" 2;
+	setAttr ".GI_diffuse_samples" 5;
+	setAttr ".version" -type "string" "3.1.2";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=perspShape;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1                           1;Background.Offset=0                           0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1                           1;Foreground.Offset=0                           0;Foreground.Apply Color Management=1;";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "B7B9DDDF-44EF-2CF0-E01A-969D56B9E27B";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "B7589DF1-467E-7687-9023-829C22929AD0";
+	setAttr ".color_management" 1;
+	setAttr ".ai_translator" -type "string" "png";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "6112B0A6-4639-0A65-6562-98B25036C9B7";
+	setAttr ".output_mode" 0;
+	setAttr ".ai_translator" -type "string" "maya";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -13713,28 +13938,34 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 50 ".st";
+	setAttr -s 59 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 52 ".s";
+	setAttr -s 61 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 157 ".u";
+	setAttr -s 184 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 5 ".r";
+	setAttr -s 7 ".r";
+select -ne :lightList1;
+	setAttr -s 2 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 27 ".tx";
+	setAttr -s 46 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 4 ".dsm";
+	setAttr -s 137 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 4 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
+select -ne :defaultLightSet;
+	setAttr -s 2 ".dsm";
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :defaultHideFaceDataSet;
 select -ne :ikSystem;
 	setAttr -s 6 ".sol";
 connectAttr "mary_Rig_001_L_Thumb_Jnt_002_Ctrl_translateX.o" "Laila_Rig_003RN.phl[1]"
@@ -15443,9 +15674,9 @@ connectAttr "Tongue_05_CTRL_visibility.o" "Kerfluffle_Rig_DoneRN.phl[267]";
 connectAttr "Jaw_CTRL_translateX.o" "Kerfluffle_Rig_DoneRN.phl[268]";
 connectAttr "Jaw_CTRL_translateY.o" "Kerfluffle_Rig_DoneRN.phl[269]";
 connectAttr "Jaw_CTRL_translateZ.o" "Kerfluffle_Rig_DoneRN.phl[270]";
-connectAttr "Jaw_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[271]";
-connectAttr "Jaw_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[272]";
-connectAttr "Jaw_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[273]";
+connectAttr "Jaw_CTRL_rotateX.o" "Kerfluffle_Rig_DoneRN.phl[271]";
+connectAttr "Jaw_CTRL_rotateY.o" "Kerfluffle_Rig_DoneRN.phl[272]";
+connectAttr "Jaw_CTRL_rotateZ.o" "Kerfluffle_Rig_DoneRN.phl[273]";
 connectAttr "Jaw_CTRL_scaleX.o" "Kerfluffle_Rig_DoneRN.phl[274]";
 connectAttr "Jaw_CTRL_scaleY.o" "Kerfluffle_Rig_DoneRN.phl[275]";
 connectAttr "Jaw_CTRL_scaleZ.o" "Kerfluffle_Rig_DoneRN.phl[276]";
@@ -15660,8 +15891,6 @@ connectAttr "Head_Jnt_001_Ctrl_scaleX1.o" "LlamaSlugRigRN1.phl[156]";
 connectAttr "Head_Jnt_001_Ctrl_scaleY1.o" "LlamaSlugRigRN1.phl[157]";
 connectAttr "Head_Jnt_001_Ctrl_scaleZ1.o" "LlamaSlugRigRN1.phl[158]";
 connectAttr "Head_Jnt_001_Ctrl_visibility1.o" "LlamaSlugRigRN1.phl[159]";
-connectAttr "polyPlane1.out" "Camera_PositionShape.i";
-connectAttr "polyCube1.out" "Laila_PlaceholderShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -15673,8 +15902,5 @@ connectAttr "sharedReferenceNode.sr" "LlamaSlugRigRN.sr";
 connectAttr "sharedReferenceNode.sr" "Kerfluffle_Rig_DoneRN.sr";
 connectAttr "sharedReferenceNode.sr" "LlamaSlugRigRN1.sr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "Camera_PositionShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "Laila_PlaceholderShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "Momma_Slug_PlaceholderShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "Baby_Slug_PlaceholderShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "Camera_Position_ValuesShape.iog" ":initialShadingGroup.dsm" -na;
 // End of LlamaSlugs_HeadTurn.ma
